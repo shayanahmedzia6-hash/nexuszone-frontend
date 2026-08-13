@@ -20,7 +20,7 @@ export function HeroTrustBar({ className }: HeroTrustBarProps) {
           return (
             <li
               key={item.id}
-              className="flex flex-col items-center gap-2 px-3 py-5 text-center sm:px-4"
+              className="flex min-w-0 flex-col items-center gap-1.5 px-2 py-4 text-center sm:gap-2 sm:px-4 sm:py-5"
             >
               {Icon ? (
                 <Icon
@@ -29,7 +29,7 @@ export function HeroTrustBar({ className }: HeroTrustBarProps) {
                   aria-hidden
                 />
               ) : null}
-              <p className="text-sm leading-snug font-semibold md:text-base">
+              <p className="text-xs leading-snug font-semibold sm:text-sm md:text-base">
                 <span
                   className={cn(
                     item.accentValue ? "text-primary" : "text-text",

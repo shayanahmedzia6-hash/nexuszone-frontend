@@ -68,12 +68,12 @@ export function WhatYouNeed() {
         ))}
       </div>
 
-      <div className="relative mt-10 flex flex-col items-start gap-6 rounded-2xl border border-primary/30 bg-background p-6 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-4">
+      <div className="relative mt-10 flex flex-col items-stretch gap-6 rounded-2xl border border-primary/30 bg-background p-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex min-w-0 items-center gap-4">
           <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-primary/30 text-primary">
             <Users className="h-6 w-6" aria-hidden />
           </span>
-          <div>
+          <div className="min-w-0">
             <h3 className="text-lg font-semibold text-text">
               Not sure what you need?
             </h3>
@@ -84,8 +84,8 @@ export function WhatYouNeed() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-          <Button href={routes.contact} className="gap-2">
+        <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center">
+          <Button href={routes.contact} className="w-full justify-center gap-2 sm:w-auto">
             Talk to an Expert
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Button>

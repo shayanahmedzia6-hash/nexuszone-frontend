@@ -44,7 +44,7 @@ export function WhyNexus() {
       </div>
 
       <div className="relative mt-10 border-b border-border">
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 pb-4">
+        <div className="-mx-4 flex gap-x-6 overflow-x-auto px-4 pb-4 [scrollbar-width:none] md:mx-0 md:flex-wrap md:justify-center md:gap-x-8 md:overflow-visible md:px-0 [&::-webkit-scrollbar]:hidden">
           {whyNexusPillars.map((pillar) => {
             const isActive = pillar.id === active.id;
             return (
@@ -53,7 +53,7 @@ export function WhyNexus() {
                 type="button"
                 onClick={() => setActiveId(pillar.id)}
                 className={cn(
-                  "relative flex items-center gap-2 pb-4 text-sm font-medium transition-colors",
+                  "relative flex shrink-0 items-center gap-2 pb-4 text-sm font-medium whitespace-nowrap transition-colors",
                   isActive ? "text-primary" : "text-text-muted hover:text-text",
                 )}
               >

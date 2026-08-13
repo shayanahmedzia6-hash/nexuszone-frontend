@@ -1,5 +1,6 @@
 import { type ReactNode } from "react";
 
+import { LenisProvider } from "@/components/providers/lenis-provider";
 import { QueryProvider } from "@/components/providers/query-provider";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 
@@ -11,7 +12,9 @@ type AppProvidersProps = {
 export function AppProviders({ children }: AppProvidersProps) {
   return (
     <QueryProvider>
-      <ThemeProvider>{children}</ThemeProvider>
+      <ThemeProvider>
+        <LenisProvider>{children}</LenisProvider>
+      </ThemeProvider>
     </QueryProvider>
   );
 }

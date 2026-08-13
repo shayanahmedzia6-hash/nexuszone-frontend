@@ -37,7 +37,7 @@ export function FAQ() {
                   type="button"
                   onClick={() => setOpenId(isOpen ? null : faq.id)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                  className="flex w-full items-center justify-between gap-3 px-4 py-4 text-left sm:gap-4 sm:px-5"
                 >
                   <span className="text-sm font-medium text-text md:text-base">
                     {faq.question}
@@ -51,7 +51,7 @@ export function FAQ() {
                   />
                 </button>
                 {isOpen ? (
-                  <p className="px-5 pb-4 text-sm leading-relaxed text-text-muted">
+                  <p className="px-4 pb-4 text-sm leading-relaxed text-text-muted sm:px-5">
                     {faq.answer}
                   </p>
                 ) : null}

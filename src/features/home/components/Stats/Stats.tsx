@@ -33,10 +33,10 @@ export function Stats() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 divide-border sm:grid-cols-3 sm:divide-x">
+        <div className="grid grid-cols-3 gap-4 divide-border sm:gap-8 sm:divide-x">
           {stats.map((stat) => (
-            <div key={stat.id} className="flex flex-col gap-1 px-2 first:pl-0">
-              <p className="text-3xl font-bold text-primary md:text-4xl">
+            <div key={stat.id} className="flex min-w-0 flex-col gap-1 px-1 first:pl-0 sm:px-2">
+              <p className="text-2xl font-bold text-primary sm:text-3xl md:text-4xl">
                 {stat.value}
               </p>
               <p className="text-sm text-text-muted">{stat.label}</p>

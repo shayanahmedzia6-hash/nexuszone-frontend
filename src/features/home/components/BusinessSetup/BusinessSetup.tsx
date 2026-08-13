@@ -33,7 +33,7 @@ export function BusinessSetup() {
           <Link
             key={option.id}
             href={option.href ?? routes.businessSetup}
-            className="group flex items-center gap-4 py-5 transition-colors hover:bg-surface/60 sm:gap-6"
+            className="group flex items-center gap-3 py-5 transition-colors hover:bg-surface/60 sm:gap-6"
           >
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-primary/20 text-primary">
               <DynamicIcon
@@ -42,7 +42,7 @@ export function BusinessSetup() {
                 strokeWidth={1.75}
               />
             </span>
-            <span className="flex-1">
+            <span className="min-w-0 flex-1">
               <span className="block text-base font-semibold text-text md:text-lg">
                 {option.title}
               </span>
@@ -58,12 +58,12 @@ export function BusinessSetup() {
         ))}
       </div>
 
-      <div className="mt-8 flex flex-col items-start gap-4 rounded-xl bg-background-secondary p-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-8 flex flex-col items-stretch gap-4 rounded-xl bg-background-secondary p-6 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3">
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-text text-background">
             <FileText className="h-4 w-4" aria-hidden />
           </span>
-          <div>
+          <div className="min-w-0">
             <h3 className="text-base font-semibold text-text">
               Not Sure Which One Fits You?
             </h3>
@@ -72,7 +72,7 @@ export function BusinessSetup() {
             </p>
           </div>
         </div>
-        <Button href={routes.contact} variant="secondary" className="gap-2 bg-text text-background hover:opacity-90">
+        <Button href={routes.contact} variant="secondary" className="w-full justify-center gap-2 bg-text text-background hover:opacity-90 sm:w-auto">
           Get Free Consultation
           <ArrowRight className="h-4 w-4" aria-hidden />
         </Button>

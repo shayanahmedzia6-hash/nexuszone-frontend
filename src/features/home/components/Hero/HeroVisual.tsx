@@ -37,7 +37,7 @@ export function HeroVisual({ className }: HeroVisualProps) {
           sizes="100vw"
           quality={85}
           className={cn(
-            "object-cover object-[52%_40%] transition-opacity duration-500 ease-out motion-reduce:transition-none",
+            "object-cover object-[40%_38%] transition-opacity duration-500 ease-out motion-reduce:transition-none lg:object-[52%_40%]",
             isDark ? "opacity-0" : "opacity-100",
           )}
         />
@@ -49,7 +49,7 @@ export function HeroVisual({ className }: HeroVisualProps) {
           sizes="100vw"
           quality={85}
           className={cn(
-            "object-cover object-[52%_40%] transition-opacity duration-500 ease-out motion-reduce:transition-none",
+            "object-cover object-[40%_38%] transition-opacity duration-500 ease-out motion-reduce:transition-none lg:object-[52%_40%]",
             isDark ? "opacity-100" : "opacity-0",
           )}
         />
@@ -57,7 +57,13 @@ export function HeroVisual({ className }: HeroVisualProps) {
 
       <div
         className={cn(
-          "absolute inset-0 transition-opacity duration-500 motion-reduce:transition-none",
+          "absolute inset-0 lg:hidden",
+          isDark ? "bg-background/80" : "bg-background/75",
+        )}
+      />
+      <div
+        className={cn(
+          "absolute inset-0 hidden transition-opacity duration-500 motion-reduce:transition-none lg:block",
           isDark
             ? "bg-gradient-to-r from-background via-background/70 to-transparent"
             : "bg-gradient-to-r from-background/75 via-background/25 to-transparent",

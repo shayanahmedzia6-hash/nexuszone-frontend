@@ -31,8 +31,12 @@ export function FinalCTA() {
           <p className="max-w-xl text-base text-text-muted md:text-lg">
             {finalCtaContent.description}
           </p>
-          <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button href={finalCtaContent.primaryCta.href} size="lg" className="gap-2">
+          <div className="mt-2 flex w-full flex-col gap-3 sm:flex-row sm:items-center">
+            <Button
+              href={finalCtaContent.primaryCta.href}
+              size="lg"
+              className="w-full justify-center gap-2 sm:w-auto"
+            >
               {finalCtaContent.primaryCta.label}
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Button>
@@ -40,6 +44,7 @@ export function FinalCTA() {
               href={finalCtaContent.secondaryCta.href}
               variant="outline"
               size="lg"
+              className="w-full justify-center sm:w-auto"
             >
               {finalCtaContent.secondaryCta.label}
             </Button>

@@ -1,36 +1,64 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils/cn";
 import { routes } from "@/lib/constants/routes";
+import { useThemeStore } from "@/store/theme-store";
 
 type BrandLogoProps = {
   className?: string;
   priority?: boolean;
 };
 
+const LOGO_IMAGES = {
+  light: "/logos/light-mode.png",
+  dark: "/logos/dark-mode.png",
+} as const;
+
 /**
- * Original Nexus Zone logo — do not recolor between themes.
- * Balanced header size: larger than compact nav icons, without
- * stretching the sticky header to multi-rem empty height.
+ * Theme-aware brand mark. Both assets stay mounted and crossfade so
+ * toggles do not remount or jump. Do not recolor these PNGs in CSS.
  */
 export function BrandLogo({ className, priority = false }: BrandLogoProps) {
+  const theme = useThemeStore((state) => state.theme);
+  const isDark = theme === "dark";
+
   return (
     <Link
       href={routes.home}
       className={cn(
-        "inline-flex h-16 shrink-0 items-center leading-none md:h-20",
+        "relative inline-flex shrink-0 items-center leading-none",
+        "h-16 w-[min(13.5rem,calc(100vw-6.5rem))] sm:h-[4.25rem] sm:w-[15rem] md:h-20 md:w-[17.5rem]",
         className,
       )}
       aria-label="Nexus Zone home"
     >
       <Image
-        src="/logos/logo.png"
+        src={LOGO_IMAGES.light}
         alt="Nexus Zone"
-        width={280}
-        height={80}
+        width={560}
+        height={160}
         priority={priority}
-        className="h-full w-auto object-contain object-left"
+        sizes="(max-width: 768px) 272px, 280px"
+        className={cn(
+          "absolute inset-0 h-full w-full object-contain object-left transition-opacity duration-300 ease-out motion-reduce:transition-none",
+          isDark ? "opacity-0" : "opacity-100",
+        )}
+      />
+      <Image
+        src={LOGO_IMAGES.dark}
+        alt=""
+        width={560}
+        height={160}
+        priority={priority}
+        sizes="(max-width: 768px) 272px, 280px"
+        aria-hidden
+        className={cn(
+          "absolute inset-0 h-full w-full object-contain object-left transition-opacity duration-300 ease-out motion-reduce:transition-none",
+          isDark ? "opacity-100" : "opacity-0",
+        )}
       />
     </Link>
   );
