@@ -52,7 +52,7 @@ export const footerContent = {
     placeholder: "Enter your email",
   },
   legal: [
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms & Conditions", href: "/terms" },
+    { label: "Privacy Policy", href: routes.privacy },
+    { label: "Terms & Conditions", href: routes.terms },
   ],
 } as const;

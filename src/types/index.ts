@@ -5,7 +5,10 @@ export type {
 } from "./business-setup";
 export type { CalculatorInput, CalculatorResult } from "./calculator";
 export type { FaqItem } from "./faq";
+export type { ProcessStep } from "./how-it-works";
 export type { Partner } from "./partner";
 export type { Service, ServiceListItem } from "./service";
 export type { TeamMember } from "./team";
 export type { Testimonial } from "./testimonial";
+export type { NeedCategory } from "./what-you-need";
+export type { WhyNexusPillar } from "./why-nexus";

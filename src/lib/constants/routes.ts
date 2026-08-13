@@ -11,6 +11,8 @@ export const routes = {
   blog: "/blog",
   contact: "/contact",
   faq: "/faq",
+  privacy: "/privacy",
+  terms: "/terms",
 } as const;
 
 export type AppRoute = (typeof routes)[keyof typeof routes];
@@ -29,4 +31,5 @@ export const staticMarketingPaths: readonly string[] = [
   routes.blog,
   routes.contact,
   routes.faq,
+  // privacy/terms are intentionally excluded while marked noIndex (draft legal content)
 ];

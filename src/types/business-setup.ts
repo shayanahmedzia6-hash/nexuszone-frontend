@@ -1,4 +1,9 @@
-export type BusinessSetupType = "mainland" | "free-zone" | "offshore";
+export type BusinessSetupType =
+  | "mainland"
+  | "free-zone"
+  | "offshore"
+  | "branch"
+  | "professional-license";
 
 export type BusinessSetupOption = {
   id: string;
@@ -6,4 +11,6 @@ export type BusinessSetupOption = {
   slug: string;
   title: string;
   summary: string;
+  icon?: string;
+  href?: string;
 };

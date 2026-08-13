@@ -1,3 +1,4 @@
+import { createElement } from "react";
 import {
   Award,
   BadgeCheck,
@@ -72,6 +73,23 @@ const iconMap: Record<string, LucideIcon> = {
 export function getNavIcon(name?: string): LucideIcon | undefined {
   if (!name) return undefined;
   return iconMap[name];
+}
+
+type DynamicIconProps = {
+  name?: string;
+  className?: string;
+  strokeWidth?: number;
+};
+
+/**
+ * Renders a named icon from iconMap by reference (createElement) rather than
+ * a dynamically-named JSX tag, so lookups don't read as "creating a
+ * component during render".
+ */
+export function DynamicIcon({ name, className, strokeWidth }: DynamicIconProps) {
+  const Icon = getNavIcon(name);
+  if (!Icon) return null;
+  return createElement(Icon, { className, strokeWidth, "aria-hidden": true });
 }
 
 type SocialIconProps = {

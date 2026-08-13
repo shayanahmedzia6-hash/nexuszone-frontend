@@ -1,3 +1,4 @@
+export { AccentBar } from "./accent-bar";
 export { Badge } from "./badge";
 export { Button, type ButtonProps } from "./button";
 export { Container } from "./container";

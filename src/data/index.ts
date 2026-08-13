@@ -1,11 +1,16 @@
 export { blogPosts } from "./blog";
 export { businessSetupOptions } from "./business-setup";
 export { faqs } from "./faqs";
+export { finalCtaContent } from "./final-cta";
 export { footerContent } from "./footer";
 export { heroContent } from "./hero";
+export { processSteps } from "./how-it-works";
 export { navigationItems } from "./navigation";
 export { partners } from "./partners";
 export { services } from "./services";
+export { servicesCatalog, serviceGroupMeta } from "./services-catalog";
 export { siteContact } from "./site-contact";
 export { teamMembers } from "./team";
 export { testimonials } from "./testimonials";
+export { needCategories } from "./what-you-need";
+export { whyNexusPillars } from "./why-nexus";
