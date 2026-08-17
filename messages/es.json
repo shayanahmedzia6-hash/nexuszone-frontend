@@ -1,0 +1,79 @@
+{
+  "common": {
+    "skipToMainContent": "Saltar al contenido principal",
+    "backToHome": "Volver al inicio",
+    "notFoundTitle": "Página no encontrada",
+    "notFoundDescription": "La página solicitada no existe o puede haber sido movida.",
+    "errorTitle": "Algo salió mal",
+    "errorDescription": "Ha ocurrido un error inesperado. Puede intentarlo de nuevo o volver más tarde.",
+    "tryAgain": "Intentar de nuevo"
+  },
+  "languages": {
+    "en": "Inglés",
+    "ar": "Árabe",
+    "fr": "Francés",
+    "es": "Español"
+  },
+  "header": {
+    "getStarted": "Comenzar",
+    "switchToDark": "Cambiar a modo oscuro",
+    "switchToLight": "Cambiar a modo claro",
+    "languageLabel": "Idioma: {language}",
+    "whatsappUs": "WhatsApp"
+  },
+  "nav": {
+    "home": "Inicio",
+    "businessSetup": "Constitución de empresas",
+    "services": "Servicios",
+    "resources": "Recursos",
+    "about": "Sobre nosotros",
+    "contact": "Contacto"
+  },
+  "footer": {
+    "tagline": "Su socio de confianza para la constitución de empresas y soluciones corporativas en los EAU y más allá.",
+    "quickLinks": "Enlaces rápidos",
+    "ourServices": "Nuestros servicios",
+    "resources": "Recursos",
+    "contactUs": "Contáctenos",
+    "newsletterTitle": "Suscríbase a nuestro boletín",
+    "newsletterDescription": "Reciba las últimas actualizaciones y novedades en su bandeja de entrada.",
+    "newsletterPlaceholder": "Ingrese su email",
+    "privacyPolicy": "Política de privacidad",
+    "termsConditions": "Términos y condiciones",
+    "hours": "Lun - Vie: 9:00 AM - 6:00 PM",
+    "copyright": "© {year} Nexus Zone. Todos los derechos reservados."
+  },
+  "hero": {
+    "eyebrow": "SU SOCIO DE NEGOCIOS DE CONFIANZA EN LOS EAU",
+    "headlinePrimary": "IMPULSE SU NEGOCIO.",
+    "headlineAccent": "LOGRE MÁS.",
+    "description": "Soluciones inteligentes para la constitución de empresas, cumplimiento normativo y apoyo empresarial, diseñadas para ayudarle a avanzar y lograr un éxito duradero.",
+    "primaryCta": "Calcular costo de constitución",
+    "secondaryCta": "Reservar consulta gratuita",
+    "trust": {
+      "businesses": "Empresas asesoradas",
+      "years": "Años de excelencia",
+      "countries": "Países atendidos",
+      "advisors": "Asesores de negocios",
+      "support": "Soporte integral",
+      "pricing": "Proceso y precios"
+    }
+  },
+  "leadCapture": {
+    "title": "Contáctenos",
+    "tabLabel": "Contáctenos",
+    "subtitle": "Ingrese sus datos de contacto",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Email",
+    "phone": "Teléfono",
+    "phonePlaceholder": "50 123 4567",
+    "helpType": "¿Cómo podemos ayudarle?",
+    "businessType": "¿Qué tipo de negocio desea establecer?",
+    "notRobot": "No soy un robot",
+    "submit": "Enviar",
+    "successTitle": "Gracias — Hemos recibido sus datos",
+    "successBody": "Su cliente de correo debería estar abierto ahora con su mensaje listo para enviar. Nos pondremos en contacto pronto.",
+    "whatsapp": "WhatsApp"
+  }
+}

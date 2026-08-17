@@ -1,6 +1,7 @@
 "use client";
 
 import { MessageCircle, Phone } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { BrandLogo } from "@/components/navigation/brand-logo";
 import { DesktopNavigation } from "@/components/navigation/desktop-navigation";
@@ -18,6 +19,8 @@ type HeaderProps = {
 };
 
 export function Header({ className }: HeaderProps) {
+  const t = useTranslations("header");
+
   return (
     <header className={cn("sticky top-0 z-50", className)}>
       <div className="border-b border-glass-border bg-glass/90 backdrop-blur-md">
@@ -38,7 +41,7 @@ export function Header({ className }: HeaderProps) {
               className="inline-flex items-center gap-1.5 transition-colors hover:text-text"
             >
               <MessageCircle className="h-3.5 w-3.5" aria-hidden />
-              {siteContact.whatsappDisplay}
+              {t("whatsappUs")}
             </a>
             <span className="h-3 w-px bg-border" aria-hidden />
             <LanguageSwitcher />
@@ -50,7 +53,7 @@ export function Header({ className }: HeaderProps) {
             <DesktopNavigation />
             <div className="hidden items-center gap-3 xl:flex">
               <Button href={routes.contact} size="sm">
-                Get Started
+                {t("getStarted")}
               </Button>
             </div>
             <MobileNavigation />

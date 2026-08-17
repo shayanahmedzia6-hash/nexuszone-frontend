@@ -1,0 +1,79 @@
+{
+  "common": {
+    "skipToMainContent": "Aller au contenu principal",
+    "backToHome": "Retour à l'accueil",
+    "notFoundTitle": "Page introuvable",
+    "notFoundDescription": "La page demandée n'existe pas ou a peut-être été déplacée.",
+    "errorTitle": "Une erreur s'est produite",
+    "errorDescription": "Une erreur inattendue s'est produite. Vous pouvez réessayer ou revenir plus tard.",
+    "tryAgain": "Réessayer"
+  },
+  "languages": {
+    "en": "Anglais",
+    "ar": "Arabe",
+    "fr": "Français",
+    "es": "Espagnol"
+  },
+  "header": {
+    "getStarted": "Commencer",
+    "switchToDark": "Passer au mode sombre",
+    "switchToLight": "Passer au mode clair",
+    "languageLabel": "Langue : {language}",
+    "whatsappUs": "WhatsApp"
+  },
+  "nav": {
+    "home": "Accueil",
+    "businessSetup": "Création d'entreprise",
+    "services": "Services",
+    "resources": "Ressources",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "footer": {
+    "tagline": "Votre partenaire de confiance pour la création d'entreprise et les solutions d'entreprise aux Émirats arabes unis et au-delà.",
+    "quickLinks": "Liens rapides",
+    "ourServices": "Nos services",
+    "resources": "Ressources",
+    "contactUs": "Contactez-nous",
+    "newsletterTitle": "Abonnez-vous à notre newsletter",
+    "newsletterDescription": "Recevez les dernières actualités et informations directement dans votre boîte de réception.",
+    "newsletterPlaceholder": "Entrez votre email",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsConditions": "Conditions générales",
+    "hours": "Lun - Ven : 9h00 - 18h00",
+    "copyright": "© {year} Nexus Zone. Tous droits réservés."
+  },
+  "hero": {
+    "eyebrow": "VOTRE PARTENAIRE DE CONFIANCE AUX ÉMIRATS ARABES UNIS",
+    "headlinePrimary": "DÉVELOPPEZ VOTRE ENTREPRISE.",
+    "headlineAccent": "ALLEZ PLUS LOIN.",
+    "description": "Des solutions intelligentes pour la création d'entreprise, la conformité et le support commercial — conçues pour vous aider à avancer et à réussir durablement.",
+    "primaryCta": "Calculer le coût de création",
+    "secondaryCta": "Réserver une consultation gratuite",
+    "trust": {
+      "businesses": "Entreprises accompagnées",
+      "years": "Années d'excellence",
+      "countries": "Pays desservis",
+      "advisors": "Conseillers d'affaires",
+      "support": "Accompagnement complet",
+      "pricing": "Processus et tarification"
+    }
+  },
+  "leadCapture": {
+    "title": "Contactez-nous",
+    "tabLabel": "Contactez-nous",
+    "subtitle": "Entrez vos coordonnées",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "phonePlaceholder": "50 123 4567",
+    "helpType": "Comment pouvons-nous vous aider ?",
+    "businessType": "Quel type d'entreprise souhaitez-vous créer ?",
+    "notRobot": "Je ne suis pas un robot",
+    "submit": "Envoyer",
+    "successTitle": "Merci — Nous avons bien reçu vos informations",
+    "successBody": "Votre messagerie devrait maintenant être ouverte avec votre message prêt à être envoyé. Nous vous contacterons bientôt.",
+    "whatsapp": "WhatsApp"
+  }
+}

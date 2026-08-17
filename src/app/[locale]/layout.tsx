@@ -1,12 +1,16 @@
 import { type ReactNode } from "react";
 import { type Metadata } from "next";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
 import { AppProviders } from "@/components/providers/app-providers";
 import { siteConfig } from "@/config/site";
+import { routing, rtlLocales, type Locale } from "@/i18n/routing";
 import { themeInitScript } from "@/lib/theme/theme-script";
 
-import "./globals.css";
+import "../globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -14,6 +18,10 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   weight: ["400", "500", "600", "700"],
 });
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -44,12 +52,27 @@ export const metadata: Metadata = {
 
 type RootLayoutProps = {
   children: ReactNode;
+  params: Promise<{ locale: string }>;
 };
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default async function RootLayout({
+  children,
+  params,
+}: RootLayoutProps) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+  const messages = await getMessages();
+  const t = await getTranslations("common");
+  const dir = rtlLocales.includes(locale as Locale) ? "rtl" : "ltr";
+
   return (
     <html
-      lang="en"
+      lang={locale}
+      dir={dir}
       suppressHydrationWarning
       className={`${plusJakarta.variable} h-full`}
     >
@@ -61,9 +84,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-3 focus:py-2 focus:text-white"
         >
-          Skip to main content
+          {t("skipToMainContent")}
         </a>
-        <AppProviders>{children}</AppProviders>
+        <NextIntlClientProvider messages={messages}>
+          <AppProviders>{children}</AppProviders>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

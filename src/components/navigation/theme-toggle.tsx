@@ -1,6 +1,7 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils/cn";
 import { useThemeStore } from "@/store/theme-store";
@@ -10,6 +11,7 @@ type ThemeToggleProps = {
 };
 
 export function ThemeToggle({ className }: ThemeToggleProps) {
+  const t = useTranslations("header");
   const theme = useThemeStore((state) => state.theme);
   const toggleTheme = useThemeStore((state) => state.toggleTheme);
   const isDark = theme === "dark";
@@ -18,8 +20,8 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
     <button
       type="button"
       onClick={toggleTheme}
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      title={isDark ? "Light mode" : "Dark mode"}
+      aria-label={isDark ? t("switchToLight") : t("switchToDark")}
+      title={isDark ? t("switchToLight") : t("switchToDark")}
       className={cn(
         "inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/70 bg-background/60 text-text transition-colors",
         "hover:border-primary/40 hover:text-primary",

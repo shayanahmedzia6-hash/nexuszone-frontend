@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 import { type BlogListItem } from "@/types/blog";
 import { cn } from "@/lib/utils/cn";

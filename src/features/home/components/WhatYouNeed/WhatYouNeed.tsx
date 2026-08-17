@@ -1,5 +1,6 @@
 import { ArrowRight, Users } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 import { DynamicIcon } from "@/components/navigation/nav-icons";
 import { BrandSphere } from "@/components/media/brand-sphere";
@@ -11,6 +12,8 @@ import { needCategories } from "@/data/what-you-need";
 import { routes } from "@/lib/constants/routes";
 
 export function WhatYouNeed() {
+  const t = useTranslations("hero.trust");
+
   if (needCategories.length === 0) return null;
 
   const businessesStat = heroContent.trustItems.find(
@@ -94,7 +97,7 @@ export function WhatYouNeed() {
               <span className="font-semibold text-primary">
                 {businessesStat.value}
               </span>{" "}
-              {businessesStat.label}
+              {t(businessesStat.id)}
             </p>
           ) : null}
         </div>

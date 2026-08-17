@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 import { cn } from "@/lib/utils/cn";
 import { routes } from "@/lib/constants/routes";
@@ -29,10 +29,10 @@ export function BrandLogo({ className, priority = false }: BrandLogoProps) {
     <Link
       href={routes.home}
       className={cn(
-        "relative inline-flex shrink-0 items-center leading-none",
-        "h-16 w-[min(13.5rem,calc(100vw-6.5rem))] sm:h-[4.25rem] sm:w-[15rem] md:h-20 md:w-[17.5rem]",
+        "relative inline-flex h-16 shrink-0 items-center leading-none sm:h-[4.25rem] md:h-20",
         className,
       )}
+      style={{ width: "clamp(13.5rem, calc(100vw - 6.5rem), 17.5rem)" }}
       aria-label="Nexus Zone home"
     >
       <Image

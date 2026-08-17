@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+
 import { getNavIcon } from "@/components/navigation/nav-icons";
 import { heroContent } from "@/data/hero";
 import { cn } from "@/lib/utils/cn";
@@ -7,6 +9,8 @@ type HeroTrustBarProps = {
 };
 
 export function HeroTrustBar({ className }: HeroTrustBarProps) {
+  const t = useTranslations("hero.trust");
+
   return (
     <div
       className={cn(
@@ -37,7 +41,7 @@ export function HeroTrustBar({ className }: HeroTrustBarProps) {
                 >
                   {item.value}
                 </span>{" "}
-                <span className="font-medium text-text-muted">{item.label}</span>
+                <span className="font-medium text-text-muted">{t(item.id)}</span>
               </p>
             </li>
           );

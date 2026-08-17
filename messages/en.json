@@ -1,0 +1,79 @@
+{
+  "common": {
+    "skipToMainContent": "Skip to main content",
+    "backToHome": "Back to home",
+    "notFoundTitle": "Page not found",
+    "notFoundDescription": "The page you requested does not exist or may have moved.",
+    "errorTitle": "Something went wrong",
+    "errorDescription": "An unexpected error occurred. You can try again, or return later.",
+    "tryAgain": "Try again"
+  },
+  "languages": {
+    "en": "English",
+    "ar": "Arabic",
+    "fr": "French",
+    "es": "Spanish"
+  },
+  "header": {
+    "getStarted": "Get Started",
+    "switchToDark": "Switch to dark mode",
+    "switchToLight": "Switch to light mode",
+    "languageLabel": "Language: {language}",
+    "whatsappUs": "WhatsApp Us"
+  },
+  "nav": {
+    "home": "Home",
+    "businessSetup": "Business Setup",
+    "services": "Services",
+    "resources": "Resources",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "footer": {
+    "tagline": "Your trusted partner for business setup and corporate solutions across the UAE and beyond.",
+    "quickLinks": "Quick Links",
+    "ourServices": "Our Services",
+    "resources": "Resources",
+    "contactUs": "Contact Us",
+    "newsletterTitle": "Subscribe to Our Newsletter",
+    "newsletterDescription": "Get the latest updates and insights delivered to your inbox.",
+    "newsletterPlaceholder": "Enter your email",
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms & Conditions",
+    "hours": "Mon - Fri: 9:00 AM - 6:00 PM",
+    "copyright": "© {year} Nexus Zone. All Rights Reserved."
+  },
+  "hero": {
+    "eyebrow": "YOUR TRUSTED BUSINESS PARTNER IN THE UAE",
+    "headlinePrimary": "EMPOWER YOUR BUSINESS.",
+    "headlineAccent": "ACHIEVE MORE.",
+    "description": "Smart solutions for company formation, compliance, and business support — designed to help you move forward and achieve lasting success.",
+    "primaryCta": "Calculate Setup Cost",
+    "secondaryCta": "Book Free Consultation",
+    "trust": {
+      "businesses": "Businesses Empowered",
+      "years": "Years of Excellence",
+      "countries": "Countries Served",
+      "advisors": "Business Advisors",
+      "support": "Business Setup Support",
+      "pricing": "Process & Pricing"
+    }
+  },
+  "leadCapture": {
+    "title": "Connect With Us",
+    "tabLabel": "Connect With Us",
+    "subtitle": "Enter Your Contact Details",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "phonePlaceholder": "50 123 4567",
+    "helpType": "How Can We Help You?",
+    "businessType": "What type of business are you looking to set up?",
+    "notRobot": "I'm not a robot",
+    "submit": "Submit",
+    "successTitle": "Thanks — We've Got Your Details",
+    "successBody": "Your email client should now be open with your message ready to send. We'll be in touch shortly.",
+    "whatsapp": "WhatsApp Us"
+  }
+}

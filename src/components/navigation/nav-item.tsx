@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link } from "@/i18n/navigation";
+import { usePathname } from "@/i18n/navigation";
 import {
   useCallback,
   useEffect,
@@ -11,10 +11,12 @@ import {
   type KeyboardEvent,
 } from "react";
 import { ChevronDown } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { DropdownMenu } from "@/components/navigation/dropdown-menu";
 import { MegaMenu } from "@/components/navigation/mega-menu";
 import { type NavigationItem } from "@/data/navigation";
+import { NAV_LABEL_KEYS } from "@/lib/i18n/nav-labels";
 import { cn } from "@/lib/utils/cn";
 
 type NavItemProps = {
@@ -22,6 +24,9 @@ type NavItemProps = {
 };
 
 export function NavItem({ item }: NavItemProps) {
+  const t = useTranslations("nav");
+  const labelKey = NAV_LABEL_KEYS[item.id];
+  const label = labelKey ? t(labelKey) : item.label;
   const pathname = usePathname();
   const menuId = useId();
   const [open, setOpen] = useState(false);
@@ -71,7 +76,7 @@ export function NavItem({ item }: NavItemProps) {
             isActive ? "text-primary" : "text-text hover:text-primary",
           )}
         >
-          {item.label}
+          {label}
           {isActive ? (
             <span className="absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full bg-primary" />
           ) : null}
@@ -81,7 +86,7 @@ export function NavItem({ item }: NavItemProps) {
   }
 
   const isOpen = open;
-  const triggerLabel = item.label;
+  const triggerLabel = label;
 
   const onTriggerKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
     if (event.key === "Enter" || event.key === " ") {

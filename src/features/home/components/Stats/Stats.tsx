@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { AccentBar } from "@/components/ui/accent-bar";
 import { heroContent } from "@/data/hero";
@@ -10,6 +12,7 @@ const STAT_IDS = ["businesses", "years", "countries"];
  * once real numbers for this section are confirmed.
  */
 export function Stats() {
+  const t = useTranslations("hero.trust");
   const stats = heroContent.trustItems.filter((item) =>
     STAT_IDS.includes(item.id),
   );
@@ -39,7 +42,7 @@ export function Stats() {
               <p className="text-2xl font-bold text-primary sm:text-3xl md:text-4xl">
                 {stat.value}
               </p>
-              <p className="text-sm text-text-muted">{stat.label}</p>
+              <p className="text-sm text-text-muted">{t(stat.id)}</p>
             </div>
           ))}
         </div>

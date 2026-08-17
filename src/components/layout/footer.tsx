@@ -1,16 +1,18 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import {
   Clock3,
   Mail,
   MapPin,
   Phone,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { BrandLogo } from "@/components/navigation/brand-logo";
 import { getSocialIcon } from "@/components/navigation/nav-icons";
 import { NewsletterForm } from "@/components/layout/newsletter-form";
 import { Container } from "@/components/ui/container";
 import { footerContent } from "@/data/footer";
+import { routes } from "@/lib/constants/routes";
 import { cn } from "@/lib/utils/cn";
 
 function FooterColumnHeading({ children }: { children: string }) {
@@ -29,6 +31,7 @@ type FooterProps = {
 };
 
 export function Footer({ className }: FooterProps) {
+  const t = useTranslations("footer");
   const year = new Date().getFullYear();
 
   return (
@@ -53,7 +56,7 @@ export function Footer({ className }: FooterProps) {
           <div className="space-y-4 md:col-span-2 xl:col-span-2">
             <BrandLogo />
             <p className="max-w-sm text-sm leading-relaxed text-text-muted">
-              {footerContent.description}
+              {t("tagline")}
             </p>
             <ul className="flex items-center gap-2">
               {footerContent.social.map((item) => {
@@ -76,7 +79,7 @@ export function Footer({ className }: FooterProps) {
           </div>
 
           <div>
-            <FooterColumnHeading>Quick Links</FooterColumnHeading>
+            <FooterColumnHeading>{t("quickLinks")}</FooterColumnHeading>
             <ul className="space-y-2.5">
               {footerContent.quickLinks.map((link) => (
                 <li key={link.href + link.label}>
@@ -92,7 +95,7 @@ export function Footer({ className }: FooterProps) {
           </div>
 
           <div>
-            <FooterColumnHeading>Our Services</FooterColumnHeading>
+            <FooterColumnHeading>{t("ourServices")}</FooterColumnHeading>
             <ul className="space-y-2.5">
               {footerContent.services.map((link) => (
                 <li key={link.href + link.label}>
@@ -108,7 +111,7 @@ export function Footer({ className }: FooterProps) {
           </div>
 
           <div>
-            <FooterColumnHeading>Resources</FooterColumnHeading>
+            <FooterColumnHeading>{t("resources")}</FooterColumnHeading>
             <ul className="space-y-2.5">
               {footerContent.resources.map((link) => (
                 <li key={link.href + link.label}>
@@ -125,7 +128,7 @@ export function Footer({ className }: FooterProps) {
 
           <div className="space-y-8 md:col-span-2 xl:col-span-1">
             <div>
-              <FooterColumnHeading>Contact Us</FooterColumnHeading>
+              <FooterColumnHeading>{t("contactUs")}</FooterColumnHeading>
               <ul className="space-y-3 text-sm text-text-muted">
                 <li className="flex gap-2.5">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
@@ -151,17 +154,15 @@ export function Footer({ className }: FooterProps) {
                 </li>
                 <li className="flex gap-2.5">
                   <Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  <span>{footerContent.contact.hours}</span>
+                  <span>{t("hours")}</span>
                 </li>
               </ul>
             </div>
 
             <div>
-              <FooterColumnHeading>
-                {footerContent.newsletter.title}
-              </FooterColumnHeading>
+              <FooterColumnHeading>{t("newsletterTitle")}</FooterColumnHeading>
               <p className="text-sm text-text-muted">
-                {footerContent.newsletter.description}
+                {t("newsletterDescription")}
               </p>
               <NewsletterForm />
             </div>
@@ -169,16 +170,19 @@ export function Footer({ className }: FooterProps) {
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-border pt-6 text-sm text-text-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} Nexus Zone. All Rights Reserved.</p>
+          <p>{t("copyright", { year })}</p>
           <p className="flex flex-wrap gap-x-3 gap-y-1">
-            {footerContent.legal.map((item, index) => (
-              <span key={item.href} className="inline-flex items-center gap-3">
-                {index > 0 ? <span aria-hidden>|</span> : null}
-                <Link href={item.href} className="hover:text-primary">
-                  {item.label}
-                </Link>
-              </span>
-            ))}
+            <span className="inline-flex items-center gap-3">
+              <Link href={routes.privacy} className="hover:text-primary">
+                {t("privacyPolicy")}
+              </Link>
+            </span>
+            <span className="inline-flex items-center gap-3">
+              <span aria-hidden>|</span>
+              <Link href={routes.terms} className="hover:text-primary">
+                {t("termsConditions")}
+              </Link>
+            </span>
           </p>
         </div>
       </Container>

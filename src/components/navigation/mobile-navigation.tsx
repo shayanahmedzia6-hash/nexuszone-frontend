@@ -2,13 +2,15 @@
 
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { useLenis } from "lenis/react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { useEffect, useId, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { ChevronDown, Menu, MessageCircle, Phone, X } from "lucide-react";
 
 import { BrandLogo } from "@/components/navigation/brand-logo";
-import { getNavIcon } from "@/components/navigation/nav-icons";
+import { LanguageSwitcher } from "@/components/navigation/language-switcher";
+import { DynamicIcon } from "@/components/navigation/nav-icons";
 import { ThemeToggle } from "@/components/navigation/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
@@ -19,6 +21,7 @@ import {
 } from "@/data/navigation";
 import { siteContact } from "@/data/site-contact";
 import { routes } from "@/lib/constants/routes";
+import { NAV_LABEL_KEYS } from "@/lib/i18n/nav-labels";
 import { cn } from "@/lib/utils/cn";
 import { useUiStore } from "@/store/ui-store";
 
@@ -121,8 +124,6 @@ function NavLinkRow({
   onNavigate: () => void;
   className?: string;
 }) {
-  const Icon = getNavIcon(link.icon);
-
   return (
     <Link
       href={link.href}
@@ -132,7 +133,7 @@ function NavLinkRow({
         className,
       )}
     >
-      {Icon ? <Icon className="h-4 w-4 shrink-0" aria-hidden /> : null}
+      <DynamicIcon name={link.icon} className="h-4 w-4 shrink-0" />
       <span>{link.label}</span>
     </Link>
   );
@@ -209,12 +210,17 @@ function MobileNavItem({
   onToggle: () => void;
   onNavigate: () => void;
 }) {
+  const t = useTranslations("nav");
+  const labelKey = NAV_LABEL_KEYS[item.id];
+  const label = labelKey ? t(labelKey) : item.label;
   const panelId = useId();
   const [openNestedId, setOpenNestedId] = useState<string | null>(null);
+  const [prevIsOpen, setPrevIsOpen] = useState(isOpen);
 
-  useEffect(() => {
+  if (isOpen !== prevIsOpen) {
+    setPrevIsOpen(isOpen);
     if (!isOpen) setOpenNestedId(null);
-  }, [isOpen]);
+  }
 
   if (item.type === "link") {
     return (
@@ -223,7 +229,7 @@ function MobileNavItem({
         onClick={onNavigate}
         className="block rounded-lg px-3 py-3 text-base font-medium text-text transition-colors hover:bg-surface"
       >
-        {item.label}
+        {label}
       </Link>
     );
   }
@@ -254,7 +260,7 @@ function MobileNavItem({
         aria-controls={panelId}
         onClick={onToggle}
       >
-        <span>{item.label}</span>
+        <span>{label}</span>
         <ChevronDown
           className={cn(
             "h-4 w-4 shrink-0 transition-transform duration-300 ease-out",
@@ -374,6 +380,7 @@ const sidebarNavItemVariants = {
 };
 
 export function MobileNavigation() {
+  const t = useTranslations("header");
   const isOpen = useUiStore((state) => state.isMobileNavOpen);
   const openMobileNav = useUiStore((state) => state.openMobileNav);
   const closeMobileNav = useUiStore((state) => state.closeMobileNav);
@@ -382,11 +389,13 @@ export function MobileNavigation() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- standard client-mount guard for the portal below
     setMounted(true);
   }, []);
 
   useEffect(() => {
     if (!isOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- bundled with the DOM/lenis side effects below, not standalone state derivation
       setOpenItemId(null);
       return;
     }
@@ -476,6 +485,7 @@ export function MobileNavigation() {
               </nav>
 
               <div className="shrink-0 space-y-3 border-t border-border p-4">
+                <LanguageSwitcher className="text-text" />
                 <a
                   href={siteContact.phoneHref}
                   className="flex items-center gap-2 text-sm text-text-muted"
@@ -490,14 +500,14 @@ export function MobileNavigation() {
                   rel="noopener noreferrer"
                 >
                   <MessageCircle className="h-4 w-4" aria-hidden />
-                  {siteContact.whatsappDisplay}
+                  {t("whatsappUs")}
                 </a>
                 <Button
                   href={routes.contact}
                   className="w-full"
                   onClick={closeMobileNav}
                 >
-                  Get Started
+                  {t("getStarted")}
                 </Button>
               </div>
             </motion.aside>
