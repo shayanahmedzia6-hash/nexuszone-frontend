@@ -15,7 +15,7 @@ const DISMISSED_KEY = "nexus-zone-lead-capture-dismissed";
 const OPEN_DELAY_MS = 6000;
 
 const fieldClass =
-  "w-full rounded-lg border-0 bg-surface px-4 py-3 text-sm text-text placeholder:text-text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40";
+  "w-full rounded-xl border-0 bg-surface px-4 py-3 text-sm text-text placeholder:text-text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40";
 
 type FormState = {
   firstName: string;
@@ -36,6 +36,17 @@ const initialState: FormState = {
   businessType: "",
   notRobot: false,
 };
+
+function UaeFlag({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 27 18" className={className} aria-hidden>
+      <rect x="7" width="20" height="6" fill="#00732f" />
+      <rect x="7" y="6" width="20" height="6" fill="#fff" />
+      <rect x="7" y="12" width="20" height="6" fill="#000" />
+      <rect width="7" height="18" fill="#ff0000" />
+    </svg>
+  );
+}
 
 /**
  * Auto-opens once per browser session, a few seconds after landing, as a
@@ -133,53 +144,57 @@ export function LeadCaptureModal() {
 
   return (
     <>
-      <FloatingActions onOpenLeadForm={() => setOpen(true)} />
+      <FloatingActions />
 
       <div
-        className="fixed right-0 z-[60] flex items-stretch"
-        style={{ top: panelTop }}
+        className="fixed z-[60] flex items-stretch"
+        style={{ top: panelTop, right: 0 }}
       >
         {open ? (
-          <div
-            role="dialog"
-            aria-modal="true"
-            aria-label={leadCaptureContent.title}
-            className="bg-background relative w-[92vw] max-w-sm overflow-y-auto rounded-l-2xl p-6 shadow-2xl sm:w-[26rem] sm:p-8"
-            style={{ maxHeight: `calc(100vh - ${panelTop}px - 1rem)` }}
-          >
+          <div className="relative">
             <button
               type="button"
               onClick={handleClose}
               aria-label="Close"
-              className="bg-primary hover:bg-primary-hover absolute -top-3 -right-3 flex h-9 w-9 items-center justify-center rounded-full text-white shadow-md"
+              className="bg-primary hover:bg-primary-hover absolute z-10 flex h-9 w-9 items-center justify-center rounded-full text-white shadow-md"
+              style={{ top: "-0.75rem", right: "-0.75rem" }}
             >
               <X className="h-4 w-4" aria-hidden />
             </button>
 
-            {submitted ? (
-              <div className="flex flex-col items-start gap-3">
-                <CheckCircle2 className="text-primary h-8 w-8" aria-hidden />
-                <h2 className="text-text text-xl font-bold">
-                  {leadCaptureContent.successTitle}
-                </h2>
-                <p className="text-text-muted text-sm">
-                  {leadCaptureContent.successBody}
-                </p>
-              </div>
-            ) : (
-              <>
-                <h2 className="text-text text-2xl font-bold sm:text-3xl">
-                  {leadCaptureContent.title}
-                </h2>
-                <p className="text-text-muted mt-2 text-sm font-medium">
-                  {leadCaptureContent.subtitle}
-                </p>
-
+            <div
+              role="dialog"
+              aria-modal="true"
+              aria-label={leadCaptureContent.title}
+              className="bg-background flex w-[92vw] max-w-sm flex-col overflow-hidden rounded-l-2xl shadow-2xl sm:w-[26rem]"
+              style={{ maxHeight: `calc(100vh - ${panelTop}px - 1rem)` }}
+            >
+              {submitted ? (
+                <div className="flex flex-col items-start gap-3 p-6 sm:p-8">
+                  <CheckCircle2 className="text-primary h-8 w-8" aria-hidden />
+                  <h2 className="text-text text-xl font-bold">
+                    {leadCaptureContent.successTitle}
+                  </h2>
+                  <p className="text-text-muted text-sm">
+                    {leadCaptureContent.successBody}
+                  </p>
+                </div>
+              ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="mt-6 flex flex-col gap-3"
+                  className="flex flex-col gap-4 overflow-y-auto p-6 sm:p-8"
+                  style={{ paddingTop: "3rem" }}
                   noValidate
                 >
+                  <div>
+                    <h2 className="text-text text-2xl font-bold sm:text-3xl">
+                      {leadCaptureContent.title}
+                    </h2>
+                    <p className="text-text-muted mt-2 text-sm font-medium">
+                      {leadCaptureContent.subtitle}
+                    </p>
+                  </div>
+
                   <div className="grid grid-cols-2 gap-3">
                     <div>
                       <label htmlFor="lead-first-name" className="sr-only">
@@ -240,14 +255,10 @@ export function LeadCaptureModal() {
                     <label htmlFor="lead-phone" className="sr-only">
                       Phone
                     </label>
-                    <div className="focus-within:ring-primary/40 flex overflow-hidden rounded-lg focus-within:ring-2">
-                      <span className="bg-surface text-text flex items-center gap-1.5 pr-2 pl-3 text-sm font-medium">
-                        <span aria-hidden>🇦🇪</span>
+                    <div className="focus-within:ring-primary/40 flex overflow-hidden rounded-xl focus-within:ring-2">
+                      <span className="bg-surface text-text flex items-center gap-1.5 py-3 pr-2 pl-3 text-sm font-medium">
+                        <UaeFlag className="h-3 w-5 rounded-[1px]" />
                         +971
-                        <ChevronDown
-                          className="text-text-muted h-3.5 w-3.5"
-                          aria-hidden
-                        />
                       </span>
                       <input
                         id="lead-phone"
@@ -279,6 +290,7 @@ export function LeadCaptureModal() {
                           "appearance-none pr-9",
                           !values.helpType && "text-text-muted",
                         )}
+                        style={{ appearance: "none" }}
                       >
                         <option value="">How Can We Help You?</option>
                         {helpTypeOptions.map((option) => (
@@ -292,7 +304,12 @@ export function LeadCaptureModal() {
                         ))}
                       </select>
                       <ChevronDown
-                        className="text-text-muted pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2"
+                        className="text-text-muted pointer-events-none absolute h-4 w-4"
+                        style={{
+                          top: "50%",
+                          right: "0.75rem",
+                          transform: "translateY(-50%)",
+                        }}
                         aria-hidden
                       />
                     </div>
@@ -320,7 +337,7 @@ export function LeadCaptureModal() {
                   <label
                     htmlFor="lead-not-robot"
                     className={cn(
-                      "bg-surface text-text flex cursor-pointer items-center gap-3 rounded-lg p-3 text-sm",
+                      "bg-surface text-text flex cursor-pointer items-center gap-3 rounded-xl p-3 text-sm",
                       errors.notRobot && "ring-primary/40 ring-2",
                     )}
                   >
@@ -348,8 +365,8 @@ export function LeadCaptureModal() {
                     {leadCaptureContent.submitLabel}
                   </Button>
                 </form>
-              </>
-            )}
+              )}
+            </div>
           </div>
         ) : null}
 
