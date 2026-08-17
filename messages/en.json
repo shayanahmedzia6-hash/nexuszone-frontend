@@ -75,5 +75,524 @@
     "successTitle": "Thanks — We've Got Your Details",
     "successBody": "Your email client should now be open with your message ready to send. We'll be in touch shortly.",
     "whatsapp": "WhatsApp Us"
+  },
+  "servicesHome": {
+    "eyebrow": "Our Services",
+    "titlePrimary": "Comprehensive Services to",
+    "titleAccent": "Power Your Business",
+    "description": "From company formation to PRO services and beyond, we provide end-to-end solutions so you can focus on what matters most — growing your business.",
+    "items": {
+      "business-setup": {
+        "title": "Business Setup Services",
+        "summary": "Company formation across Mainland, Free Zone and Offshore tailored to your needs."
+      },
+      "pro-services": {
+        "title": "PRO Services",
+        "summary": "Visa processing, license renewals, document clearing and all government related services."
+      },
+      "corporate-services": {
+        "title": "Corporate Services",
+        "summary": "Compliance, corporate governance, and business support to keep you ahead."
+      },
+      "banking-assistance": {
+        "title": "Banking Assistance",
+        "summary": "Support in corporate bank account opening with leading banks in the UAE."
+      },
+      "consulting-services": {
+        "title": "Consulting Services",
+        "summary": "Expert advice and strategies to help you start, manage and scale with confidence."
+      }
+    }
+  },
+  "howItWorks": {
+    "eyebrow": "How It Works",
+    "titlePrimary": "Simple Process.",
+    "titleAccent": "Seamless Experience.",
+    "description": "We make business setup in the UAE simple, transparent and hassle-free.",
+    "steps": {
+      "requirements": {
+        "title": "Share Your Requirements",
+        "description": "Tell us about your business goals and setup preferences."
+      },
+      "consultation": {
+        "title": "Get Expert Consultation",
+        "description": "Our experts will guide you with the best options and legal structure."
+      },
+      "documentation": {
+        "title": "Documentation & Processing",
+        "description": "We handle all documentation and government approvals for you."
+      },
+      "setup": {
+        "title": "Business Set Up",
+        "description": "Your business is ready! We continue to support you as you grow."
+      }
+    },
+    "ctaTitle": "Ready to Get Started?",
+    "ctaDescription": "Kickstart your business journey in the UAE today.",
+    "ctaButton": "Talk to an Expert"
+  },
+  "businessSetupHome": {
+    "eyebrow": "Business Setup Options",
+    "titlePrimary": "Choose the Right Setup for",
+    "titleAccent": "Your Business",
+    "description": "Whether you're a startup, investor, or established brand, we offer flexible business structures in the UAE designed to help you grow with confidence.",
+    "options": {
+      "mainland": {
+        "title": "Mainland Company",
+        "summary": "Operate anywhere in the UAE market and internationally with full flexibility."
+      },
+      "free-zone": {
+        "title": "Free Zone Company",
+        "summary": "100% foreign ownership, full profit repatriation and world-class infrastructure."
+      },
+      "offshore": {
+        "title": "Offshore Company",
+        "summary": "Ideal for asset protection, international trade and global business operations."
+      },
+      "branch": {
+        "title": "Branch Office",
+        "summary": "Expand your existing business to the UAE seamlessly."
+      },
+      "professional-license": {
+        "title": "Professional Services License",
+        "summary": "Perfect for consultants, freelancers and service-based businesses."
+      }
+    },
+    "notSureTitle": "Not Sure Which One Fits You?",
+    "notSureDescription": "Our experts will help you choose the perfect setup.",
+    "notSureButton": "Get Free Consultation"
+  },
+  "costCalculator": {
+    "eyebrow": "Cost Calculator",
+    "titlePrimary": "Plan Smart.",
+    "titleAccent": "Start Right.",
+    "description": "Estimate your total business setup cost in the UAE in just a few clicks. No hidden charges.",
+    "highlights": {
+      "instant": {
+        "title": "Instant Estimate",
+        "description": "Get real-time cost estimates instantly."
+      },
+      "transparent": {
+        "title": "No Hidden Fees",
+        "description": "Transparent pricing you can trust."
+      },
+      "save-time": {
+        "title": "Save Time",
+        "description": "Plan your budget and launch faster."
+      }
+    },
+    "fields": {
+      "businessType": "Business Type",
+      "jurisdiction": "Jurisdiction",
+      "visaCount": "Number of Visas",
+      "officeSpace": "Office Space"
+    },
+    "options": {
+      "businessType": {
+        "trading": "Trading",
+        "consulting": "Consulting",
+        "e-commerce": "E-Commerce",
+        "professional-services": "Professional Services",
+        "other": "Other"
+      },
+      "jurisdiction": {
+        "mainland": "Mainland",
+        "free-zone": "Free Zone",
+        "offshore": "Offshore"
+      },
+      "visaCount": {
+        "0": "No Visas",
+        "1-2": "1 - 2 Visas",
+        "3-5": "3 - 5 Visas",
+        "6+": "6+ Visas"
+      },
+      "officeSpace": {
+        "flexi-desk": "Flexi Desk",
+        "shared-office": "Shared Office",
+        "private-office": "Private Office",
+        "none": "Not Required"
+      }
+    },
+    "estimatedCost": "Estimated Total Cost",
+    "quoteNote": "Final pricing is confirmed by our team based on your exact requirements.",
+    "getQuote": "Get My Quote",
+    "calculateButton": "Calculate Now"
+  },
+  "whyNexus": {
+    "eyebrow": "Why Nexus Zone?",
+    "titlePrimary": "Why Choose",
+    "titleAccent": "Nexus Zone?",
+    "description": "We go beyond just services — we become your growth partner. Here's what sets us apart.",
+    "pillars": {
+      "expertise": {
+        "tabLabel": "Expertise & Experience",
+        "eyebrow": "Expertise & Experience",
+        "title": "Advice Grounded in",
+        "titleAccent": "Real Experience",
+        "description": "Our advisors bring hands-on knowledge of UAE business setup, compliance and corporate structuring to every engagement.",
+        "highlight": "We stay close to regulatory changes so your business decisions are always built on current, accurate guidance."
+      },
+      "end-to-end": {
+        "tabLabel": "End-to-End Solutions",
+        "eyebrow": "End-to-End Solutions",
+        "title": "One Partner, Every",
+        "titleAccent": "Step of the Journey",
+        "description": "From company formation to visas, banking and ongoing compliance, we cover the full lifecycle so you don't need multiple vendors.",
+        "highlight": "One point of contact coordinates every moving part, so nothing falls between the cracks."
+      },
+      "tailored-support": {
+        "tabLabel": "Tailored Support",
+        "eyebrow": "Tailored Support",
+        "title": "Support That Fits",
+        "titleAccent": "Your Business",
+        "description": "Every business is unique — and so is our approach. We provide personalized consultancy and high-level support, assigning a dedicated expert who understands your goals and guides you at every step.",
+        "highlight": "We take the time to understand your business, challenges, and ambitions — then deliver solutions that truly make a difference."
+      },
+      "strategic-advantage": {
+        "tabLabel": "Strategic Advantage",
+        "eyebrow": "Strategic Advantage",
+        "title": "Structured to Help",
+        "titleAccent": "You Scale",
+        "description": "We help you choose the jurisdiction, licensing and structure that positions your business for long-term growth, not just a quick setup.",
+        "highlight": "Every recommendation is weighed against your growth plans, not a one-size-fits-all checklist."
+      },
+      "trust-transparency": {
+        "tabLabel": "Trust & Transparency",
+        "eyebrow": "Trust & Transparency",
+        "title": "Clear Process.",
+        "titleAccent": "Honest Pricing.",
+        "description": "No hidden fees, no surprises. We explain every step and every cost upfront so you can make confident decisions.",
+        "highlight": "Transparency isn't a feature for us — it's the baseline for every client relationship."
+      }
+    }
+  },
+  "whatYouNeed": {
+    "eyebrow": "What Do You Need?",
+    "titlePrimary": "Find the Right Solution for",
+    "titleAccent": "Your Business",
+    "description": "Whether you're starting, expanding, or optimizing — we have the expertise and resources to help you move forward with confidence.",
+    "categories": {
+      "start-a-business": {
+        "title": "Start a Business",
+        "description": "Launch your company in Mainland, Free Zone, Offshore or International."
+      },
+      "visa-pro": {
+        "title": "Visa & PRO Services",
+        "description": "Investor, Partner, Employment Visas and all PRO services under one roof."
+      },
+      "banking": {
+        "title": "Banking Solutions",
+        "description": "Open corporate bank accounts with our trusted banking partners."
+      },
+      "tax-accounting": {
+        "title": "Tax & Accounting",
+        "description": "Corporate Tax, VAT, Accounting & Bookkeeping — we handle it all."
+      },
+      "legal-compliance": {
+        "title": "Legal & Compliance",
+        "description": "Legal advisory, contract drafting and full compliance support."
+      },
+      "business-support": {
+        "title": "Business Support",
+        "description": "HR, Payroll, Audit, Insurance and other essential business support services."
+      },
+      "international-setup": {
+        "title": "International Setup",
+        "description": "Expand your business internationally with our global solutions."
+      },
+      "real-estate": {
+        "title": "Real Estate Solutions",
+        "description": "Find, buy or lease the perfect office space for your business."
+      },
+      "marketing": {
+        "title": "Marketing Solutions",
+        "description": "Digital marketing, branding and growth strategies to scale your business."
+      },
+      "other": {
+        "title": "Other Services",
+        "description": "Have something else in mind? We're here to help you."
+      }
+    },
+    "notSureTitle": "Not sure what you need?",
+    "notSureDescription": "Our experts are ready to understand your goals and recommend the best solution for your business.",
+    "talkToExpert": "Talk to an Expert"
+  },
+  "faqHome": {
+    "eyebrow": "Frequently Asked Questions",
+    "titlePrimary": "Got Questions?",
+    "titleAccent": "We've Got Answers.",
+    "description": "Find quick answers to common questions about our services and processes.",
+    "items": {
+      "timeline": {
+        "question": "How long does it take to set up a business in the UAE?",
+        "answer": "Timelines vary by jurisdiction and business activity. Many free zone company formations can move quickly once documents are in order, while mainland setups or activities needing extra approvals can take longer. We'll give you a specific timeline once we understand your requirements."
+      },
+      "mainland-vs-freezone": {
+        "question": "What is the difference between Mainland and Free Zone?",
+        "answer": "A mainland company can trade freely across the UAE and take on government contracts. A free zone company is registered within a specific zone, often with 100% foreign ownership and a streamlined setup, but may have restrictions on trading directly in the local mainland market."
+      },
+      "remote-setup": {
+        "question": "Do I need to be in the UAE to start a company?",
+        "answer": "Not necessarily. Many free zone and offshore company formations can be completed remotely with the right documentation and power of attorney arrangements. Some steps, such as opening a bank account or visa processing, may require your presence in the UAE at some stage."
+      },
+      "bank-account": {
+        "question": "Can you help with bank account opening?",
+        "answer": "Yes — we support clients through the corporate bank account opening process, including preparing documentation and guiding you through each bank's requirements. Final approval always rests with the bank."
+      },
+      "documents": {
+        "question": "What documents are required for company formation?",
+        "answer": "Requirements vary by jurisdiction and activity, but typically include passport copies, proof of address, and a description of your business activity. We'll provide an exact checklist once we know your chosen setup."
+      }
+    },
+    "stillHaveQuestions": "Still Have Questions?",
+    "stillHaveQuestionsDesc": "Our team is happy to walk you through anything that's not covered here.",
+    "contactUs": "Contact Us"
+  },
+  "finalCta": {
+    "eyebrow": "Ready to Get Started?",
+    "titlePrimary": "Let's Build Your",
+    "titleAccent": "Success Story Together",
+    "description": "Partner with Nexus Zone and experience seamless business setup and corporate solutions that drive real growth.",
+    "primaryCta": "Get Started Today",
+    "secondaryCta": "Schedule a Consultation"
+  },
+  "servicesCatalogPage": {
+    "heroEyebrow": "Our Services",
+    "heroTitlePrimary": "Everything Your Business Needs,",
+    "heroTitleAccent": "In One Place",
+    "heroDescription": "From day-one setup to ongoing compliance, explore the full range of services Nexus Zone offers to help your business start, run and grow in the UAE.",
+    "groups": {
+      "core": {
+        "title": "Core Services",
+        "description": "The essentials most businesses need to operate compliantly in the UAE."
+      },
+      "growth": {
+        "title": "Business Growth Solutions",
+        "description": "Strategic support to help you enter the market and expand well."
+      },
+      "support": {
+        "title": "Ongoing Business Support",
+        "description": "Keep your business compliant and running smoothly, year-round."
+      }
+    },
+    "items": {
+      "visa-pro": {
+        "title": "Visa & PRO Services",
+        "summary": "Investor, partner and employment visas, plus all PRO and government-related processing."
+      },
+      "banking": {
+        "title": "Banking Solutions",
+        "summary": "Support opening and managing corporate bank accounts with leading UAE banks."
+      },
+      "tax": {
+        "title": "Tax & Accounting",
+        "summary": "Corporate tax, VAT registration, and accurate day-to-day bookkeeping."
+      },
+      "legal": {
+        "title": "Legal & Compliance",
+        "summary": "Contract drafting, legal advisory, and ongoing regulatory compliance."
+      },
+      "corporate": {
+        "title": "Corporate Services",
+        "summary": "Corporate governance, documentation, and business support to keep you ahead."
+      },
+      "real-estate": {
+        "title": "Real Estate Services",
+        "summary": "Finding, leasing or buying the right office and commercial space."
+      },
+      "market-entry": {
+        "title": "Market Entry Strategy",
+        "summary": "Guidance on the right jurisdiction, structure and timing to enter the UAE market."
+      },
+      "company-formation": {
+        "title": "Company Formation",
+        "summary": "Full company formation across Mainland, Free Zone and Offshore."
+      },
+      "trade-license": {
+        "title": "Trade License Services",
+        "summary": "Trade license applications, renewals and activity amendments."
+      },
+      "feasibility": {
+        "title": "Feasibility Study",
+        "summary": "Market and financial feasibility studies to validate your business plan."
+      },
+      "advisory": {
+        "title": "Business Advisory",
+        "summary": "Strategic advice to help you start, manage and scale with confidence."
+      },
+      "accounting": {
+        "title": "Accounting & Bookkeeping",
+        "summary": "Day-to-day bookkeeping and financial record-keeping support."
+      },
+      "vat": {
+        "title": "VAT & Corporate Tax",
+        "summary": "VAT filing and corporate tax compliance handled end-to-end."
+      },
+      "payroll": {
+        "title": "Payroll Management",
+        "summary": "Payroll processing and WPS-compliant salary management."
+      },
+      "audit": {
+        "title": "Audit & Assurance",
+        "summary": "Independent audit and assurance services for regulatory and stakeholder confidence."
+      },
+      "compliance": {
+        "title": "Compliance Management",
+        "summary": "Ongoing regulatory compliance monitoring and reporting."
+      }
+    },
+    "learnMore": "Learn more",
+    "ctaTitle": "Not Sure Where to Start?",
+    "ctaDescription": "Talk to our team and we'll help you find the right service for your business.",
+    "ctaButton": "Talk to an Expert"
+  },
+  "businessSetupHub": {
+    "titlePrimary": "Choose the Right Setup for",
+    "titleAccent": "Your Business",
+    "description": "Whether you're a startup, investor, or established brand, we offer flexible business structures in the UAE designed to help you grow with confidence.",
+    "branchOfficeTitle": "Branch Office",
+    "branchOfficeDescription": "A branch office lets an existing foreign or UAE company establish a presence in the UAE without incorporating a new legal entity. It operates as an extension of the parent company, carrying out the same licensed activities under UAE trade licensing rules.",
+    "branchOfficeButton": "Ask About Branch Offices",
+    "professionalLicenseTitle": "Professional Services License",
+    "professionalLicenseDescription": "A professional license is designed for consultants, freelancers and service providers. It allows full ownership for many professional activities and typically doesn't require share capital, making it a lightweight route to operate as a licensed professional in the UAE.",
+    "professionalLicenseButton": "Ask About Professional Licenses",
+    "notSureTitle": "Not Sure Which One Fits You?",
+    "notSureDescription": "Our experts will help you choose the perfect setup for your business.",
+    "notSureButton": "Get Free Consultation"
+  },
+  "businessSetupDetail": {
+    "eyebrow": "Business Setup",
+    "talkToExpert": "Talk to an Expert",
+    "estimateCost": "Estimate Setup Cost",
+    "keyBenefits": "Key Benefits",
+    "whoItsFor": "Who It's For",
+    "disclaimer": "This is general information, not legal or tax advice — exact requirements vary by emirate, free zone authority and business activity. Talk to our team for guidance specific to your case.",
+    "readyTitle": "Ready to Get Started?",
+    "readyDescription": "Our experts will guide you through every step of the setup process.",
+    "bookConsultation": "Book Free Consultation",
+    "types": {
+      "mainland": {
+        "heroTitle": "Mainland Company Setup",
+        "heroDescription": "Register a mainland company to trade freely across the UAE and internationally, with access to government contracts and the local market.",
+        "benefits": [
+          { "title": "Trade Anywhere in the UAE", "description": "Operate across all Emirates without free zone restrictions." },
+          { "title": "Access Government Contracts", "description": "Mainland companies can bid on government and public-sector tenders." },
+          { "title": "Flexible Office Locations", "description": "Choose office space anywhere on the mainland, not limited to a specific zone." },
+          { "title": "Broad Business Activities", "description": "License a wide range of commercial, professional and industrial activities." }
+        ],
+        "idealFor": [
+          "Businesses trading directly with the local UAE market",
+          "Retail, contracting and service businesses needing a mainland presence",
+          "Companies bidding for government contracts"
+        ]
+      },
+      "free-zone": {
+        "heroTitle": "Free Zone Company Setup",
+        "heroDescription": "Set up in one of the UAE's free zones for 100% foreign ownership, streamlined licensing, and zone-specific incentives.",
+        "benefits": [
+          { "title": "100% Foreign Ownership", "description": "No local sponsor required in most free zones." },
+          { "title": "Full Profit Repatriation", "description": "Move 100% of profits and capital out of the UAE." },
+          { "title": "Streamlined Setup", "description": "Many free zones offer fast, largely digital registration processes." },
+          { "title": "Zone-Specific Infrastructure", "description": "Access shared facilities, warehousing or office space depending on the zone." }
+        ],
+        "idealFor": [
+          "Import/export and trading businesses",
+          "Startups and consultancies wanting full ownership",
+          "Companies not needing to trade directly in the local mainland market"
+        ]
+      },
+      "offshore": {
+        "heroTitle": "Offshore Company Setup",
+        "heroDescription": "Establish an offshore company for international trade, asset holding and structuring — without a physical UAE office requirement.",
+        "benefits": [
+          { "title": "Asset Protection", "description": "Hold international assets, shares or property under a separate corporate structure." },
+          { "title": "No Physical Office Required", "description": "Offshore companies generally do not need UAE office space." },
+          { "title": "Confidential Structuring", "description": "Commonly used for holding companies and international structuring." },
+          { "title": "International Trade", "description": "Operate and invoice internationally outside the UAE market." }
+        ],
+        "idealFor": [
+          "International holding companies",
+          "Businesses focused on global trade rather than the UAE market",
+          "Investors structuring cross-border assets"
+        ]
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "About Nexus Zone",
+    "titlePrimary": "Your Trusted Partner for",
+    "titleAccent": "Business Setup in the UAE",
+    "description": "Nexus Zone helps entrepreneurs, investors and growing companies navigate company formation, compliance and ongoing business support across the UAE — so you can focus on running your business, not the paperwork behind it.",
+    "missionTitle": "Our Mission",
+    "missionText": "To make business setup and compliance in the UAE simple, transparent and accessible — guiding every client with clear advice and honest pricing.",
+    "visionTitle": "Our Vision",
+    "visionText": "To be the long-term growth partner businesses turn to at every stage — from first registration to ongoing operations in the UAE.",
+    "readyTitle": "Ready to Work Together?",
+    "readyDescription": "Tell us about your business and we'll help you get started.",
+    "talkToExpert": "Talk to an Expert"
+  },
+  "blog": {
+    "eyebrow": "Insights",
+    "titlePrimary": "Stay Updated With",
+    "titleAccent": "Our Blog",
+    "description": "Expert insights, guides and updates to help you grow your business in the UAE.",
+    "comingSoonTitle": "Articles Are Coming Soon",
+    "comingSoonDescription": "We're preparing guides and insights on UAE business setup and compliance. Leave your email and we'll let you know when we publish."
+  },
+  "contactPage": {
+    "eyebrow": "Contact Us",
+    "titlePrimary": "Let's Talk About",
+    "titleAccent": "Your Business",
+    "description": "Share a few details and our team will get back to you shortly — or reach us directly using the details below.",
+    "form": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "phonePlaceholder": "+971 5X XXX XXXX",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your business and what you need help with.",
+      "send": "Send Message",
+      "sentTitle": "Your email client should now be open",
+      "sentBody": "Send the pre-filled message and our team will get back to you shortly. Prefer another way? Call or WhatsApp us using the details alongside this form.",
+      "sendAnother": "Send Another Message"
+    },
+    "info": {
+      "phone": "Phone",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "office": "Office",
+      "hours": "Hours"
+    }
+  },
+  "legal": {
+    "draftNotice": "This page is a general template and has not been reviewed by a lawyer. Replace it with policy text confirmed by qualified legal counsel before relying on it.",
+    "draftLabel": "Draft content.",
+    "updatedLabel": "Draft — not yet published",
+    "privacy": {
+      "title": "Privacy Policy",
+      "intro": "This Privacy Policy explains, in general terms, how Nexus Zone may collect, use and protect information submitted through this website.",
+      "sections": {
+        "collect": { "heading": "Information We Collect", "body": "Information you provide directly, such as through the contact or newsletter forms (e.g. name, email, phone number, and message content)." },
+        "use": { "heading": "How We Use Information", "body": "To respond to enquiries, provide requested services, and — where you've opted in — send updates about our services." },
+        "cookies": { "heading": "Cookies & Analytics", "body": "This site may use cookies or similar technologies to remember preferences (such as light/dark mode) and understand site usage." },
+        "thirdParty": { "heading": "Third-Party Services", "body": "We may use third-party tools (e.g. hosting, analytics, email delivery) that process information on our behalf." },
+        "retention": { "heading": "Data Retention", "body": "We retain information only for as long as necessary to fulfil the purpose it was collected for, or as required by law." },
+        "rights": { "heading": "Your Rights", "body": "You may request access to, correction of, or deletion of your personal information by contacting us using the details below." },
+        "contact": { "heading": "Contact Us", "body": "Questions about this policy can be sent to" }
+      }
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "intro": "These Terms & Conditions govern your use of this website. By using the site, you agree to the terms below.",
+      "sections": {
+        "use": { "heading": "Use of This Website", "body": "This website is provided for general information about Nexus Zone's services. Content should not be relied upon as legal, tax or financial advice." },
+        "ip": { "heading": "Intellectual Property", "body": "All content, branding and design on this website belong to Nexus Zone unless otherwise stated, and may not be reproduced without permission." },
+        "accuracy": { "heading": "Accuracy of Information", "body": "We aim to keep information on this site accurate and up to date, but make no guarantee that all content is complete, current or error-free." },
+        "liability": { "heading": "Limitation of Liability", "body": "Nexus Zone is not liable for any loss or damage arising from use of, or reliance on, this website." },
+        "law": { "heading": "Governing Law", "body": "These terms are governed by the laws of the United Arab Emirates." },
+        "changes": { "heading": "Changes to These Terms", "body": "We may update these terms from time to time. Continued use of the site after changes means you accept the updated terms." },
+        "contact": { "heading": "Contact Us", "body": "Questions about these terms can be sent to" }
+      }
+    }
   }
 }
