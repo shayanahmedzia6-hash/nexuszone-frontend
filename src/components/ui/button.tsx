@@ -3,7 +3,7 @@ import { type ButtonHTMLAttributes, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils/cn";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "outline";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "outline" | "success";
 type ButtonSize = "sm" | "md" | "lg";
 
 const variantClasses: Record<ButtonVariant, string> = {
@@ -14,6 +14,8 @@ const variantClasses: Record<ButtonVariant, string> = {
   ghost: "bg-transparent text-text hover:bg-surface",
   outline:
     "bg-transparent text-text border border-border hover:border-primary hover:text-primary",
+  success:
+    "bg-[var(--color-success)] text-white hover:opacity-90 focus-visible:ring-[var(--color-success)]",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
