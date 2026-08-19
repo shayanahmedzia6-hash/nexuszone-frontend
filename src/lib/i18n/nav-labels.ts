@@ -3,7 +3,7 @@ export const NAV_LABEL_KEYS: Record<string, string> = {
   home: "home",
   "business-setup": "businessSetup",
   services: "services",
-  resources: "resources",
+  faq: "faq",
   about: "about",
   contact: "contact",
 };

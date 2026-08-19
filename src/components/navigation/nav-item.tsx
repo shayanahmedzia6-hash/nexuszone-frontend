@@ -26,7 +26,8 @@ type NavItemProps = {
 export function NavItem({ item }: NavItemProps) {
   const t = useTranslations("nav");
   const labelKey = NAV_LABEL_KEYS[item.id];
-  const label = labelKey ? t(labelKey) : item.label;
+  const label =
+    labelKey && t.has(labelKey) ? t(labelKey) : item.label;
   const pathname = usePathname();
   const menuId = useId();
   const [open, setOpen] = useState(false);
@@ -53,7 +54,10 @@ export function NavItem({ item }: NavItemProps) {
       if (event.key === "Escape") close();
     };
     const onPointerDown = (event: MouseEvent) => {
-      if (!rootRef.current?.contains(event.target as Node)) close();
+      const target = event.target as Node;
+      const menu = document.getElementById(menuId);
+      if (rootRef.current?.contains(target) || menu?.contains(target)) return;
+      close();
     };
     window.addEventListener("keydown", onKeyDown);
     window.addEventListener("mousedown", onPointerDown);
@@ -61,7 +65,7 @@ export function NavItem({ item }: NavItemProps) {
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("mousedown", onPointerDown);
     };
-  }, [open, close]);
+  }, [open, close, menuId]);
 
   useEffect(() => () => clearCloseTimer(), []);
 
@@ -147,6 +151,8 @@ export function NavItem({ item }: NavItemProps) {
           columns={item.columns}
           cta={item.cta}
           onNavigate={close}
+          onMouseEnter={clearCloseTimer}
+          onMouseLeave={scheduleClose}
         />
       ) : null}
     </li>

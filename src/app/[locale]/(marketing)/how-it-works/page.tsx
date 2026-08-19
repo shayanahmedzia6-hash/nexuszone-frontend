@@ -18,7 +18,7 @@ export default function HowItWorksPage() {
     <>
       <HowItWorks />
       <CTASection
-        title="Ready to Get Started?"
+        title="Ready to Begin?"
         description="Share your requirements and we'll take it from there."
         actions={
           <Button href={routes.contact} className="gap-2">

@@ -5,8 +5,8 @@ export const heroContent = {
   description:
     "Smart solutions for company formation, compliance, and business support — designed to help you move forward and achieve lasting success.",
   primaryCta: {
-    label: "Calculate Setup Cost",
-    href: "/cost-calculator",
+    label: "Book Free Consultation",
+    href: "/contact",
   },
   secondaryCta: {
     label: "Book Free Consultation",

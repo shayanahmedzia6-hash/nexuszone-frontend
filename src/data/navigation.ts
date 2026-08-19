@@ -76,16 +76,6 @@ export const navigationItems: NavigationItem[] = [
         href: routes.businessSetupOffshore,
         icon: "globe-2",
       },
-      {
-        label: "Branch Office",
-        href: `${routes.businessSetup}#branch-office`,
-        icon: "git-branch",
-      },
-      {
-        label: "Professional License",
-        href: `${routes.businessSetup}#professional-license`,
-        icon: "badge-check",
-      },
     ],
     columns: [
       {
@@ -118,12 +108,6 @@ export const navigationItems: NavigationItem[] = [
       {
         title: "Need Guidance?",
         items: [
-          {
-            label: "Cost Calculator",
-            href: routes.costCalculator,
-            icon: "calculator",
-            description: "Estimate setup costs in minutes.",
-          },
           {
             label: "Talk to an Expert",
             href: routes.contact,
@@ -198,21 +182,6 @@ export const navigationItems: NavigationItem[] = [
             href: routes.businessSetup,
             icon: "building-2",
           },
-          {
-            label: "Trade License Services",
-            href: `${routes.services}#trade-license`,
-            icon: "file-check",
-          },
-          {
-            label: "Feasibility Study",
-            href: `${routes.services}#feasibility`,
-            icon: "clipboard-list",
-          },
-          {
-            label: "Business Advisory",
-            href: `${routes.services}#advisory`,
-            icon: "lightbulb",
-          },
         ],
         footerLink: { label: "View All Services", href: routes.services },
       },
@@ -228,11 +197,6 @@ export const navigationItems: NavigationItem[] = [
             label: "VAT & Corporate Tax",
             href: `${routes.services}#vat`,
             icon: "receipt",
-          },
-          {
-            label: "Payroll Management",
-            href: `${routes.services}#payroll`,
-            icon: "wallet",
           },
           {
             label: "Audit & Assurance",
@@ -257,24 +221,10 @@ export const navigationItems: NavigationItem[] = [
     },
   },
   {
-    id: "resources",
-    label: "Resources",
-    type: "dropdown",
-    items: [
-      { label: "Blog", href: routes.blog, icon: "newspaper" },
-      { label: "Guides", href: `${routes.blog}#guides`, icon: "book-marked" },
-      { label: "FAQs", href: routes.faq, icon: "circle-help" },
-      {
-        label: "Case Studies",
-        href: `${routes.blog}#case-studies`,
-        icon: "folder-kanban",
-      },
-      {
-        label: "Cost Calculator",
-        href: routes.costCalculator,
-        icon: "calculator",
-      },
-    ],
+    id: "faq",
+    label: "FAQs",
+    type: "link",
+    href: routes.faq,
   },
   {
     id: "about",

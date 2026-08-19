@@ -23,7 +23,7 @@ export function HowItWorks() {
           <p className="text-sm font-medium tracking-wide text-primary uppercase">
             How It Works
           </p>
-          <h2 className="max-w-xl text-3xl font-semibold tracking-tight text-white md:text-4xl">
+          <h2 className="max-w-xl text-3xl font-semibold tracking-tight text-white drop-shadow-sm md:text-4xl">
             Simple Process.{" "}
             <span className="text-primary">Seamless Experience.</span>
           </h2>
@@ -37,19 +37,21 @@ export function HowItWorks() {
           {processSteps.map((step, index) => (
             <li
               key={step.id}
-              className="relative flex flex-col gap-3 rounded-xl border border-white/15 bg-black/35 p-5 backdrop-blur-sm md:border-0 md:bg-transparent md:p-0 md:backdrop-blur-none"
+              className="relative flex flex-col gap-3 rounded-xl border border-white/20 bg-black/55 p-5 shadow-lg backdrop-blur-md"
             >
               {index < processSteps.length - 1 ? (
                 <span
-                  className="absolute top-4 left-[calc(100%-1rem)] hidden h-px w-[calc(100%-2rem)] border-t border-dashed border-white/35 md:block"
+                  className="absolute top-8 left-[calc(100%-0.5rem)] hidden h-px w-[calc(100%-1rem)] border-t border-dashed border-white/40 md:block"
                   aria-hidden
                 />
               ) : null}
-              <span className="text-2xl font-bold text-primary">{step.step}</span>
-              <h3 className="text-base font-semibold text-text md:text-lg">
+              <span className="text-2xl font-bold text-primary drop-shadow-sm">
+                {step.step}
+              </span>
+              <h3 className="text-base font-semibold text-white drop-shadow-sm md:text-lg">
                 {step.title}
               </h3>
-              <p className="text-sm leading-relaxed text-text">
+              <p className="text-sm leading-relaxed text-white/90">
                 {step.description}
               </p>
             </li>
@@ -59,7 +61,7 @@ export function HowItWorks() {
         <div className="mt-12 flex flex-col items-stretch gap-4 rounded-xl border border-white/15 bg-black/40 p-6 shadow-sm backdrop-blur-md sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h3 className="text-lg font-semibold text-white">
-              Ready to Get Started?
+              Ready to Begin?
             </h3>
             <p className="text-sm text-white/85">
               Kickstart your business journey in the UAE today.

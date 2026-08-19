@@ -32,23 +32,4 @@ export const businessSetupOptions: BusinessSetupOption[] = [
     icon: "landmark",
     href: routes.businessSetupOffshore,
   },
-  {
-    id: "branch",
-    type: "branch",
-    slug: "branch-office",
-    title: "Branch Office",
-    summary: "Expand your existing business to the UAE seamlessly.",
-    icon: "home",
-    href: `${routes.businessSetup}#branch-office`,
-  },
-  {
-    id: "professional-license",
-    type: "professional-license",
-    slug: "professional-license",
-    title: "Professional Services License",
-    summary:
-      "Perfect for consultants, freelancers and service-based businesses.",
-    icon: "users",
-    href: `${routes.businessSetup}#professional-license`,
-  },
 ];

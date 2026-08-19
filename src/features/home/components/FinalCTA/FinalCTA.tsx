@@ -8,7 +8,7 @@ import { finalCtaContent } from "@/data/final-cta";
 export function FinalCTA() {
   return (
     <SectionWrapper
-      id="get-started"
+      id="final-cta"
       contained={false}
       className="relative overflow-hidden bg-background-secondary py-16 md:py-24"
     >

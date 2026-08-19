@@ -57,39 +57,6 @@ export function BusinessSetupHub() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper id="branch-office" className="scroll-mt-28 bg-background-secondary">
-        <h2 className="text-2xl font-semibold tracking-tight text-text md:text-3xl">
-          Branch Office
-        </h2>
-        <p className="mt-3 max-w-2xl text-base leading-relaxed text-text-muted">
-          A branch office lets an existing foreign or UAE company establish
-          a presence in the UAE without incorporating a new legal entity.
-          It operates as an extension of the parent company, carrying out
-          the same licensed activities under UAE trade licensing rules.
-        </p>
-        <Button href={routes.contact} variant="outline" className="mt-6 gap-2">
-          Ask About Branch Offices
-          <ArrowRight className="h-4 w-4" aria-hidden />
-        </Button>
-      </SectionWrapper>
-
-      <SectionWrapper id="professional-license" className="scroll-mt-28">
-        <h2 className="text-2xl font-semibold tracking-tight text-text md:text-3xl">
-          Professional Services License
-        </h2>
-        <p className="mt-3 max-w-2xl text-base leading-relaxed text-text-muted">
-          A professional license is designed for consultants, freelancers
-          and service providers. It allows full ownership for many
-          professional activities and typically doesn&apos;t require share
-          capital, making it a lightweight route to operate as a licensed
-          professional in the UAE.
-        </p>
-        <Button href={routes.contact} variant="outline" className="mt-6 gap-2">
-          Ask About Professional Licenses
-          <ArrowRight className="h-4 w-4" aria-hidden />
-        </Button>
-      </SectionWrapper>
-
       <CTASection
         title="Not Sure Which One Fits You?"
         description="Our experts will help you choose the perfect setup for your business."

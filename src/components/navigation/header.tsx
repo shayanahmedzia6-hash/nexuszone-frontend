@@ -8,10 +8,8 @@ import { DesktopNavigation } from "@/components/navigation/desktop-navigation";
 import { LanguageSwitcher } from "@/components/navigation/language-switcher";
 import { MobileNavigation } from "@/components/navigation/mobile-navigation";
 import { ThemeToggle } from "@/components/navigation/theme-toggle";
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { siteContact } from "@/data/site-contact";
-import { routes } from "@/lib/constants/routes";
 import { cn } from "@/lib/utils/cn";
 
 type HeaderProps = {
@@ -48,15 +46,12 @@ export function Header({ className }: HeaderProps) {
             <ThemeToggle />
           </div>
 
-          <div className="flex min-w-0 items-center justify-between gap-1.5 sm:gap-4">
+          <div className="flex min-w-0 items-center justify-between gap-1.5 sm:gap-4 xl:grid xl:grid-cols-[1fr_auto_1fr]">
             <BrandLogo priority />
             <DesktopNavigation />
-            <div className="hidden items-center gap-3 xl:flex">
-              <Button href={routes.contact} size="sm">
-                {t("getStarted")}
-              </Button>
+            <div className="justify-self-end">
+              <MobileNavigation />
             </div>
-            <MobileNavigation />
           </div>
         </Container>
       </div>

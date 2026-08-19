@@ -62,8 +62,8 @@ export function HowItWorksVisual({ className }: HowItWorksVisualProps) {
         className={cn(
           "absolute inset-0 hidden transition-opacity duration-500 motion-reduce:transition-none lg:block",
           isDark
-            ? "bg-gradient-to-b from-background/55 via-background/35 to-background/50"
-            : "bg-gradient-to-b from-background/40 via-background/20 to-background/35",
+            ? "bg-gradient-to-b from-black/50 via-black/35 to-black/55"
+            : "bg-gradient-to-b from-black/25 via-black/15 to-black/30",
         )}
       />
       <div

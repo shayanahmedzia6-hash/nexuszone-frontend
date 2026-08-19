@@ -26,9 +26,7 @@ export const staticMarketingPaths: readonly string[] = [
   routes.businessSetupMainland,
   routes.businessSetupFreeZone,
   routes.businessSetupOffshore,
-  routes.costCalculator,
   routes.howItWorks,
-  routes.blog,
   routes.contact,
   routes.faq,
   // privacy/terms are intentionally excluded while marked noIndex (draft legal content)

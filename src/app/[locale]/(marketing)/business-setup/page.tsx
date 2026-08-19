@@ -6,7 +6,7 @@ export const metadata = createPageMetadata({
   title: "Business Setup",
   path: routes.businessSetup,
   description:
-    "Explore Mainland, Free Zone, Offshore, Branch Office and Professional License options for setting up a business in the UAE with Nexus Zone.",
+    "Explore Mainland, Free Zone and Offshore options for setting up a business in the UAE with Nexus Zone.",
 });
 
 export default function BusinessSetupPage() {

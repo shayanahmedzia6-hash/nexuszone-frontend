@@ -79,31 +79,6 @@ export const servicesCatalog: Service[] = [
     icon: "building-2",
     href: routes.businessSetup,
   },
-  {
-    id: "trade-license",
-    slug: "trade-license",
-    group: "growth",
-    title: "Trade License Services",
-    summary: "Trade license applications, renewals and activity amendments.",
-    icon: "file-check",
-  },
-  {
-    id: "feasibility",
-    slug: "feasibility",
-    group: "growth",
-    title: "Feasibility Study",
-    summary:
-      "Market and financial feasibility studies to validate your business plan.",
-    icon: "clipboard-list",
-  },
-  {
-    id: "advisory",
-    slug: "advisory",
-    group: "growth",
-    title: "Business Advisory",
-    summary: "Strategic advice to help you start, manage and scale with confidence.",
-    icon: "lightbulb",
-  },
 
   // Ongoing Business Support
   {
@@ -121,14 +96,6 @@ export const servicesCatalog: Service[] = [
     title: "VAT & Corporate Tax",
     summary: "VAT filing and corporate tax compliance handled end-to-end.",
     icon: "receipt",
-  },
-  {
-    id: "payroll",
-    slug: "payroll",
-    group: "support",
-    title: "Payroll Management",
-    summary: "Payroll processing and WPS-compliant salary management.",
-    icon: "wallet",
   },
   {
     id: "audit",

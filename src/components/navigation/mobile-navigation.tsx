@@ -20,7 +20,6 @@ import {
   type NavigationItem,
 } from "@/data/navigation";
 import { siteContact } from "@/data/site-contact";
-import { routes } from "@/lib/constants/routes";
 import { NAV_LABEL_KEYS } from "@/lib/i18n/nav-labels";
 import { cn } from "@/lib/utils/cn";
 import { useUiStore } from "@/store/ui-store";
@@ -212,7 +211,8 @@ function MobileNavItem({
 }) {
   const t = useTranslations("nav");
   const labelKey = NAV_LABEL_KEYS[item.id];
-  const label = labelKey ? t(labelKey) : item.label;
+  const label =
+    labelKey && t.has(labelKey) ? t(labelKey) : item.label;
   const panelId = useId();
   const [openNestedId, setOpenNestedId] = useState<string | null>(null);
   const [prevIsOpen, setPrevIsOpen] = useState(isOpen);
@@ -502,13 +502,6 @@ export function MobileNavigation() {
                   <MessageCircle className="h-4 w-4" aria-hidden />
                   {t("whatsappUs")}
                 </a>
-                <Button
-                  href={routes.contact}
-                  className="w-full"
-                  onClick={closeMobileNav}
-                >
-                  {t("getStarted")}
-                </Button>
               </div>
             </motion.aside>
           ) : null}

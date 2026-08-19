@@ -31,7 +31,7 @@ export function BusinessSetupDetail({ detail }: BusinessSetupDetailProps) {
               Talk to an Expert
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Button>
-            <Button href={routes.costCalculator} variant="outline">
+            <Button href={routes.contact} variant="outline">
               Estimate Setup Cost
             </Button>
           </div>
@@ -77,7 +77,7 @@ export function BusinessSetupDetail({ detail }: BusinessSetupDetailProps) {
       </SectionWrapper>
 
       <CTASection
-        title="Ready to Get Started?"
+        title="Ready to Begin?"
         description="Our experts will guide you through every step of the setup process."
         actions={
           <Button href={routes.contact} className="gap-2">

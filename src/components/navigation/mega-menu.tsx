@@ -1,3 +1,7 @@
+"use client";
+
+import { useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "@/i18n/navigation";
 
 import { Button } from "@/components/ui/button";
@@ -16,6 +20,8 @@ type MegaMenuProps = {
   columns: MegaMenuColumn[];
   cta?: MegaMenuCta;
   onNavigate?: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 };
 
 export function MegaMenu({
@@ -25,14 +31,49 @@ export function MegaMenu({
   columns,
   cta,
   onNavigate,
+  onMouseEnter,
+  onMouseLeave,
 }: MegaMenuProps) {
-  return (
+  const panelRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useLayoutEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- portal mount guard
+    setMounted(true);
+  }, []);
+
+  useLayoutEffect(() => {
+    if (!mounted) return;
+
+    const panel = panelRef.current;
+    const header = document.querySelector("header");
+    if (!panel || !header) return;
+
+    const updatePosition = () => {
+      panel.style.top = `${header.getBoundingClientRect().bottom + 12}px`;
+    };
+
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+    window.addEventListener("scroll", updatePosition, true);
+    return () => {
+      window.removeEventListener("resize", updatePosition);
+      window.removeEventListener("scroll", updatePosition, true);
+    };
+  }, [mounted]);
+
+  if (!mounted) return null;
+
+  return createPortal(
     <div
+      ref={panelRef}
       id={id}
       role="region"
       aria-label="Submenu"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
       className={cn(
-        "absolute top-full left-1/2 z-50 mt-3 w-[min(92vw,72rem)] -translate-x-1/2",
+        "fixed top-24 left-1/2 z-[60] w-[min(72rem,calc(100vw-2rem))] -translate-x-1/2",
         "rounded-2xl border border-border bg-background/95 p-5 shadow-lg backdrop-blur-3xl",
       )}
     >
@@ -150,6 +191,7 @@ export function MegaMenu({
           </div>
         ) : null}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

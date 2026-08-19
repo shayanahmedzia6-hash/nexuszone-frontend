@@ -1,6 +1,6 @@
 import { BlogPreview } from "@/features/home/components/BlogPreview";
 import { BusinessSetup } from "@/features/home/components/BusinessSetup";
-import { CostCalculator } from "@/features/home/components/CostCalculator";
+// import { CostCalculator } from "@/features/home/components/CostCalculator";
 import { FAQ } from "@/features/home/components/FAQ";
 import { FinalCTA } from "@/features/home/components/FinalCTA";
 import { Hero } from "@/features/home/components/Hero";
@@ -28,7 +28,7 @@ export default function HomePage() {
       <Services />
       <HowItWorks />
       <BusinessSetup />
-      <CostCalculator />
+      {/* <CostCalculator /> */}
       <WhyNexus />
       <WhatYouNeed />
       <Stats />

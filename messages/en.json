@@ -25,7 +25,7 @@
     "home": "Home",
     "businessSetup": "Business Setup",
     "services": "Services",
-    "resources": "Resources",
+    "faq": "FAQs",
     "about": "About Us",
     "contact": "Contact Us"
   },
@@ -127,7 +127,7 @@
         "description": "Your business is ready! We continue to support you as you grow."
       }
     },
-    "ctaTitle": "Ready to Get Started?",
+    "ctaTitle": "Ready to Begin?",
     "ctaDescription": "Kickstart your business journey in the UAE today.",
     "ctaButton": "Talk to an Expert"
   },
@@ -349,11 +349,11 @@
     "contactUs": "Contact Us"
   },
   "finalCta": {
-    "eyebrow": "Ready to Get Started?",
+    "eyebrow": "Ready to Begin?",
     "titlePrimary": "Let's Build Your",
     "titleAccent": "Success Story Together",
     "description": "Partner with Nexus Zone and experience seamless business setup and corporate solutions that drive real growth.",
-    "primaryCta": "Get Started Today",
+    "primaryCta": "Talk to an Expert",
     "secondaryCta": "Schedule a Consultation"
   },
   "servicesCatalogPage": {
@@ -467,7 +467,7 @@
     "keyBenefits": "Key Benefits",
     "whoItsFor": "Who It's For",
     "disclaimer": "This is general information, not legal or tax advice — exact requirements vary by emirate, free zone authority and business activity. Talk to our team for guidance specific to your case.",
-    "readyTitle": "Ready to Get Started?",
+    "readyTitle": "Ready to Begin?",
     "readyDescription": "Our experts will guide you through every step of the setup process.",
     "bookConsultation": "Book Free Consultation",
     "types": {
