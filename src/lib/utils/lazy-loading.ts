@@ -3,7 +3,7 @@
  *
  * Prefer:
  * - Route-level code splitting (automatic with App Router)
- * - `next/dynamic` for heavy client-only widgets (calculator, carousel, map)
+ * - `next/dynamic` for heavy client-only widgets (carousel, map)
  * - `Suspense` + `loading.tsx` for streaming async server regions
  *
  * Avoid:
@@ -12,7 +12,6 @@
  */
 
 export const LAZY_LOAD_CANDIDATES = [
-  "CostCalculator",
   "HeavyCarousel",
   "MapWidget",
   "AnimationHeavyWidget",

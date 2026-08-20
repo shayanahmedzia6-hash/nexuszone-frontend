@@ -9,35 +9,58 @@ type PartnersProps = {
 };
 
 export function Partners({ emptyState = false }: PartnersProps) {
+  const freeZones = partners.filter((partner) => partner.category === "free-zone");
+  const banks = partners.filter((partner) => partner.category === "bank");
+
   if (partners.length === 0 && !emptyState) return null;
 
   return (
     <SectionWrapper id="partners" className="bg-background-secondary">
       <div className="flex flex-col gap-4">
         <p className="text-sm font-medium tracking-wide text-primary uppercase">
-          Partners & Recognitions
+          Free Zone & Banking Partners
         </p>
         <h2 className="max-w-xl text-3xl font-semibold tracking-tight text-text md:text-4xl">
-          Proud Partnerships. <span className="text-primary">Industry Recognition.</span>
+          Wherever You Set Up. <span className="text-primary">Whoever You Bank With.</span>
         </h2>
         <AccentBar variant="tri" />
         <p className="max-w-lg text-base text-text-muted">
-          We collaborate with leading organizations and uphold the highest
-          standards of excellence.
+          We help clients set up across every UAE free zone and open corporate
+          accounts with the UAE&apos;s leading banks.
         </p>
       </div>
 
-      {partners.length > 0 ? (
-        <div className="mt-10 flex flex-wrap items-center gap-x-10 gap-y-4">
-          {partners.map((partner) => (
-            <PartnerCard key={partner.id} partner={partner} />
-          ))}
+      {freeZones.length > 0 ? (
+        <div className="mt-10">
+          <h3 className="mb-4 text-sm font-semibold tracking-wide text-text uppercase">
+            Free Zone Partners
+          </h3>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+            {freeZones.map((partner) => (
+              <PartnerCard key={partner.id} partner={partner} />
+            ))}
+          </div>
         </div>
-      ) : (
+      ) : null}
+
+      {banks.length > 0 ? (
+        <div className="mt-10">
+          <h3 className="mb-4 text-sm font-semibold tracking-wide text-text uppercase">
+            Banking Partners
+          </h3>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+            {banks.map((partner) => (
+              <PartnerCard key={partner.id} partner={partner} />
+            ))}
+          </div>
+        </div>
+      ) : null}
+
+      {partners.length === 0 ? (
         <div className="mt-10 rounded-2xl border border-dashed border-border bg-background p-8 text-center text-sm text-text-muted">
-          Partner and award details are being added soon.
+          Partner details are being added soon.
         </div>
-      )}
+      ) : null}
     </SectionWrapper>
   );
 }

@@ -6,9 +6,9 @@ export const routes = {
   businessSetupMainland: "/business-setup/mainland",
   businessSetupFreeZone: "/business-setup/free-zone",
   businessSetupOffshore: "/business-setup/offshore",
-  costCalculator: "/cost-calculator",
   howItWorks: "/how-it-works",
   blog: "/blog",
+  careers: "/careers",
   contact: "/contact",
   faq: "/faq",
   privacy: "/privacy",
@@ -27,6 +27,7 @@ export const staticMarketingPaths: readonly string[] = [
   routes.businessSetupFreeZone,
   routes.businessSetupOffshore,
   routes.howItWorks,
+  routes.careers,
   routes.contact,
   routes.faq,
   // privacy/terms are intentionally excluded while marked noIndex (draft legal content)

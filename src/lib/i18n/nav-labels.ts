@@ -5,5 +5,6 @@ export const NAV_LABEL_KEYS: Record<string, string> = {
   services: "services",
   faq: "faq",
   about: "about",
+  careers: "careers",
   contact: "contact",
 };

@@ -19,8 +19,7 @@ export default function ServicesPage() {
     <>
       <ServicesHero />
       <ServiceGroupSection group="core" />
-      <ServiceGroupSection group="growth" className="bg-background-secondary" />
-      <ServiceGroupSection group="support" />
+      <ServiceGroupSection group="support" className="bg-background-secondary" />
       <CTASection
         title="Not Sure Where to Start?"
         description="Talk to our team and we'll help you find the right service for your business."

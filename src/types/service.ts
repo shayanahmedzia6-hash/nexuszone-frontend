@@ -1,4 +1,4 @@
-export type ServiceGroup = "core" | "growth" | "support";
+export type ServiceGroup = "core" | "support";
 
 export type Service = {
   id: string;

@@ -21,6 +21,7 @@ export const footerContent = {
     { label: "Services", href: routes.services },
     { label: "How It Works", href: routes.howItWorks },
     { label: "FAQ", href: routes.faq },
+    { label: "Careers", href: routes.careers },
     { label: "Contact Us", href: routes.contact },
   ],
   services: [

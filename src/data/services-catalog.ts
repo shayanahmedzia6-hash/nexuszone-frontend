@@ -59,21 +59,19 @@ export const servicesCatalog: Service[] = [
     summary: "Finding, leasing or buying the right office and commercial space.",
     icon: "home",
   },
-
-  // Business Growth Solutions
   {
-    id: "market-entry",
-    slug: "market-entry",
-    group: "growth",
-    title: "Market Entry Strategy",
+    id: "golden-visa",
+    slug: "golden-visa",
+    group: "core",
+    title: "Golden Visa",
     summary:
-      "Guidance on the right jurisdiction, structure and timing to enter the UAE market.",
-    icon: "target",
+      "Guidance on eligibility and documentation for the UAE's long-term Golden Visa residency for investors, entrepreneurs and specialized talent.",
+    icon: "award",
   },
   {
     id: "company-formation",
     slug: "company-formation",
-    group: "growth",
+    group: "core",
     title: "Company Formation",
     summary: "Full company formation across Mainland, Free Zone and Offshore.",
     icon: "building-2",
@@ -110,8 +108,9 @@ export const servicesCatalog: Service[] = [
     id: "compliance",
     slug: "compliance",
     group: "support",
-    title: "Compliance Management",
-    summary: "Ongoing regulatory compliance monitoring and reporting.",
+    title: "AML Compliance",
+    summary:
+      "Anti-money laundering policy setup, risk assessments, and UBO/goAML registration support to meet UAE AML/CFT obligations.",
     icon: "shield-check",
   },
 ];
@@ -121,10 +120,6 @@ export const serviceGroupMeta = {
     title: "Core Services",
     description:
       "The essentials most businesses need to operate compliantly in the UAE.",
-  },
-  growth: {
-    title: "Business Growth Solutions",
-    description: "Strategic support to help you enter the market and expand well.",
   },
   support: {
     title: "Ongoing Business Support",

@@ -170,22 +170,6 @@ export const navigationItems: NavigationItem[] = [
     ],
     columns: [
       {
-        title: "Business Growth Solutions",
-        items: [
-          {
-            label: "Market Entry Strategy",
-            href: `${routes.services}#market-entry`,
-            icon: "target",
-          },
-          {
-            label: "Company Formation",
-            href: routes.businessSetup,
-            icon: "building-2",
-          },
-        ],
-        footerLink: { label: "View All Services", href: routes.services },
-      },
-      {
         title: "Ongoing Business Support",
         items: [
           {
@@ -204,9 +188,14 @@ export const navigationItems: NavigationItem[] = [
             icon: "search-check",
           },
           {
-            label: "Compliance Management",
+            label: "AML Compliance",
             href: `${routes.services}#compliance`,
             icon: "shield-check",
+          },
+          {
+            label: "Golden Visa",
+            href: `${routes.services}#golden-visa`,
+            icon: "award",
           },
         ],
         footerLink: { label: "View All Services", href: routes.services },
@@ -244,6 +233,12 @@ export const navigationItems: NavigationItem[] = [
         icon: "sparkles",
       },
     ],
+  },
+  {
+    id: "careers",
+    label: "Careers",
+    type: "link",
+    href: routes.careers,
   },
   {
     id: "contact",

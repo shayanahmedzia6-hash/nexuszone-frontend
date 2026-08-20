@@ -27,6 +27,7 @@
     "services": "Services",
     "faq": "FAQs",
     "about": "About Us",
+    "careers": "Careers",
     "contact": "Contact Us"
   },
   "footer": {
@@ -161,62 +162,6 @@
     "notSureTitle": "Not Sure Which One Fits You?",
     "notSureDescription": "Our experts will help you choose the perfect setup.",
     "notSureButton": "Get Free Consultation"
-  },
-  "costCalculator": {
-    "eyebrow": "Cost Calculator",
-    "titlePrimary": "Plan Smart.",
-    "titleAccent": "Start Right.",
-    "description": "Estimate your total business setup cost in the UAE in just a few clicks. No hidden charges.",
-    "highlights": {
-      "instant": {
-        "title": "Instant Estimate",
-        "description": "Get real-time cost estimates instantly."
-      },
-      "transparent": {
-        "title": "No Hidden Fees",
-        "description": "Transparent pricing you can trust."
-      },
-      "save-time": {
-        "title": "Save Time",
-        "description": "Plan your budget and launch faster."
-      }
-    },
-    "fields": {
-      "businessType": "Business Type",
-      "jurisdiction": "Jurisdiction",
-      "visaCount": "Number of Visas",
-      "officeSpace": "Office Space"
-    },
-    "options": {
-      "businessType": {
-        "trading": "Trading",
-        "consulting": "Consulting",
-        "e-commerce": "E-Commerce",
-        "professional-services": "Professional Services",
-        "other": "Other"
-      },
-      "jurisdiction": {
-        "mainland": "Mainland",
-        "free-zone": "Free Zone",
-        "offshore": "Offshore"
-      },
-      "visaCount": {
-        "0": "No Visas",
-        "1-2": "1 - 2 Visas",
-        "3-5": "3 - 5 Visas",
-        "6+": "6+ Visas"
-      },
-      "officeSpace": {
-        "flexi-desk": "Flexi Desk",
-        "shared-office": "Shared Office",
-        "private-office": "Private Office",
-        "none": "Not Required"
-      }
-    },
-    "estimatedCost": "Estimated Total Cost",
-    "quoteNote": "Final pricing is confirmed by our team based on your exact requirements.",
-    "getQuote": "Get My Quote",
-    "calculateButton": "Calculate Now"
   },
   "whyNexus": {
     "eyebrow": "Why Nexus Zone?",
@@ -475,10 +420,22 @@
         "heroTitle": "Mainland Company Setup",
         "heroDescription": "Register a mainland company to trade freely across the UAE and internationally, with access to government contracts and the local market.",
         "benefits": [
-          { "title": "Trade Anywhere in the UAE", "description": "Operate across all Emirates without free zone restrictions." },
-          { "title": "Access Government Contracts", "description": "Mainland companies can bid on government and public-sector tenders." },
-          { "title": "Flexible Office Locations", "description": "Choose office space anywhere on the mainland, not limited to a specific zone." },
-          { "title": "Broad Business Activities", "description": "License a wide range of commercial, professional and industrial activities." }
+          {
+            "title": "Trade Anywhere in the UAE",
+            "description": "Operate across all Emirates without free zone restrictions."
+          },
+          {
+            "title": "Access Government Contracts",
+            "description": "Mainland companies can bid on government and public-sector tenders."
+          },
+          {
+            "title": "Flexible Office Locations",
+            "description": "Choose office space anywhere on the mainland, not limited to a specific zone."
+          },
+          {
+            "title": "Broad Business Activities",
+            "description": "License a wide range of commercial, professional and industrial activities."
+          }
         ],
         "idealFor": [
           "Businesses trading directly with the local UAE market",
@@ -490,10 +447,22 @@
         "heroTitle": "Free Zone Company Setup",
         "heroDescription": "Set up in one of the UAE's free zones for 100% foreign ownership, streamlined licensing, and zone-specific incentives.",
         "benefits": [
-          { "title": "100% Foreign Ownership", "description": "No local sponsor required in most free zones." },
-          { "title": "Full Profit Repatriation", "description": "Move 100% of profits and capital out of the UAE." },
-          { "title": "Streamlined Setup", "description": "Many free zones offer fast, largely digital registration processes." },
-          { "title": "Zone-Specific Infrastructure", "description": "Access shared facilities, warehousing or office space depending on the zone." }
+          {
+            "title": "100% Foreign Ownership",
+            "description": "No local sponsor required in most free zones."
+          },
+          {
+            "title": "Full Profit Repatriation",
+            "description": "Move 100% of profits and capital out of the UAE."
+          },
+          {
+            "title": "Streamlined Setup",
+            "description": "Many free zones offer fast, largely digital registration processes."
+          },
+          {
+            "title": "Zone-Specific Infrastructure",
+            "description": "Access shared facilities, warehousing or office space depending on the zone."
+          }
         ],
         "idealFor": [
           "Import/export and trading businesses",
@@ -505,10 +474,22 @@
         "heroTitle": "Offshore Company Setup",
         "heroDescription": "Establish an offshore company for international trade, asset holding and structuring — without a physical UAE office requirement.",
         "benefits": [
-          { "title": "Asset Protection", "description": "Hold international assets, shares or property under a separate corporate structure." },
-          { "title": "No Physical Office Required", "description": "Offshore companies generally do not need UAE office space." },
-          { "title": "Confidential Structuring", "description": "Commonly used for holding companies and international structuring." },
-          { "title": "International Trade", "description": "Operate and invoice internationally outside the UAE market." }
+          {
+            "title": "Asset Protection",
+            "description": "Hold international assets, shares or property under a separate corporate structure."
+          },
+          {
+            "title": "No Physical Office Required",
+            "description": "Offshore companies generally do not need UAE office space."
+          },
+          {
+            "title": "Confidential Structuring",
+            "description": "Commonly used for holding companies and international structuring."
+          },
+          {
+            "title": "International Trade",
+            "description": "Operate and invoice internationally outside the UAE market."
+          }
         ],
         "idealFor": [
           "International holding companies",
@@ -572,26 +553,68 @@
       "title": "Privacy Policy",
       "intro": "This Privacy Policy explains, in general terms, how Nexus Zone may collect, use and protect information submitted through this website.",
       "sections": {
-        "collect": { "heading": "Information We Collect", "body": "Information you provide directly, such as through the contact or newsletter forms (e.g. name, email, phone number, and message content)." },
-        "use": { "heading": "How We Use Information", "body": "To respond to enquiries, provide requested services, and — where you've opted in — send updates about our services." },
-        "cookies": { "heading": "Cookies & Analytics", "body": "This site may use cookies or similar technologies to remember preferences (such as light/dark mode) and understand site usage." },
-        "thirdParty": { "heading": "Third-Party Services", "body": "We may use third-party tools (e.g. hosting, analytics, email delivery) that process information on our behalf." },
-        "retention": { "heading": "Data Retention", "body": "We retain information only for as long as necessary to fulfil the purpose it was collected for, or as required by law." },
-        "rights": { "heading": "Your Rights", "body": "You may request access to, correction of, or deletion of your personal information by contacting us using the details below." },
-        "contact": { "heading": "Contact Us", "body": "Questions about this policy can be sent to" }
+        "collect": {
+          "heading": "Information We Collect",
+          "body": "Information you provide directly, such as through the contact or newsletter forms (e.g. name, email, phone number, and message content)."
+        },
+        "use": {
+          "heading": "How We Use Information",
+          "body": "To respond to enquiries, provide requested services, and — where you've opted in — send updates about our services."
+        },
+        "cookies": {
+          "heading": "Cookies & Analytics",
+          "body": "This site may use cookies or similar technologies to remember preferences (such as light/dark mode) and understand site usage."
+        },
+        "thirdParty": {
+          "heading": "Third-Party Services",
+          "body": "We may use third-party tools (e.g. hosting, analytics, email delivery) that process information on our behalf."
+        },
+        "retention": {
+          "heading": "Data Retention",
+          "body": "We retain information only for as long as necessary to fulfil the purpose it was collected for, or as required by law."
+        },
+        "rights": {
+          "heading": "Your Rights",
+          "body": "You may request access to, correction of, or deletion of your personal information by contacting us using the details below."
+        },
+        "contact": {
+          "heading": "Contact Us",
+          "body": "Questions about this policy can be sent to"
+        }
       }
     },
     "terms": {
       "title": "Terms & Conditions",
       "intro": "These Terms & Conditions govern your use of this website. By using the site, you agree to the terms below.",
       "sections": {
-        "use": { "heading": "Use of This Website", "body": "This website is provided for general information about Nexus Zone's services. Content should not be relied upon as legal, tax or financial advice." },
-        "ip": { "heading": "Intellectual Property", "body": "All content, branding and design on this website belong to Nexus Zone unless otherwise stated, and may not be reproduced without permission." },
-        "accuracy": { "heading": "Accuracy of Information", "body": "We aim to keep information on this site accurate and up to date, but make no guarantee that all content is complete, current or error-free." },
-        "liability": { "heading": "Limitation of Liability", "body": "Nexus Zone is not liable for any loss or damage arising from use of, or reliance on, this website." },
-        "law": { "heading": "Governing Law", "body": "These terms are governed by the laws of the United Arab Emirates." },
-        "changes": { "heading": "Changes to These Terms", "body": "We may update these terms from time to time. Continued use of the site after changes means you accept the updated terms." },
-        "contact": { "heading": "Contact Us", "body": "Questions about these terms can be sent to" }
+        "use": {
+          "heading": "Use of This Website",
+          "body": "This website is provided for general information about Nexus Zone's services. Content should not be relied upon as legal, tax or financial advice."
+        },
+        "ip": {
+          "heading": "Intellectual Property",
+          "body": "All content, branding and design on this website belong to Nexus Zone unless otherwise stated, and may not be reproduced without permission."
+        },
+        "accuracy": {
+          "heading": "Accuracy of Information",
+          "body": "We aim to keep information on this site accurate and up to date, but make no guarantee that all content is complete, current or error-free."
+        },
+        "liability": {
+          "heading": "Limitation of Liability",
+          "body": "Nexus Zone is not liable for any loss or damage arising from use of, or reliance on, this website."
+        },
+        "law": {
+          "heading": "Governing Law",
+          "body": "These terms are governed by the laws of the United Arab Emirates."
+        },
+        "changes": {
+          "heading": "Changes to These Terms",
+          "body": "We may update these terms from time to time. Continued use of the site after changes means you accept the updated terms."
+        },
+        "contact": {
+          "heading": "Contact Us",
+          "body": "Questions about these terms can be sent to"
+        }
       }
     }
   }
