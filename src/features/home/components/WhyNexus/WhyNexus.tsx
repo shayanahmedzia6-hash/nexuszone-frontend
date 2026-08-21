@@ -6,6 +6,7 @@ import { Users2 } from "lucide-react";
 import { DynamicIcon } from "@/components/navigation/nav-icons";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { BrandSphere } from "@/components/media/brand-sphere";
+import { OptimizedImage } from "@/components/media/optimized-image";
 import { AccentBar } from "@/components/ui/accent-bar";
 import { whyNexusPillars } from "@/data/why-nexus";
 import { cn } from "@/lib/utils/cn";
@@ -69,10 +70,14 @@ export function WhyNexus() {
       </div>
 
       <div className="relative mt-10 grid gap-8 md:grid-cols-2 md:items-center md:gap-12">
-        <div className="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-xl bg-background-secondary">
-          <div className="h-40 w-40 opacity-70 md:h-56 md:w-56">
-            <BrandSphere />
-          </div>
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-background-secondary">
+          <OptimizedImage
+            src="/images/why-nexus/team-discussion.jpg"
+            alt="Nexus Zone advisors discussing a client's business setup"
+            fill
+            sizes="(max-width: 768px) 100vw, 600px"
+            className="object-cover"
+          />
           <span className="absolute right-5 bottom-5 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-lg">
             <Users2 className="h-5 w-5" aria-hidden />
           </span>
