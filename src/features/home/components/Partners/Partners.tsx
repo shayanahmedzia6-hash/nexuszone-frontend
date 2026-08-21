@@ -1,7 +1,7 @@
-import { PartnerCard } from "@/components/cards/partner-card";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { AccentBar } from "@/components/ui/accent-bar";
 import { partners } from "@/data/partners";
+import { LogoMarquee } from "@/features/home/components/Partners/LogoMarquee";
 
 type PartnersProps = {
   /** Render the anchor + heading even with no data yet, instead of hiding entirely. */
@@ -35,24 +35,16 @@ export function Partners({ emptyState = false }: PartnersProps) {
           <h3 className="mb-4 text-sm font-semibold tracking-wide text-text uppercase">
             Free Zone Partners
           </h3>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
-            {freeZones.map((partner) => (
-              <PartnerCard key={partner.id} partner={partner} />
-            ))}
-          </div>
+          <LogoMarquee items={freeZones} />
         </div>
       ) : null}
 
       {banks.length > 0 ? (
-        <div className="mt-10">
+        <div className="mt-8">
           <h3 className="mb-4 text-sm font-semibold tracking-wide text-text uppercase">
             Banking Partners
           </h3>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
-            {banks.map((partner) => (
-              <PartnerCard key={partner.id} partner={partner} />
-            ))}
-          </div>
+          <LogoMarquee items={banks} reverse />
         </div>
       ) : null}
 

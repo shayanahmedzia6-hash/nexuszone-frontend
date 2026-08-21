@@ -23,9 +23,11 @@ export function BusinessSetupDetail({ detail }: BusinessSetupDetailProps) {
             {detail.heroTitle}
           </h1>
           <AccentBar variant="tri" />
-          <p className="max-w-2xl text-base text-text-muted md:text-lg">
-            {detail.heroDescription}
-          </p>
+          <div className="flex max-w-2xl flex-col gap-4 text-base text-text-muted md:text-lg">
+            {detail.heroDescription.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
           <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Button href={routes.contact} className="gap-2">
               Talk to an Expert
@@ -40,9 +42,9 @@ export function BusinessSetupDetail({ detail }: BusinessSetupDetailProps) {
 
       <SectionWrapper id="benefits">
         <h2 className="text-2xl font-semibold tracking-tight text-text md:text-3xl">
-          Key Benefits
+          {detail.whyChooseTitle}
         </h2>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {detail.benefits.map((benefit) => (
             <div
               key={benefit.title}
@@ -59,9 +61,9 @@ export function BusinessSetupDetail({ detail }: BusinessSetupDetailProps) {
 
       <SectionWrapper id="ideal-for" className="bg-background-secondary">
         <h2 className="text-2xl font-semibold tracking-tight text-text md:text-3xl">
-          Who It&apos;s For
+          {detail.idealForTitle}
         </h2>
-        <ul className="mt-6 flex flex-col gap-3">
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2">
           {detail.idealFor.map((item) => (
             <li key={item} className="flex items-start gap-3 text-base text-text-muted">
               <Check className="mt-1 h-4 w-4 shrink-0 text-primary" aria-hidden />
@@ -69,19 +71,62 @@ export function BusinessSetupDetail({ detail }: BusinessSetupDetailProps) {
             </li>
           ))}
         </ul>
-        <p className="mt-8 max-w-2xl text-xs text-text-muted">
-          This is general information, not legal or tax advice — exact
-          requirements vary by emirate, free zone authority and business
-          activity. Talk to our team for guidance specific to your case.
-        </p>
+      </SectionWrapper>
+
+      <SectionWrapper id="process">
+        <h2 className="text-2xl font-semibold tracking-tight text-text md:text-3xl">
+          {detail.processTitle}
+        </h2>
+        <ol className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          {detail.process.map((step) => (
+            <li
+              key={step.step}
+              className="rounded-xl border border-border bg-background p-6"
+            >
+              <span className="text-2xl font-bold text-primary">{step.step}</span>
+              <h3 className="mt-3 font-semibold text-text">{step.title}</h3>
+              <p className="mt-1 text-sm leading-relaxed text-text-muted">
+                {step.description}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </SectionWrapper>
+
+      {detail.extraSection ? (
+        <SectionWrapper id="considerations" className="bg-background-secondary">
+          <h2 className="text-2xl font-semibold tracking-tight text-text md:text-3xl">
+            {detail.extraSection.title}
+          </h2>
+          <div className="mt-4 flex max-w-3xl flex-col gap-4 text-base text-text-muted">
+            {detail.extraSection.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </SectionWrapper>
+      ) : null}
+
+      <SectionWrapper
+        id="why-us"
+        className={detail.extraSection ? undefined : "bg-background-secondary"}
+      >
+        <h2 className="text-2xl font-semibold tracking-tight text-text md:text-3xl">
+          {detail.whyWorkWithUs.title}
+        </h2>
+        <div className="mt-4 flex max-w-3xl flex-col gap-4 text-base text-text-muted">
+          {detail.whyWorkWithUs.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+        <p className="mt-8 max-w-2xl text-xs text-text-muted">{detail.disclaimer}</p>
       </SectionWrapper>
 
       <CTASection
-        title="Ready to Begin?"
-        description="Our experts will guide you through every step of the setup process."
+        title={detail.finalCta.title}
+        description={detail.finalCta.description}
         actions={
           <Button href={routes.contact} className="gap-2">
-            Book Free Consultation
+            Talk to an Expert
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Button>
         }

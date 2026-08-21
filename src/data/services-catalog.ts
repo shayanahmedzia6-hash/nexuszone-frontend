@@ -14,7 +14,7 @@ export const servicesCatalog: Service[] = [
     group: "core",
     title: "Visa & PRO Services",
     summary:
-      "Investor, partner and employment visas, plus all PRO and government-related processing.",
+      "Simplify UAE visa applications and government-related procedures with dedicated PRO support. From employment and investor visas to document processing and government submissions, we help reduce administrative work and delays.",
     icon: "id-card",
   },
   {
@@ -23,7 +23,7 @@ export const servicesCatalog: Service[] = [
     group: "core",
     title: "Banking Solutions",
     summary:
-      "Support opening and managing corporate bank accounts with leading UAE banks.",
+      "Get practical support for opening and managing your UAE business bank account. We help you understand banking requirements, prepare the necessary documentation, and navigate the application process with greater confidence.",
     icon: "landmark",
   },
   {
@@ -31,7 +31,8 @@ export const servicesCatalog: Service[] = [
     slug: "tax",
     group: "core",
     title: "Tax & Accounting",
-    summary: "Corporate tax, VAT registration, and accurate day-to-day bookkeeping.",
+    summary:
+      "Manage your business finances with professional tax and accounting support. From bookkeeping and financial reporting to VAT and Corporate Tax compliance, we help keep your financial operations accurate and organized.",
     icon: "calculator",
   },
   {
@@ -39,7 +40,8 @@ export const servicesCatalog: Service[] = [
     slug: "legal",
     group: "core",
     title: "Legal & Compliance",
-    summary: "Contract drafting, legal advisory, and ongoing regulatory compliance.",
+    summary:
+      "Protect your business with reliable legal and regulatory support tailored to your needs. We help you understand applicable requirements, manage corporate documentation, and maintain compliance as your business grows.",
     icon: "scale",
   },
   {
@@ -48,7 +50,7 @@ export const servicesCatalog: Service[] = [
     group: "core",
     title: "Corporate Services",
     summary:
-      "Corporate governance, documentation, and business support to keep you ahead.",
+      "Keep your company running smoothly with essential corporate and administrative services. Our support covers ongoing business requirements, documentation, company changes, renewals, and other important corporate processes.",
     icon: "briefcase",
   },
   {
@@ -56,7 +58,8 @@ export const servicesCatalog: Service[] = [
     slug: "real-estate",
     group: "core",
     title: "Real Estate Services",
-    summary: "Finding, leasing or buying the right office and commercial space.",
+    summary:
+      "Find practical UAE property solutions for business, investment, and relocation requirements. We assist with property-related needs and help you navigate opportunities across commercial and residential real estate.",
     icon: "home",
   },
   {
@@ -65,15 +68,16 @@ export const servicesCatalog: Service[] = [
     group: "core",
     title: "Golden Visa",
     summary:
-      "Guidance on eligibility and documentation for the UAE's long-term Golden Visa residency for investors, entrepreneurs and specialized talent.",
+      "Explore long-term UAE residency options for investors, entrepreneurs, professionals, and eligible individuals. Our team guides you through the requirements, documentation, application process, and relevant procedures for obtaining your Golden Visa.",
     icon: "award",
   },
   {
     id: "company-formation",
     slug: "company-formation",
     group: "core",
-    title: "Company Formation",
-    summary: "Full company formation across Mainland, Free Zone and Offshore.",
+    title: "Business Setup",
+    summary:
+      "Launch your UAE business with the right company structure and licensing solution. We assist with mainland, free zone, and offshore setups, helping you navigate registration, documentation, licensing, and other essential requirements.",
     icon: "building-2",
     href: routes.businessSetup,
   },
@@ -84,7 +88,8 @@ export const servicesCatalog: Service[] = [
     slug: "accounting",
     group: "support",
     title: "Accounting & Bookkeeping",
-    summary: "Day-to-day bookkeeping and financial record-keeping support.",
+    summary:
+      "Keep your business finances organized with accurate bookkeeping, financial records, and reporting. Our accounting support helps you maintain clear financial visibility while staying prepared for your ongoing business and compliance requirements.",
     icon: "book-open",
   },
   {
@@ -92,7 +97,8 @@ export const servicesCatalog: Service[] = [
     slug: "vat",
     group: "support",
     title: "VAT & Corporate Tax",
-    summary: "VAT filing and corporate tax compliance handled end-to-end.",
+    summary:
+      "Navigate UAE VAT and Corporate Tax requirements with professional support tailored to your business. We assist with registration, filing, calculations, and compliance so your business can meet its tax obligations confidently.",
     icon: "receipt",
   },
   {
@@ -101,7 +107,7 @@ export const servicesCatalog: Service[] = [
     group: "support",
     title: "Audit & Assurance",
     summary:
-      "Independent audit and assurance services for regulatory and stakeholder confidence.",
+      "Gain greater confidence in your financial information with reliable audit and assurance services. Our team reviews your records, identifies potential issues, and helps ensure your financial reporting meets the relevant requirements.",
     icon: "search-check",
   },
   {
@@ -110,7 +116,7 @@ export const servicesCatalog: Service[] = [
     group: "support",
     title: "AML Compliance",
     summary:
-      "Anti-money laundering policy setup, risk assessments, and UBO/goAML registration support to meet UAE AML/CFT obligations.",
+      "Protect your business and meet UAE regulatory requirements with practical AML compliance support. We help businesses understand their obligations, establish appropriate procedures, and maintain the documentation required for ongoing compliance.",
     icon: "shield-check",
   },
 ];
