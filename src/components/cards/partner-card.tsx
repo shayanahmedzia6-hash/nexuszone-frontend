@@ -15,7 +15,9 @@ export function PartnerCard({ partner, className }: PartnerCardProps) {
   const showLogoBackground =
     Boolean(partner.logoLightBackground && partner.logoUrl && !isDark);
   const logoPath = partner.logoUrl
-    ? decodeURIComponent(partner.logoUrl.split("?")[0]).toLowerCase()
+    ? decodeURIComponent(
+        partner.logoUrl.split("?")[0] ?? partner.logoUrl,
+      ).toLowerCase()
     : "";
   const useUnoptimizedLogo =
     logoPath.endsWith(".svg") || logoPath.endsWith(".jfif");
