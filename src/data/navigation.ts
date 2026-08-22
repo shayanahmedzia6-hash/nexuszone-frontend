@@ -1,6 +1,7 @@
 import { routes } from "@/lib/constants/routes";
 
 export type NavLinkItem = {
+  id: string;
   label: string;
   href: string;
   description?: string;
@@ -8,6 +9,7 @@ export type NavLinkItem = {
 };
 
 export type MegaMenuColumn = {
+  id: string;
   title: string;
   items: NavLinkItem[];
   footerLink?: NavLinkItem;
@@ -53,77 +55,8 @@ export const navigationItems: NavigationItem[] = [
   {
     id: "business-setup",
     label: "Business Setup",
-    type: "mega",
-    sidebarTitle: "Setup Options",
-    sidebar: [
-      {
-        label: "All Setup Options",
-        href: routes.businessSetup,
-        icon: "layout-grid",
-      },
-      {
-        label: "Mainland Company",
-        href: routes.businessSetupMainland,
-        icon: "building-2",
-      },
-      {
-        label: "Free Zone Company",
-        href: routes.businessSetupFreeZone,
-        icon: "landmark",
-      },
-      {
-        label: "Offshore Company",
-        href: routes.businessSetupOffshore,
-        icon: "globe-2",
-      },
-    ],
-    columns: [
-      {
-        title: "Popular Routes",
-        items: [
-          {
-            label: "Mainland Company",
-            href: routes.businessSetupMainland,
-            icon: "building-2",
-            description: "Trade freely across the UAE mainland.",
-          },
-          {
-            label: "Free Zone Company",
-            href: routes.businessSetupFreeZone,
-            icon: "landmark",
-            description: "100% ownership with zone incentives.",
-          },
-          {
-            label: "Offshore Company",
-            href: routes.businessSetupOffshore,
-            icon: "globe-2",
-            description: "International holding and asset structures.",
-          },
-        ],
-        footerLink: {
-          label: "View All Setup Options",
-          href: routes.businessSetup,
-        },
-      },
-      {
-        title: "Need Guidance?",
-        items: [
-          {
-            label: "Talk to an Expert",
-            href: routes.contact,
-            icon: "headset",
-            description: "Get a tailored setup recommendation.",
-          },
-        ],
-      },
-    ],
-    cta: {
-      title: "Need Help Choosing?",
-      description:
-        "Our experts are ready to help you find the right setup for your business.",
-      buttonLabel: "Talk to an Expert",
-      href: routes.contact,
-    },
+    type: "link",
+    href: routes.businessSetup,
   },
   {
     id: "services",
@@ -131,38 +64,44 @@ export const navigationItems: NavigationItem[] = [
     type: "mega",
     sidebarTitle: "Explore Our Services",
     sidebar: [
-      { label: "All Services", href: routes.services, icon: "layout-grid" },
       {
-        label: "Business Setup",
-        href: routes.businessSetup,
-        icon: "briefcase",
+        id: "all-services",
+        label: "All Services",
+        href: routes.services,
+        icon: "layout-grid",
       },
       {
+        id: "visa-pro",
         label: "Visa & PRO Services",
         href: `${routes.services}#visa-pro`,
         icon: "id-card",
       },
       {
+        id: "banking",
         label: "Banking Solutions",
         href: `${routes.services}#banking`,
         icon: "landmark",
       },
       {
+        id: "tax-accounting",
         label: "Tax & Accounting",
         href: `${routes.services}#tax`,
         icon: "calculator",
       },
       {
+        id: "legal-compliance",
         label: "Legal & Compliance",
         href: `${routes.services}#legal`,
         icon: "scale",
       },
       {
+        id: "corporate-services",
         label: "Corporate Services",
         href: `${routes.services}#corporate`,
         icon: "building",
       },
       {
+        id: "real-estate",
         label: "Real Estate Services",
         href: `${routes.services}#real-estate`,
         icon: "home",
@@ -170,35 +109,45 @@ export const navigationItems: NavigationItem[] = [
     ],
     columns: [
       {
+        id: "ongoing-support",
         title: "Ongoing Business Support",
         items: [
           {
+            id: "accounting",
             label: "Accounting & Bookkeeping",
             href: `${routes.services}#accounting`,
             icon: "book-open",
           },
           {
+            id: "vat",
             label: "VAT & Corporate Tax",
             href: `${routes.services}#vat`,
             icon: "receipt",
           },
           {
+            id: "audit",
             label: "Audit & Assurance",
             href: `${routes.services}#audit`,
             icon: "search-check",
           },
           {
+            id: "aml-compliance",
             label: "AML Compliance",
             href: `${routes.services}#compliance`,
             icon: "shield-check",
           },
           {
+            id: "golden-visa",
             label: "Golden Visa",
             href: `${routes.services}#golden-visa`,
             icon: "award",
           },
         ],
-        footerLink: { label: "View All Services", href: routes.services },
+        footerLink: {
+          id: "view-all-services",
+          label: "View All Services",
+          href: routes.services,
+        },
       },
     ],
     cta: {
@@ -220,14 +169,26 @@ export const navigationItems: NavigationItem[] = [
     label: "About Us",
     type: "dropdown",
     items: [
-      { label: "About Nexus Zone", href: routes.about, icon: "info" },
-      { label: "Our Team", href: `${routes.about}#team`, icon: "users" },
       {
+        id: "about-nexus",
+        label: "About Nexus Zone",
+        href: routes.about,
+        icon: "info",
+      },
+      {
+        id: "our-team",
+        label: "Our Team",
+        href: `${routes.about}#team`,
+        icon: "users",
+      },
+      {
+        id: "partners-awards",
         label: "Partners & Awards",
         href: `${routes.about}#partners`,
         icon: "award",
       },
       {
+        id: "why-nexus",
         label: "Why Nexus Zone",
         href: `${routes.about}#why-us`,
         icon: "sparkles",

@@ -1,8 +1,7 @@
 "use client";
 
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
-import { useLenis } from "lenis/react";
-import { Link } from "@/i18n/navigation";
+import { NavigationLink } from "@/components/navigation/navigation-link";
 import { useTranslations } from "next-intl";
 import { useEffect, useId, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
@@ -21,6 +20,7 @@ import {
 } from "@/data/navigation";
 import { siteContact } from "@/data/site-contact";
 import { NAV_LABEL_KEYS } from "@/lib/i18n/nav-labels";
+import { useNavMega } from "@/lib/i18n/nav-mega";
 import { cn } from "@/lib/utils/cn";
 import { useUiStore } from "@/store/ui-store";
 
@@ -116,16 +116,19 @@ function StaggerItem({
 
 function NavLinkRow({
   link,
+  label,
   onNavigate,
   className,
 }: {
   link: NavLinkItem;
+  label: string;
   onNavigate: () => void;
   className?: string;
 }) {
   return (
-    <Link
+    <NavigationLink
       href={link.href}
+      scroll={false}
       onClick={onNavigate}
       className={cn(
         "flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm text-text-muted transition-colors hover:bg-surface hover:text-text",
@@ -133,24 +136,27 @@ function NavLinkRow({
       )}
     >
       <DynamicIcon name={link.icon} className="h-4 w-4 shrink-0" />
-      <span>{link.label}</span>
-    </Link>
+      <span>{label}</span>
+    </NavigationLink>
   );
 }
 
 function NestedAccordionGroup({
+  menuId,
   column,
   openId,
   onToggle,
   onNavigate,
 }: {
+  menuId: string;
   column: MegaMenuColumn;
   openId: string | null;
   onToggle: (id: string) => void;
   onNavigate: () => void;
 }) {
+  const { text } = useNavMega(menuId);
   const panelId = useId();
-  const isOpen = openId === column.title;
+  const isOpen = openId === column.id;
 
   return (
     <StaggerItem>
@@ -160,9 +166,9 @@ function NestedAccordionGroup({
           className="flex w-full items-center justify-between gap-3 px-3 py-2.5 text-left text-sm font-medium text-text"
           aria-expanded={isOpen}
           aria-controls={panelId}
-          onClick={() => onToggle(column.title)}
+          onClick={() => onToggle(column.id)}
         >
-          <span>{column.title}</span>
+          <span>{text(`columns.${column.id}.title`, column.title)}</span>
           <ChevronDown
             className={cn(
               "h-4 w-4 shrink-0 text-text-muted transition-transform duration-300 ease-out",
@@ -177,19 +183,31 @@ function NestedAccordionGroup({
           className="space-y-0.5 border-t border-border/60 px-1.5 py-2"
         >
           {column.items.map((link) => (
-            <StaggerItem key={link.href + link.label}>
-              <NavLinkRow link={link} onNavigate={onNavigate} />
+            <StaggerItem key={link.id}>
+              <NavLinkRow
+                link={link}
+                label={text(
+                  `columns.${column.id}.items.${link.id}.label`,
+                  link.label,
+                )}
+                onNavigate={onNavigate}
+              />
             </StaggerItem>
           ))}
           {column.footerLink ? (
             <StaggerItem>
-              <Link
+              <NavigationLink
                 href={column.footerLink.href}
+                scroll={false}
                 onClick={onNavigate}
                 className="mt-1 block px-3 py-2 text-sm font-medium text-primary"
               >
-                {column.footerLink.label} →
-              </Link>
+                {text(
+                  `columns.${column.id}.footerLink`,
+                  column.footerLink.label,
+                )}{" "}
+                →
+              </NavigationLink>
             </StaggerItem>
           ) : null}
         </AccordionPanel>
@@ -210,6 +228,7 @@ function MobileNavItem({
   onNavigate: () => void;
 }) {
   const t = useTranslations("nav");
+  const { text } = useNavMega(item.id);
   const labelKey = NAV_LABEL_KEYS[item.id];
   const label =
     labelKey && t.has(labelKey) ? t(labelKey) : item.label;
@@ -224,13 +243,14 @@ function MobileNavItem({
 
   if (item.type === "link") {
     return (
-      <Link
+      <NavigationLink
         href={item.href}
+        scroll={false}
         onClick={onNavigate}
         className="block rounded-lg px-3 py-3 text-base font-medium text-text transition-colors hover:bg-surface"
       >
         {label}
-      </Link>
+      </NavigationLink>
     );
   }
 
@@ -239,12 +259,10 @@ function MobileNavItem({
   const overviewLink = isMega ? item.sidebar?.[0] : undefined;
   const extraSidebarLinks = isMega
     ? (item.sidebar ?? []).slice(1).filter((sidebarLink) => {
-        const columnLabels = new Set(
-          item.columns.flatMap((column) =>
-            column.items.map((entry) => entry.label.toLowerCase()),
-          ),
+        const columnItemIds = new Set(
+          item.columns.flatMap((column) => column.items.map((entry) => entry.id)),
         );
-        return !columnLabels.has(sidebarLink.label.toLowerCase());
+        return !columnItemIds.has(sidebarLink.id);
       })
     : [];
 
@@ -277,8 +295,12 @@ function MobileNavItem({
       >
         {item.type === "dropdown"
           ? flatLinks.map((link) => (
-              <StaggerItem key={link.href + link.label}>
-                <NavLinkRow link={link} onNavigate={onNavigate} />
+              <StaggerItem key={link.id}>
+                <NavLinkRow
+                  link={link}
+                  label={text(`items.${link.id}`, link.label)}
+                  onNavigate={onNavigate}
+                />
               </StaggerItem>
             ))
           : null}
@@ -289,6 +311,7 @@ function MobileNavItem({
               <StaggerItem>
                 <NavLinkRow
                   link={overviewLink}
+                  label={text(`sidebar.${overviewLink.id}`, overviewLink.label)}
                   onNavigate={onNavigate}
                   className="font-medium text-text"
                 />
@@ -297,7 +320,8 @@ function MobileNavItem({
 
             {item.columns.map((column) => (
               <NestedAccordionGroup
-                key={column.title}
+                key={column.id}
+                menuId={item.id}
                 column={column}
                 openId={openNestedId}
                 onToggle={(id) =>
@@ -308,8 +332,12 @@ function MobileNavItem({
             ))}
 
             {extraSidebarLinks.map((link) => (
-              <StaggerItem key={link.href + link.label}>
-                <NavLinkRow link={link} onNavigate={onNavigate} />
+              <StaggerItem key={link.id}>
+                <NavLinkRow
+                  link={link}
+                  label={text(`sidebar.${link.id}`, link.label)}
+                  onNavigate={onNavigate}
+                />
               </StaggerItem>
             ))}
 
@@ -321,7 +349,7 @@ function MobileNavItem({
                   className="w-full"
                   onClick={onNavigate}
                 >
-                  {item.cta.buttonLabel}
+                  {text("cta.buttonLabel", item.cta.buttonLabel)}
                 </Button>
               </StaggerItem>
             ) : null}
@@ -384,7 +412,6 @@ export function MobileNavigation() {
   const isOpen = useUiStore((state) => state.isMobileNavOpen);
   const openMobileNav = useUiStore((state) => state.openMobileNav);
   const closeMobileNav = useUiStore((state) => state.closeMobileNav);
-  const lenis = useLenis();
   const [openItemId, setOpenItemId] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -395,23 +422,21 @@ export function MobileNavigation() {
 
   useEffect(() => {
     if (!isOpen) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- bundled with the DOM/lenis side effects below, not standalone state derivation
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- reset nested accordion when parent closes
       setOpenItemId(null);
       return;
     }
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    lenis?.stop();
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") closeMobileNav();
     };
     window.addEventListener("keydown", onKeyDown);
     return () => {
       document.body.style.overflow = previous;
-      lenis?.start();
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [isOpen, closeMobileNav, lenis]);
+  }, [isOpen, closeMobileNav]);
 
   const drawer =
     mounted &&
@@ -458,7 +483,6 @@ export function MobileNavigation() {
 
               <nav
                 className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-3 py-3"
-                data-lenis-prevent
                 aria-label="Mobile primary"
               >
                 <motion.ul
@@ -516,7 +540,7 @@ export function MobileNavigation() {
         <ThemeToggle />
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-text"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border text-text"
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
           onClick={() => (isOpen ? closeMobileNav() : openMobileNav())}

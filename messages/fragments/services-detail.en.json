@@ -1,0 +1,381 @@
+{
+  "eyebrow": "Nexus Zone Business Services",
+  "talkToExpert": "Talk to an Expert",
+  "backToServices": "Back to Services",
+  "types": {
+    "visa-pro": {
+      "metaTitle": "Visa & PRO Services in the UAE | Nexus Zone",
+      "metaDescription": "Streamline UAE visas, immigration formalities, and government processing with Nexus Zone's practical PRO support.",
+      "heroTitle": "Visa & PRO Services",
+      "heroDescription": [
+        "Manage UAE visa and government procedures with a team that understands the requirements, timelines, and documentation involved.",
+        "Nexus Zone coordinates applications, renewals, and routine PRO work so your business and employees can stay focused on operations."
+      ],
+      "whyChooseTitle": "Reliable support for every government touchpoint",
+      "benefits": [
+        { "title": "End-to-end coordination", "description": "We organize documentation and follow each request from preparation through submission and completion." },
+        { "title": "Clear requirements", "description": "Receive practical guidance on forms, supporting documents, fees, and expected processing stages." },
+        { "title": "Timely renewals", "description": "Structured tracking helps reduce missed deadlines for visas, permits, and corporate documents." },
+        { "title": "One point of contact", "description": "A dedicated team coordinates with relevant authorities and keeps you informed." }
+      ],
+      "idealForTitle": "Ideal for",
+      "idealFor": ["New UAE companies hiring their first employees", "Established businesses managing workforce visas", "Founders and dependants requiring residency support", "Companies outsourcing routine government liaison", "Businesses approaching visa or licence renewals"],
+      "processTitle": "How the process works",
+      "process": [
+        { "step": "01", "title": "Requirement review", "description": "We assess the applicant, company status, and requested government service." },
+        { "step": "02", "title": "Document preparation", "description": "We provide a checklist and review documents before submission." },
+        { "step": "03", "title": "Application coordination", "description": "We submit or coordinate the request and monitor its progress." },
+        { "step": "04", "title": "Completion and follow-up", "description": "We confirm completion, share records, and flag future renewal dates." }
+      ],
+      "whyWorkWithUs": {
+        "title": "Why work with Nexus Zone",
+        "paragraphs": [
+          "Our team combines local process knowledge with responsive, straightforward communication.",
+          "We coordinate closely with your company so every request has clear ownership and fewer administrative delays."
+        ]
+      },
+      "finalCta": { "title": "Make UAE administration easier", "description": "Speak with Nexus Zone about visa, immigration, and PRO support tailored to your business." },
+      "disclaimer": "This content is general information and does not constitute legal or tax advice."
+    },
+    "banking": {
+      "metaTitle": "Corporate Banking Solutions in the UAE | Nexus Zone",
+      "metaDescription": "Prepare for a UAE corporate bank account application with structured documentation and banking support from Nexus Zone.",
+      "heroTitle": "Banking Solutions",
+      "heroDescription": [
+        "A well-prepared banking application helps UAE businesses present their ownership, activities, and expected transactions clearly.",
+        "Nexus Zone supports account selection, document preparation, and bank coordination while keeping expectations realistic throughout the review."
+      ],
+      "whyChooseTitle": "A stronger, better-prepared banking application",
+      "benefits": [
+        { "title": "Bank selection support", "description": "We help identify suitable banking options based on your activity, profile, and operating needs." },
+        { "title": "Application readiness", "description": "Your corporate, shareholder, and commercial documents are organized before review." },
+        { "title": "Clear business profile", "description": "We help present expected transactions, counterparties, and source-of-funds information coherently." },
+        { "title": "Practical coordination", "description": "Our team manages communication and helps respond to additional information requests." }
+      ],
+      "idealForTitle": "Ideal for",
+      "idealFor": ["New mainland and free zone companies", "International founders entering the UAE", "Businesses seeking an additional banking relationship", "Companies with cross-border transactions", "Firms preparing for bank compliance reviews"],
+      "processTitle": "How the process works",
+      "process": [
+        { "step": "01", "title": "Profile assessment", "description": "We review the company, shareholders, activities, and banking requirements." },
+        { "step": "02", "title": "Option selection", "description": "We discuss appropriate banks and account features for your circumstances." },
+        { "step": "03", "title": "Application preparation", "description": "We organize documents and help prepare the required business information." },
+        { "step": "04", "title": "Bank follow-up", "description": "We coordinate queries through the bank's independent compliance and approval process." }
+      ],
+      "whyWorkWithUs": {
+        "title": "Why work with Nexus Zone",
+        "paragraphs": [
+          "We understand what banks typically need to evaluate a UAE corporate account application.",
+          "Our structured approach helps you submit a complete, consistent profile without promising outcomes controlled solely by the bank."
+        ]
+      },
+      "finalCta": { "title": "Prepare your banking application with confidence", "description": "Talk to our team about corporate account options and application support in the UAE." },
+      "disclaimer": "This content is general information, not legal or tax advice; account approval remains at the bank's sole discretion."
+    },
+    "tax": {
+      "metaTitle": "Tax & Accounting Services in the UAE | Nexus Zone",
+      "metaDescription": "Keep your UAE records, VAT, corporate tax, and financial reporting organized with Nexus Zone.",
+      "heroTitle": "Tax & Accounting",
+      "heroDescription": [
+        "Accurate records and timely tax compliance provide the financial clarity every growing UAE business needs.",
+        "Nexus Zone brings bookkeeping, reporting, VAT, and corporate tax support together in one coordinated service."
+      ],
+      "whyChooseTitle": "Connected accounting and tax support",
+      "benefits": [
+        { "title": "Reliable records", "description": "Maintain organized books supported by consistent transaction classification and reconciliations." },
+        { "title": "Tax readiness", "description": "Prepare for VAT and corporate tax obligations using current financial information." },
+        { "title": "Management visibility", "description": "Receive practical reports that help owners understand performance and cash flow." },
+        { "title": "Scalable support", "description": "Adapt the service as transaction volumes, reporting needs, and compliance duties grow." }
+      ],
+      "idealForTitle": "Ideal for",
+      "idealFor": ["Startups building their finance function", "SMEs outsourcing accounting and tax work", "Companies registered or registering for VAT", "Businesses subject to UAE corporate tax", "Owners needing dependable management reports"],
+      "processTitle": "How the process works",
+      "process": [
+        { "step": "01", "title": "Finance review", "description": "We assess your records, systems, registrations, and reporting obligations." },
+        { "step": "02", "title": "Onboarding", "description": "We agree workflows, document access, reporting periods, and responsibilities." },
+        { "step": "03", "title": "Accounting and compliance", "description": "We maintain records and prepare applicable returns and reports." },
+        { "step": "04", "title": "Review and guidance", "description": "We discuss results, outstanding actions, and upcoming deadlines." }
+      ],
+      "whyWorkWithUs": {
+        "title": "Why work with Nexus Zone",
+        "paragraphs": [
+          "Our coordinated team connects day-to-day bookkeeping with wider UAE tax and reporting requirements.",
+          "You receive clear communication, disciplined workflows, and practical support designed around your operating model."
+        ]
+      },
+      "finalCta": { "title": "Build a stronger financial foundation", "description": "Speak with us about an accounting and tax support package for your UAE business." },
+      "disclaimer": "This content is general information and does not constitute legal or tax advice."
+    },
+    "legal": {
+      "metaTitle": "Legal & Compliance Services in the UAE | Nexus Zone",
+      "metaDescription": "Navigate UAE legal documentation and regulatory obligations with coordinated compliance support from Nexus Zone.",
+      "heroTitle": "Legal & Compliance",
+      "heroDescription": [
+        "Sound documentation and proactive compliance help protect your business as regulations and commercial relationships evolve.",
+        "Nexus Zone coordinates practical legal and regulatory support, connecting you with qualified specialists where formal advice is required."
+      ],
+      "whyChooseTitle": "Practical support for responsible operations",
+      "benefits": [
+        { "title": "Compliance mapping", "description": "Identify key obligations linked to your entity, licence, activity, and operating model." },
+        { "title": "Document coordination", "description": "Organize corporate records, policies, resolutions, and commercial documentation." },
+        { "title": "Risk awareness", "description": "Spot areas requiring action or specialist legal review before they become urgent." },
+        { "title": "Ongoing support", "description": "Keep compliance activities visible through structured reviews and action tracking." }
+      ],
+      "idealForTitle": "Ideal for",
+      "idealFor": ["New businesses establishing governance processes", "Growing companies entering new contracts", "Regulated or higher-risk business activities", "Companies updating policies and corporate records", "International groups adapting to UAE requirements"],
+      "processTitle": "How the process works",
+      "process": [
+        { "step": "01", "title": "Scope review", "description": "We understand the business, issue, documents, and relevant regulatory context." },
+        { "step": "02", "title": "Gap assessment", "description": "We identify missing information, priority actions, and specialist needs." },
+        { "step": "03", "title": "Implementation support", "description": "We coordinate documents, filings, policies, and professional input as agreed." },
+        { "step": "04", "title": "Ongoing monitoring", "description": "We record completed actions and help schedule future compliance reviews." }
+      ],
+      "whyWorkWithUs": {
+        "title": "Why work with Nexus Zone",
+        "paragraphs": [
+          "We translate complex administrative requirements into clear, manageable actions for business owners.",
+          "Where reserved legal work is needed, we coordinate with appropriately qualified advisers while maintaining one practical point of contact."
+        ]
+      },
+      "finalCta": { "title": "Strengthen your compliance framework", "description": "Discuss your UAE legal documentation and regulatory support needs with Nexus Zone." },
+      "disclaimer": "This content is general information and does not constitute legal or tax advice."
+    },
+    "corporate": {
+      "metaTitle": "Corporate Services in the UAE | Nexus Zone",
+      "metaDescription": "Keep your UAE company records, renewals, amendments, and administration under control with Nexus Zone.",
+      "heroTitle": "Corporate Services",
+      "heroDescription": [
+        "A UAE company needs consistent administration long after incorporation is complete.",
+        "Nexus Zone manages routine corporate actions, records, renewals, and stakeholder coordination so your entity remains organized."
+      ],
+      "whyChooseTitle": "Corporate administration that keeps pace",
+      "benefits": [
+        { "title": "Organized records", "description": "Maintain accessible company documents, resolutions, licences, and ownership records." },
+        { "title": "Renewal oversight", "description": "Track key expiry dates and begin recurring procedures with sufficient lead time." },
+        { "title": "Change coordination", "description": "Manage licence amendments, shareholder updates, and other corporate actions." },
+        { "title": "Administrative continuity", "description": "Give management a dependable contact for recurring entity requirements." }
+      ],
+      "idealForTitle": "Ideal for",
+      "idealFor": ["UAE companies requiring ongoing administration", "International groups with local subsidiaries", "Businesses changing activities or ownership", "Founders without an internal corporate secretary", "Companies preparing for annual renewals"],
+      "processTitle": "How the process works",
+      "process": [
+        { "step": "01", "title": "Company review", "description": "We assess entity records, current status, and upcoming corporate needs." },
+        { "step": "02", "title": "Service calendar", "description": "We create a schedule for renewals, filings, and planned amendments." },
+        { "step": "03", "title": "Action management", "description": "We prepare and coordinate approved corporate administration tasks." },
+        { "step": "04", "title": "Record update", "description": "We confirm completion and keep your corporate file current." }
+      ],
+      "whyWorkWithUs": {
+        "title": "Why work with Nexus Zone",
+        "paragraphs": [
+          "Our UAE business services experience gives your corporate administration structure and accountability.",
+          "We keep owners informed with clear timelines and practical support across authorities and service providers."
+        ]
+      },
+      "finalCta": { "title": "Keep your company moving forward", "description": "Let Nexus Zone coordinate the recurring corporate work behind your UAE business." },
+      "disclaimer": "This content is general information and does not constitute legal or tax advice."
+    },
+    "real-estate": {
+      "metaTitle": "Real Estate Services in the UAE | Nexus Zone",
+      "metaDescription": "Explore UAE commercial and residential property options with practical transaction coordination from Nexus Zone.",
+      "heroTitle": "Real Estate Services",
+      "heroDescription": [
+        "The right UAE property decision starts with clear objectives, informed comparisons, and careful transaction coordination.",
+        "Nexus Zone supports businesses, investors, and residents across commercial and residential property requirements."
+      ],
+      "whyChooseTitle": "Property support connected to your wider goals",
+      "benefits": [
+        { "title": "Needs-led search", "description": "We focus options around your location, use, budget, timeline, and investment criteria." },
+        { "title": "Market context", "description": "Compare suitable areas and property types using relevant commercial considerations." },
+        { "title": "Transaction coordination", "description": "Keep brokers, landlords, developers, and professional advisers aligned." },
+        { "title": "Business integration", "description": "Connect premises decisions with licensing, visas, and operational planning where relevant." }
+      ],
+      "idealForTitle": "Ideal for",
+      "idealFor": ["Companies leasing offices or commercial premises", "Founders relocating to the UAE", "Investors considering residential property", "Families seeking long-term accommodation", "Businesses expanding to a new emirate"],
+      "processTitle": "How the process works",
+      "process": [
+        { "step": "01", "title": "Brief and budget", "description": "We define your property objectives, constraints, and preferred timeline." },
+        { "step": "02", "title": "Option review", "description": "We help compare shortlisted properties and relevant commercial terms." },
+        { "step": "03", "title": "Due diligence coordination", "description": "We coordinate documentation and appropriate professional checks." },
+        { "step": "04", "title": "Transaction support", "description": "We assist with the agreed steps through signing, registration, or handover." }
+      ],
+      "whyWorkWithUs": {
+        "title": "Why work with Nexus Zone",
+        "paragraphs": [
+          "We consider property in the context of your business, residency, or investment plans rather than as an isolated transaction.",
+          "Our network and coordination-led approach help you move through the process with clearer information and fewer handoffs."
+        ]
+      },
+      "finalCta": { "title": "Find the right UAE property solution", "description": "Tell us what you need from a commercial or residential property in the UAE." },
+      "disclaimer": "This content is general information and does not constitute legal, tax, financial, or investment advice."
+    },
+    "golden-visa": {
+      "metaTitle": "UAE Golden Visa Services | Nexus Zone",
+      "metaDescription": "Assess UAE Golden Visa pathways and coordinate a well-prepared long-term residency application with Nexus Zone.",
+      "heroTitle": "Golden Visa",
+      "heroDescription": [
+        "The UAE Golden Visa offers eligible applicants a long-term residency route linked to approved categories and current criteria.",
+        "Nexus Zone helps evaluate potential eligibility, organize evidence, and coordinate the application journey for you and qualifying family members."
+      ],
+      "whyChooseTitle": "Structured support for long-term residency",
+      "benefits": [
+        { "title": "Eligibility screening", "description": "Review relevant categories and current criteria before committing to an application." },
+        { "title": "Evidence preparation", "description": "Build an organized file of identity, investment, professional, or nomination documents." },
+        { "title": "Family coordination", "description": "Plan eligible dependant applications alongside the principal applicant's process." },
+        { "title": "Application oversight", "description": "Track stages, requests, appointments, and status updates through completion." }
+      ],
+      "idealForTitle": "Ideal for",
+      "idealFor": ["Qualifying investors and property owners", "Entrepreneurs and eligible business founders", "Specialized professionals and executives", "Exceptional talent and qualifying graduates", "Eligible applicants seeking family stability"],
+      "processTitle": "How the process works",
+      "process": [
+        { "step": "01", "title": "Eligibility review", "description": "We review your profile against applicable Golden Visa categories." },
+        { "step": "02", "title": "Evidence planning", "description": "We identify required documents, attestations, and external approvals." },
+        { "step": "03", "title": "Application coordination", "description": "We prepare and coordinate the submission and related appointments." },
+        { "step": "04", "title": "Residency completion", "description": "We support final formalities and any agreed dependant applications." }
+      ],
+      "whyWorkWithUs": {
+        "title": "Why work with Nexus Zone",
+        "paragraphs": [
+          "Our team provides a realistic initial assessment and a clear document roadmap based on the selected category.",
+          "We manage administrative steps carefully while recognizing that eligibility and approval rest with the relevant UAE authorities."
+        ]
+      },
+      "finalCta": { "title": "Explore your Golden Visa options", "description": "Speak with an expert about your profile and potential UAE long-term residency pathway." },
+      "disclaimer": "This content is general information, not legal or tax advice; eligibility and approval are determined by UAE authorities."
+    },
+    "accounting": {
+      "metaTitle": "Accounting & Bookkeeping in the UAE | Nexus Zone",
+      "metaDescription": "Maintain accurate books, reconciliations, and management reports for your UAE company with Nexus Zone.",
+      "heroTitle": "Accounting & Bookkeeping",
+      "heroDescription": [
+        "Reliable bookkeeping turns daily transactions into useful financial information and supports sound business decisions.",
+        "Nexus Zone maintains structured records, reconciliations, and reports suited to your UAE company's operations."
+      ],
+      "whyChooseTitle": "Accurate records, clearer decisions",
+      "benefits": [
+        { "title": "Consistent bookkeeping", "description": "Record income, expenses, assets, liabilities, and journals using agreed classifications." },
+        { "title": "Regular reconciliations", "description": "Compare bank, customer, supplier, and ledger balances to identify discrepancies." },
+        { "title": "Useful reporting", "description": "Receive timely financial statements and management information." },
+        { "title": "Compliance-ready files", "description": "Keep supporting documents organized for tax filings, audit, and stakeholder review." }
+      ],
+      "idealForTitle": "Ideal for",
+      "idealFor": ["Startups establishing proper books", "SMEs without an in-house finance team", "Companies catching up on historical records", "Businesses needing monthly management accounts", "Groups standardizing finance processes"],
+      "processTitle": "How the process works",
+      "process": [
+        { "step": "01", "title": "Records assessment", "description": "We review transaction volumes, systems, documents, and reporting needs." },
+        { "step": "02", "title": "Workflow setup", "description": "We define the chart of accounts, cut-off dates, access, and approvals." },
+        { "step": "03", "title": "Monthly processing", "description": "We post transactions, reconcile balances, and raise queries." },
+        { "step": "04", "title": "Reporting review", "description": "We deliver agreed reports and discuss material movements or open items." }
+      ],
+      "whyWorkWithUs": {
+        "title": "Why work with Nexus Zone",
+        "paragraphs": [
+          "We combine disciplined bookkeeping with an understanding of UAE tax and statutory expectations.",
+          "Our team provides consistent delivery and clear queries, giving owners confidence in the numbers they use."
+        ]
+      },
+      "finalCta": { "title": "Bring clarity to your accounts", "description": "Choose a bookkeeping and reporting service built around your UAE business." },
+      "disclaimer": "This content is general information and does not constitute legal or tax advice."
+    },
+    "vat": {
+      "metaTitle": "VAT & Corporate Tax Services in the UAE | Nexus Zone",
+      "metaDescription": "Manage UAE VAT and corporate tax registration, return preparation, and filing support with Nexus Zone.",
+      "heroTitle": "VAT & Corporate Tax",
+      "heroDescription": [
+        "UAE tax compliance depends on accurate records, correct tax treatment, and timely action at every filing period.",
+        "Nexus Zone supports VAT and corporate tax registrations, calculations, returns, and compliance reviews."
+      ],
+      "whyChooseTitle": "Practical support for UAE tax obligations",
+      "benefits": [
+        { "title": "Registration guidance", "description": "Assess registration requirements and coordinate the supporting information and application." },
+        { "title": "Return preparation", "description": "Prepare filings from reconciled records with documented review points." },
+        { "title": "Deadline control", "description": "Track filing and payment dates to support timely compliance." },
+        { "title": "Tax health checks", "description": "Review prior treatments and records to identify potential gaps or corrections." }
+      ],
+      "idealForTitle": "Ideal for",
+      "idealFor": ["Businesses approaching VAT thresholds", "UAE corporate tax registrants", "Companies filing periodic VAT returns", "Groups reviewing related-party transactions", "Businesses correcting historic tax records", "Owners seeking ongoing tax compliance support"],
+      "processTitle": "How the process works",
+      "process": [
+        { "step": "01", "title": "Obligation assessment", "description": "We review activities, turnover, registrations, periods, and filing status." },
+        { "step": "02", "title": "Data and records review", "description": "We gather ledgers and evidence, then identify missing or unclear items." },
+        { "step": "03", "title": "Calculation and approval", "description": "We prepare the return or position and share it for authorized approval." },
+        { "step": "04", "title": "Filing and records", "description": "We coordinate submission and retain the relevant calculation and filing records." }
+      ],
+      "whyWorkWithUs": {
+        "title": "Why work with Nexus Zone",
+        "paragraphs": [
+          "We connect filing work to the underlying accounting records, reducing avoidable inconsistencies.",
+          "Our team communicates assumptions and required actions clearly, with specialist review available where circumstances are complex."
+        ]
+      },
+      "finalCta": { "title": "Stay ahead of UAE tax deadlines", "description": "Discuss your VAT and corporate tax requirements with the Nexus Zone team." },
+      "disclaimer": "This content is general information and does not constitute legal or tax advice."
+    },
+    "audit": {
+      "metaTitle": "Audit & Assurance Services in the UAE | Nexus Zone",
+      "metaDescription": "Coordinate independent audit and assurance work for your UAE company with organized, responsive support.",
+      "heroTitle": "Audit & Assurance",
+      "heroDescription": [
+        "Independent assurance strengthens confidence in financial information and may support statutory, regulatory, banking, or shareholder requirements.",
+        "Nexus Zone coordinates audit-ready records and connects engagements with appropriately licensed independent professionals."
+      ],
+      "whyChooseTitle": "A smoother route to credible assurance",
+      "benefits": [
+        { "title": "Readiness assessment", "description": "Identify missing schedules, reconciliations, and supporting evidence before fieldwork." },
+        { "title": "Organized coordination", "description": "Manage information requests and communication between management and the auditor." },
+        { "title": "Independent expertise", "description": "Access appropriately licensed professionals for the required assurance engagement." },
+        { "title": "Actionable findings", "description": "Understand control observations and prioritize practical remediation steps." }
+      ],
+      "idealForTitle": "Ideal for",
+      "idealFor": ["Companies with statutory audit requirements", "Free zone entities requiring audited statements", "Businesses responding to bank or investor requests", "Groups needing agreed-upon procedures", "Owners preparing for a transaction or review"],
+      "processTitle": "How the process works",
+      "process": [
+        { "step": "01", "title": "Engagement scoping", "description": "We clarify the purpose, period, reporting framework, and required assurance." },
+        { "step": "02", "title": "Audit preparation", "description": "We assemble records, reconciliations, schedules, and supporting documents." },
+        { "step": "03", "title": "Fieldwork coordination", "description": "We support timely responses while the independent practitioner performs procedures." },
+        { "step": "04", "title": "Reporting and follow-up", "description": "The practitioner issues the report and we help track agreed follow-up actions." }
+      ],
+      "whyWorkWithUs": {
+        "title": "Why work with Nexus Zone",
+        "paragraphs": [
+          "Our preparation and coordination reduce disruption for your team and help information move efficiently.",
+          "We respect auditor independence and ensure regulated assurance opinions are issued only by appropriately authorized practitioners."
+        ]
+      },
+      "finalCta": { "title": "Get ready for your next audit", "description": "Talk to Nexus Zone about audit preparation and independent assurance coordination." },
+      "disclaimer": "This content is general information and does not constitute legal or tax advice; assurance opinions are issued by independent licensed practitioners."
+    },
+    "compliance": {
+      "metaTitle": "AML Compliance Services in the UAE | Nexus Zone",
+      "metaDescription": "Build and maintain a risk-based UAE anti-money laundering compliance framework with Nexus Zone.",
+      "heroTitle": "AML Compliance",
+      "heroDescription": [
+        "Effective anti-money laundering controls help UAE businesses understand customers, manage risk, and meet regulatory duties.",
+        "Nexus Zone supports risk assessments, policies, customer due diligence, training, and ongoing AML compliance processes."
+      ],
+      "whyChooseTitle": "A practical, risk-based AML framework",
+      "benefits": [
+        { "title": "Risk assessment", "description": "Evaluate customer, geography, product, delivery channel, and transaction risks." },
+        { "title": "Policies and controls", "description": "Develop procedures proportionate to your activities and regulatory exposure." },
+        { "title": "CDD support", "description": "Structure onboarding, beneficial ownership checks, screening, and record keeping." },
+        { "title": "Training and monitoring", "description": "Build staff awareness and maintain a schedule for reviews, escalation, and updates." }
+      ],
+      "idealForTitle": "Ideal for",
+      "idealFor": ["Designated non-financial businesses and professions", "Real estate brokers and agents", "Dealers in precious metals and stones", "Corporate service providers", "Businesses strengthening customer onboarding", "Regulated firms remediating AML gaps"],
+      "processTitle": "How the process works",
+      "process": [
+        { "step": "01", "title": "AML gap review", "description": "We assess your regulatory scope, risk profile, and existing controls." },
+        { "step": "02", "title": "Framework design", "description": "We prepare or update risk assessments, policies, forms, and procedures." },
+        { "step": "03", "title": "Implementation", "description": "We support customer file remediation, screening workflows, and staff training." },
+        { "step": "04", "title": "Ongoing review", "description": "We help test controls, record issues, and update the framework as risks change." }
+      ],
+      "whyWorkWithUs": {
+        "title": "Why work with Nexus Zone",
+        "paragraphs": [
+          "We turn AML obligations into practical workflows that teams can apply consistently in daily operations.",
+          "Our risk-based support is tailored to your sector and can be coordinated with specialist legal advice where required."
+        ]
+      },
+      "finalCta": { "title": "Strengthen your AML controls", "description": "Speak with Nexus Zone about building or improving your UAE AML compliance framework." },
+      "disclaimer": "This content is general information and does not constitute legal or tax advice."
+    }
+  }
+}

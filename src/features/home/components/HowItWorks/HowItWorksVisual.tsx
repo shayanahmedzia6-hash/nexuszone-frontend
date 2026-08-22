@@ -34,6 +34,7 @@ export function HowItWorksVisual({ className }: HowItWorksVisualProps) {
           fill
           sizes="100vw"
           quality={85}
+          loading="eager"
           className={cn(
             "object-cover object-[50%_45%] transition-opacity duration-500 ease-out motion-reduce:transition-none lg:object-[50%_40%]",
             isDark ? "opacity-0" : "opacity-100",
@@ -45,6 +46,7 @@ export function HowItWorksVisual({ className }: HowItWorksVisualProps) {
           fill
           sizes="100vw"
           quality={85}
+          loading="eager"
           className={cn(
             "object-cover object-[50%_45%] transition-opacity duration-500 ease-out motion-reduce:transition-none lg:object-[50%_40%]",
             isDark ? "opacity-100" : "opacity-0",

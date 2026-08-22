@@ -1,4 +1,4 @@
 export { AppProviders } from "./app-providers";
-export { LenisProvider } from "./lenis-provider";
 export { QueryProvider } from "./query-provider";
+export { SectionScrollSync } from "./section-scroll-sync";
 export { ThemeProvider } from "./theme-provider";

@@ -2,7 +2,7 @@ export const routes = {
   home: "/",
   about: "/about",
   services: "/services",
-  businessSetup: "/business-setup",
+  businessSetup: "/#business-setup",
   businessSetupMainland: "/business-setup/mainland",
   businessSetupFreeZone: "/business-setup/free-zone",
   businessSetupOffshore: "/business-setup/offshore",
@@ -10,7 +10,7 @@ export const routes = {
   blog: "/blog",
   careers: "/careers",
   contact: "/contact",
-  faq: "/faq",
+  faq: "/#faq",
   privacy: "/privacy",
   terms: "/terms",
 } as const;
@@ -22,13 +22,11 @@ export const staticMarketingPaths: readonly string[] = [
   routes.home,
   routes.about,
   routes.services,
-  routes.businessSetup,
   routes.businessSetupMainland,
   routes.businessSetupFreeZone,
   routes.businessSetupOffshore,
   routes.howItWorks,
   routes.careers,
   routes.contact,
-  routes.faq,
   // privacy/terms are intentionally excluded while marked noIndex (draft legal content)
 ];

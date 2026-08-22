@@ -8,7 +8,7 @@ export { processSteps } from "./how-it-works";
 export { navigationItems } from "./navigation";
 export { partners } from "./partners";
 export { services } from "./services";
-export { servicesCatalog, serviceGroupMeta } from "./services-catalog";
+export { servicesCatalog, serviceGroupIds } from "./services-catalog";
 export { siteContact } from "./site-contact";
 export { teamMembers } from "./team";
 export { testimonials } from "./testimonials";

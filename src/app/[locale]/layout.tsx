@@ -1,5 +1,6 @@
 import { type ReactNode } from "react";
 import { type Metadata } from "next";
+import { cookies } from "next/headers";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -8,7 +9,10 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { AppProviders } from "@/components/providers/app-providers";
 import { siteConfig } from "@/config/site";
 import { routing, rtlLocales, type Locale } from "@/i18n/routing";
-import { themeInitScript } from "@/lib/theme/theme-script";
+import {
+  isThemeMode,
+  THEME_COOKIE_KEY,
+} from "@/lib/theme/theme-cookie";
 
 import "../globals.css";
 
@@ -69,16 +73,17 @@ export default async function RootLayout({
   const t = await getTranslations("common");
   const dir = rtlLocales.includes(locale as Locale) ? "rtl" : "ltr";
 
+  const themeCookie = (await cookies()).get(THEME_COOKIE_KEY)?.value;
+  const theme = isThemeMode(themeCookie) ? themeCookie : "light";
+
   return (
     <html
       lang={locale}
       dir={dir}
+      data-theme={theme}
       suppressHydrationWarning
       className={`${plusJakarta.variable} h-full`}
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </head>
       <body className="flex min-h-svh flex-col overflow-x-clip bg-background font-sans text-text antialiased">
         <a
           href="#main-content"
@@ -86,7 +91,7 @@ export default async function RootLayout({
         >
           {t("skipToMainContent")}
         </a>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <AppProviders>{children}</AppProviders>
         </NextIntlClientProvider>
       </body>

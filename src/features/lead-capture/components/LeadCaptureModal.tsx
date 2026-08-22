@@ -2,7 +2,6 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle2, ChevronDown, X } from "lucide-react";
-import { useLenis } from "lenis/react";
 import {
   type ChangeEvent,
   type FormEvent,
@@ -68,7 +67,6 @@ function UaeFlag({ className }: { className?: string }) {
  * approach as the Contact page).
  */
 export function LeadCaptureModal() {
-  const lenis = useLenis();
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -105,7 +103,6 @@ export function LeadCaptureModal() {
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    lenis?.stop();
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") handleClose();
@@ -114,10 +111,9 @@ export function LeadCaptureModal() {
 
     return () => {
       document.body.style.overflow = previousOverflow;
-      lenis?.start();
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [open, lenis]);
+  }, [open]);
 
   const handleChange =
     (field: keyof FormState) =>
@@ -190,7 +186,6 @@ export function LeadCaptureModal() {
                 transition={modalPanelTransition}
                 className="border-glass-border pointer-events-auto relative flex max-h-[min(88dvh,40rem)] w-[min(100%,22rem)] flex-col overflow-hidden rounded-2xl border bg-glass/35 shadow-[0_24px_80px_-16px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
                 onClick={(event) => event.stopPropagation()}
-                data-lenis-prevent
               >
           <button
             type="button"

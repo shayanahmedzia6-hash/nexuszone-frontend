@@ -2,7 +2,7 @@
 
 import { useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { Link } from "@/i18n/navigation";
+import { NavigationLink } from "@/components/navigation/navigation-link";
 
 import { Button } from "@/components/ui/button";
 import { getNavIcon } from "@/components/navigation/nav-icons";
@@ -11,9 +11,11 @@ import {
   type MegaMenuCta,
   type NavLinkItem,
 } from "@/data/navigation";
+import { useNavMega } from "@/lib/i18n/nav-mega";
 import { cn } from "@/lib/utils/cn";
 
 type MegaMenuProps = {
+  menuId: string;
   id: string;
   sidebarTitle?: string;
   sidebar?: NavLinkItem[];
@@ -25,6 +27,7 @@ type MegaMenuProps = {
 };
 
 export function MegaMenu({
+  menuId,
   id,
   sidebarTitle,
   sidebar,
@@ -34,6 +37,7 @@ export function MegaMenu({
   onMouseEnter,
   onMouseLeave,
 }: MegaMenuProps) {
+  const { text } = useNavMega(menuId);
   const panelRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -87,7 +91,7 @@ export function MegaMenu({
           <div className="border-border/60 lg:border-r lg:pr-4">
             {sidebarTitle ? (
               <p className="mb-3 text-xs font-semibold tracking-wide text-text-muted uppercase">
-                {sidebarTitle}
+                {text("sidebarTitle", sidebarTitle)}
               </p>
             ) : null}
             <ul className="flex flex-col gap-1">
@@ -95,9 +99,10 @@ export function MegaMenu({
                 const Icon = getNavIcon(item.icon);
                 const isActive = index === 0;
                 return (
-                  <li key={item.href + item.label}>
-                    <Link
+                  <li key={item.id}>
+                    <NavigationLink
                       href={item.href}
+                      scroll={false}
                       onClick={onNavigate}
                       className={cn(
                         "flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm transition-colors",
@@ -109,8 +114,8 @@ export function MegaMenu({
                       {Icon ? (
                         <Icon className="h-4 w-4 shrink-0" aria-hidden />
                       ) : null}
-                      <span>{item.label}</span>
-                    </Link>
+                      <span>{text(`sidebar.${item.id}`, item.label)}</span>
+                    </NavigationLink>
                   </li>
                 );
               })}
@@ -125,17 +130,18 @@ export function MegaMenu({
           )}
         >
           {columns.map((column) => (
-            <div key={column.title} className="min-w-0">
+            <div key={column.id} className="min-w-0">
               <p className="mb-3 text-sm font-semibold text-text">
-                {column.title}
+                {text(`columns.${column.id}.title`, column.title)}
               </p>
               <ul className="flex flex-col gap-1">
                 {column.items.map((item) => {
                   const Icon = getNavIcon(item.icon);
                   return (
-                    <li key={item.href + item.label}>
-                      <Link
+                    <li key={item.id}>
+                      <NavigationLink
                         href={item.href}
+                        scroll={false}
                         onClick={onNavigate}
                         className="group flex items-start gap-2.5 rounded-lg px-2 py-2 text-sm text-text-muted transition-colors hover:bg-surface hover:text-text"
                       >
@@ -147,28 +153,38 @@ export function MegaMenu({
                         ) : null}
                         <span>
                           <span className="block font-medium text-text">
-                            {item.label}
+                            {text(
+                              `columns.${column.id}.items.${item.id}.label`,
+                              item.label,
+                            )}
                           </span>
                           {item.description ? (
                             <span className="mt-0.5 block text-xs text-text-muted">
-                              {item.description}
+                              {text(
+                                `columns.${column.id}.items.${item.id}.description`,
+                                item.description,
+                              )}
                             </span>
                           ) : null}
                         </span>
-                      </Link>
+                      </NavigationLink>
                     </li>
                   );
                 })}
               </ul>
               {column.footerLink ? (
-                <Link
+                <NavigationLink
                   href={column.footerLink.href}
+                  scroll={false}
                   onClick={onNavigate}
                   className="mt-3 inline-flex items-center gap-1 px-2 text-sm font-medium text-primary hover:underline"
                 >
-                  {column.footerLink.label}
+                  {text(
+                    `columns.${column.id}.footerLink`,
+                    column.footerLink.label,
+                  )}
                   <span aria-hidden>→</span>
-                </Link>
+                </NavigationLink>
               ) : null}
             </div>
           ))}
@@ -183,10 +199,14 @@ export function MegaMenu({
                 <Icon className="mb-3 h-6 w-6 text-primary" aria-hidden />
               ) : null;
             })()}
-            <p className="mb-2 text-sm font-semibold text-text">{cta.title}</p>
-            <p className="mb-4 text-sm text-text-muted">{cta.description}</p>
+            <p className="mb-2 text-sm font-semibold text-text">
+              {text("cta.title", cta.title)}
+            </p>
+            <p className="mb-4 text-sm text-text-muted">
+              {text("cta.description", cta.description)}
+            </p>
             <Button href={cta.href} size="sm">
-              {cta.buttonLabel}
+              {text("cta.buttonLabel", cta.buttonLabel)}
             </Button>
           </div>
         ) : null}

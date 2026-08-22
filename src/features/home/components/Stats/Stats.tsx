@@ -12,7 +12,8 @@ const STAT_IDS = ["businesses", "years", "countries"];
  * once real numbers for this section are confirmed.
  */
 export function Stats() {
-  const t = useTranslations("hero.trust");
+  const t = useTranslations("homePage.stats");
+  const tTrust = useTranslations("hero.trust");
   const stats = heroContent.trustItems.filter((item) =>
     STAT_IDS.includes(item.id),
   );
@@ -20,29 +21,33 @@ export function Stats() {
   if (stats.length === 0) return null;
 
   return (
-    <SectionWrapper id="stats" className="bg-background-secondary">
+    <SectionWrapper
+      id="stats"
+      className="bg-background-secondary pt-4 pb-6 md:pt-6 md:pb-8 lg:pt-8 lg:pb-10"
+    >
       <div className="grid gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center md:gap-16">
         <div className="flex flex-col gap-4">
           <p className="text-sm font-medium tracking-wide text-primary uppercase">
-            Our Impact in Numbers
+            {t("eyebrow")}
           </p>
           <h2 className="text-3xl font-semibold tracking-tight text-text md:text-4xl">
-            Results That Reflect <span className="text-primary">Our Commitment</span>
+            {t("titlePrimary")}{" "}
+            <span className="text-primary">{t("titleAccent")}</span>
           </h2>
           <AccentBar variant="duo" />
-          <p className="max-w-md text-base text-text-muted">
-            We take pride in the trust our clients place in us and the
-            impact we create together.
-          </p>
+          <p className="max-w-md text-base text-text-muted">{t("description")}</p>
         </div>
 
         <div className="grid grid-cols-3 gap-4 divide-border sm:gap-8 sm:divide-x">
           {stats.map((stat) => (
-            <div key={stat.id} className="flex min-w-0 flex-col gap-1 px-1 first:pl-0 sm:px-2">
+            <div
+              key={stat.id}
+              className="flex min-w-0 flex-col gap-1 px-1 first:pl-0 sm:px-2"
+            >
               <p className="text-2xl font-bold text-primary sm:text-3xl md:text-4xl">
                 {stat.value}
               </p>
-              <p className="text-sm text-text-muted">{t(stat.id)}</p>
+              <p className="text-sm text-text-muted">{tTrust(stat.id)}</p>
             </div>
           ))}
         </div>

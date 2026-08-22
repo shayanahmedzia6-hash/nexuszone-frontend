@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 import { CTASection } from "@/components/sections/cta-section";
 import { Button } from "@/components/ui/button";
@@ -9,14 +10,19 @@ import { WhyNexus } from "@/features/home/components/WhyNexus";
 import { routes } from "@/lib/constants/routes";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = createPageMetadata({
-  title: "About",
-  path: routes.about,
-  description:
-    "Learn about Nexus Zone — your trusted partner for business setup, compliance and corporate solutions across the UAE.",
-});
+export async function generateMetadata() {
+  const t = await getTranslations("aboutPage");
 
-export default function AboutPage() {
+  return createPageMetadata({
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+    path: routes.about,
+  });
+}
+
+export default async function AboutPage() {
+  const t = await getTranslations("aboutPage");
+
   return (
     <>
       <AboutIntro />
@@ -24,11 +30,11 @@ export default function AboutPage() {
       <Team showCta={false} emptyState />
       <Partners emptyState />
       <CTASection
-        title="Ready to Work Together?"
-        description="Tell us about your business and we'll help you get started."
+        title={t("readyTitle")}
+        description={t("readyDescription")}
         actions={
           <Button href={routes.contact} className="gap-2">
-            Talk to an Expert
+            {t("talkToExpert")}
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Button>
         }

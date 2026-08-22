@@ -2,30 +2,30 @@
 
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { faqs } from "@/data/faqs";
 import { cn } from "@/lib/utils/cn";
 
 export function FAQ() {
+  const t = useTranslations("faqHome");
   const [openId, setOpenId] = useState<string | null>(faqs[0]?.id ?? null);
 
   if (faqs.length === 0) return null;
 
   return (
-    <SectionWrapper id="faq" className="bg-background-secondary">
+    <SectionWrapper id="faq" className="bg-background-secondary pb-6 md:pb-8 lg:pb-10">
       <div className="grid gap-10 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:gap-16">
         <div className="flex flex-col gap-4">
           <p className="text-sm font-medium tracking-wide text-primary uppercase">
-            Frequently Asked Questions
+            {t("eyebrow")}
           </p>
           <h2 className="text-3xl font-semibold tracking-tight text-text md:text-4xl">
-            Got Questions? <span className="text-primary">We&apos;ve Got Answers.</span>
+            {t("titlePrimary")}{" "}
+            <span className="text-primary">{t("titleAccent")}</span>
           </h2>
-          <p className="max-w-sm text-base text-text-muted">
-            Find quick answers to common questions about our services and
-            processes.
-          </p>
+          <p className="max-w-sm text-base text-text-muted">{t("description")}</p>
         </div>
 
         <div className="flex flex-col divide-y divide-border rounded-xl border border-border bg-background">
@@ -40,7 +40,7 @@ export function FAQ() {
                   className="flex w-full items-center justify-between gap-3 px-4 py-4 text-left sm:gap-4 sm:px-5"
                 >
                   <span className="text-sm font-medium text-text md:text-base">
-                    {faq.question}
+                    {t(`items.${faq.id}.question`)}
                   </span>
                   <ChevronDown
                     className={cn(
@@ -52,7 +52,7 @@ export function FAQ() {
                 </button>
                 {isOpen ? (
                   <p className="px-4 pb-4 text-sm leading-relaxed text-text-muted sm:px-5">
-                    {faq.answer}
+                    {t(`items.${faq.id}.answer`)}
                   </p>
                 ) : null}
               </div>

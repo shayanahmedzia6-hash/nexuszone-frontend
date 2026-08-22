@@ -1,15 +1,19 @@
-import { businessSetupDetails } from "@/data/business-setup-detail";
+import { getTranslations } from "next-intl/server";
+
 import { BusinessSetupDetail } from "@/features/business-setup/components/BusinessSetupDetail";
 import { routes } from "@/lib/constants/routes";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = createPageMetadata({
-  title: "Mainland Company Setup",
-  path: routes.businessSetupMainland,
-  description:
-    "Register a UAE mainland company with Nexus Zone — trade freely across the Emirates with full setup and compliance support.",
-});
+export async function generateMetadata() {
+  const t = await getTranslations("businessSetupDetail.types.mainland");
+
+  return createPageMetadata({
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+    path: routes.businessSetupMainland,
+  });
+}
 
 export default function MainlandPage() {
-  return <BusinessSetupDetail detail={businessSetupDetails.mainland} />;
+  return <BusinessSetupDetail type="mainland" />;
 }

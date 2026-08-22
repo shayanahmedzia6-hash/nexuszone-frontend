@@ -1,10 +1,15 @@
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { OptimizedImage } from "@/components/media/optimized-image";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { Button } from "@/components/ui/button";
 import { teamMembers } from "@/data/team";
 import { routes } from "@/lib/constants/routes";
+
+const TEAM_ROLE_KEYS: Record<string, string> = {
+  waqas: "ceoFounder",
+};
 
 type TeamProps = {
   /** Show a "Meet the Team" link to the About page (hide when already on it). */
@@ -14,6 +19,7 @@ type TeamProps = {
 };
 
 export function Team({ showCta = true, emptyState = false }: TeamProps) {
+  const t = useTranslations("homePage.team");
   const leader = teamMembers[0];
 
   if (!leader && !emptyState) return null;
@@ -24,18 +30,20 @@ export function Team({ showCta = true, emptyState = false }: TeamProps) {
     .join("")
     .slice(0, 2);
 
+  const roleKey = leader ? TEAM_ROLE_KEYS[leader.id] : undefined;
+  const roleLabel = roleKey ? t(`roles.${roleKey}`) : leader?.role;
+
   return (
     <SectionWrapper id="team">
       <div className="flex flex-col gap-4">
         <p className="text-sm font-medium tracking-wide text-primary uppercase">
-          Our Leadership
+          {t("eyebrow")}
         </p>
         <h2 className="max-w-xl text-3xl font-semibold tracking-tight text-text md:text-4xl">
-          The People Behind <span className="text-primary">Nexus Zone</span>
+          {t("titlePrimary")}{" "}
+          <span className="text-primary">{t("titleAccent")}</span>
         </h2>
-        <p className="max-w-lg text-base text-text-muted">
-          A passionate team of professionals dedicated to your success.
-        </p>
+        <p className="max-w-lg text-base text-text-muted">{t("description")}</p>
         {showCta ? (
           <Button
             href={routes.about}
@@ -43,7 +51,7 @@ export function Team({ showCta = true, emptyState = false }: TeamProps) {
             size="sm"
             className="mt-1 w-fit gap-2"
           >
-            Meet the Team
+            {t("meetTheTeam")}
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Button>
         ) : null}
@@ -69,7 +77,7 @@ export function Team({ showCta = true, emptyState = false }: TeamProps) {
 
           <div className="flex flex-col gap-3">
             <h3 className="text-xl font-semibold text-text">{leader.name}</h3>
-            <p className="text-sm font-medium text-primary">{leader.role}</p>
+            <p className="text-sm font-medium text-primary">{roleLabel}</p>
             {leader.bio ? (
               <p className="text-base leading-relaxed text-text-muted">
                 {leader.bio}
@@ -79,7 +87,7 @@ export function Team({ showCta = true, emptyState = false }: TeamProps) {
         </div>
       ) : (
         <div className="mt-10 rounded-2xl border border-dashed border-border bg-background-secondary p-8 text-center text-sm text-text-muted">
-          Team profiles are being added soon.
+          {t("emptyState")}
         </div>
       )}
     </SectionWrapper>

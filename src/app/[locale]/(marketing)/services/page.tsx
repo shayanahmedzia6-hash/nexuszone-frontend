@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 import { CTASection } from "@/components/sections/cta-section";
 import { Button } from "@/components/ui/button";
@@ -7,25 +8,30 @@ import { ServicesHero } from "@/features/services/components/ServicesHero";
 import { routes } from "@/lib/constants/routes";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = createPageMetadata({
-  title: "Services",
-  path: routes.services,
-  description:
-    "Explore Nexus Zone's full range of business setup, PRO, corporate, tax and compliance services in the UAE.",
-});
+export async function generateMetadata() {
+  const t = await getTranslations("servicesCatalogPage");
 
-export default function ServicesPage() {
+  return createPageMetadata({
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+    path: routes.services,
+  });
+}
+
+export default async function ServicesPage() {
+  const t = await getTranslations("servicesCatalogPage");
+
   return (
     <>
       <ServicesHero />
-      <ServiceGroupSection group="core" />
+      <ServiceGroupSection group="core" className="pt-4 md:pt-6 lg:pt-8" />
       <ServiceGroupSection group="support" className="bg-background-secondary" />
       <CTASection
-        title="Not Sure Where to Start?"
-        description="Talk to our team and we'll help you find the right service for your business."
+        title={t("ctaTitle")}
+        description={t("ctaDescription")}
         actions={
           <Button href={routes.contact} className="gap-2">
-            Talk to an Expert
+            {t("ctaButton")}
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Button>
         }

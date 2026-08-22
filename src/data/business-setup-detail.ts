@@ -1,9 +1,10 @@
 import { type BusinessSetupDetail } from "@/types/business-setup-detail";
 
 /**
- * General, publicly-known characteristics of each UAE company structure —
- * not legal or tax advice, and specifics vary by emirate/authority/activity.
- * See the disclaimer rendered on each detail page.
+ * @deprecated Page copy now lives in
+ * `messages/fragments/business-setup-detail.{en,ar}.json`
+ * and is rendered via `BusinessSetupDetail` + next-intl.
+ * Kept temporarily as an English reference for content parity checks.
  */
 export const businessSetupDetails: Record<
   "mainland" | "free-zone" | "offshore",

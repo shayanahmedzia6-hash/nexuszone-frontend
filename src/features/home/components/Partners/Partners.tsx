@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { AccentBar } from "@/components/ui/accent-bar";
 import { partners } from "@/data/partners";
@@ -9,31 +11,33 @@ type PartnersProps = {
 };
 
 export function Partners({ emptyState = false }: PartnersProps) {
+  const t = useTranslations("homePage.partners");
   const freeZones = partners.filter((partner) => partner.category === "free-zone");
   const banks = partners.filter((partner) => partner.category === "bank");
 
   if (partners.length === 0 && !emptyState) return null;
 
   return (
-    <SectionWrapper id="partners" className="bg-background-secondary">
+    <SectionWrapper
+      id="partners"
+      className="bg-background-secondary pt-4 md:pt-6 lg:pt-8"
+    >
       <div className="flex flex-col gap-4">
         <p className="text-sm font-medium tracking-wide text-primary uppercase">
-          Free Zone & Banking Partners
+          {t("eyebrow")}
         </p>
         <h2 className="max-w-xl text-3xl font-semibold tracking-tight text-text md:text-4xl">
-          Wherever You Set Up. <span className="text-primary">Whoever You Bank With.</span>
+          {t("titlePrimary")}{" "}
+          <span className="text-primary">{t("titleAccent")}</span>
         </h2>
         <AccentBar variant="tri" />
-        <p className="max-w-lg text-base text-text-muted">
-          We help clients set up across every UAE free zone and open corporate
-          accounts with the UAE&apos;s leading banks.
-        </p>
+        <p className="max-w-lg text-base text-text-muted">{t("description")}</p>
       </div>
 
       {freeZones.length > 0 ? (
         <div className="mt-10">
           <h3 className="mb-4 text-sm font-semibold tracking-wide text-text uppercase">
-            Free Zone Partners
+            {t("freeZoneTitle")}
           </h3>
           <LogoMarquee items={freeZones} />
         </div>
@@ -42,7 +46,7 @@ export function Partners({ emptyState = false }: PartnersProps) {
       {banks.length > 0 ? (
         <div className="mt-8">
           <h3 className="mb-4 text-sm font-semibold tracking-wide text-text uppercase">
-            Banking Partners
+            {t("bankingTitle")}
           </h3>
           <LogoMarquee items={banks} reverse />
         </div>
@@ -50,7 +54,7 @@ export function Partners({ emptyState = false }: PartnersProps) {
 
       {partners.length === 0 ? (
         <div className="mt-10 rounded-2xl border border-dashed border-border bg-background p-8 text-center text-sm text-text-muted">
-          Partner details are being added soon.
+          {t("emptyState")}
         </div>
       ) : null}
     </SectionWrapper>

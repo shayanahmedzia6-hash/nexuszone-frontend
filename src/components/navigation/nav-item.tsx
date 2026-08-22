@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "@/i18n/navigation";
+import { NavigationLink } from "@/components/navigation/navigation-link";
 import { usePathname } from "@/i18n/navigation";
 import {
   useCallback,
@@ -73,10 +73,11 @@ export function NavItem({ item }: NavItemProps) {
     const isActive = pathname === item.href;
     return (
       <li>
-        <Link
+        <NavigationLink
           href={item.href}
+          scroll={false}
           className={cn(
-            "relative inline-flex items-center px-2 py-2 text-sm font-medium transition-colors",
+            "relative inline-flex items-center px-2 py-1.5 text-sm font-medium transition-colors",
             isActive ? "text-primary" : "text-text hover:text-primary",
           )}
         >
@@ -84,7 +85,7 @@ export function NavItem({ item }: NavItemProps) {
           {isActive ? (
             <span className="absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full bg-primary" />
           ) : null}
-        </Link>
+        </NavigationLink>
       </li>
     );
   }
@@ -116,7 +117,7 @@ export function NavItem({ item }: NavItemProps) {
       <button
         type="button"
         className={cn(
-          "relative inline-flex items-center gap-1 px-2 py-2 text-sm font-medium transition-colors",
+          "relative inline-flex items-center gap-1 px-2 py-1.5 text-sm font-medium transition-colors",
           isOpen ? "text-primary" : "text-text hover:text-primary",
         )}
         aria-expanded={isOpen}
@@ -140,11 +141,17 @@ export function NavItem({ item }: NavItemProps) {
       </button>
 
       {isOpen && item.type === "dropdown" ? (
-        <DropdownMenu id={menuId} items={item.items} onNavigate={close} />
+        <DropdownMenu
+          menuId={item.id}
+          id={menuId}
+          items={item.items}
+          onNavigate={close}
+        />
       ) : null}
 
       {isOpen && item.type === "mega" ? (
         <MegaMenu
+          menuId={item.id}
           id={menuId}
           sidebarTitle={item.sidebarTitle}
           sidebar={item.sidebar}

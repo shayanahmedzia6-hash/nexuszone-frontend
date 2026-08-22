@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "lenis/dist/lenis.css";
 
 /* =============================================================================
    Nexus Zone design tokens
@@ -21,7 +20,7 @@
   --color-success: #009639;
   --color-glass: rgb(255 255 255 / 0.92);
   --color-glass-border: rgb(11 18 32 / 0.08);
-  --header-height: 5.5rem;
+  --header-height: 4.5rem;
 
   /* Spacing scale */
   --space-1: 0.25rem;
@@ -173,6 +172,21 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  /* Partner logo marquee — keep a slow loop; global rule above disables all motion. */
+  .marquee-track {
+    animation-duration: 40s !important;
+    animation-iteration-count: infinite !important;
+    animation-name: marquee-scroll !important;
+  }
+
+  /* Hero Ken Burns — keep the zoom loop visible even when OS reduces motion. */
+  .hero-ken-burns {
+    animation-duration: 12s !important;
+    animation-iteration-count: infinite !important;
+    animation-name: hero-ken-burns !important;
+    animation-timing-function: ease-in-out !important;
+  }
 }
 
 @utility container-page {
@@ -204,9 +218,30 @@
 }
 
 .marquee-track {
+  direction: ltr;
   animation: marquee-scroll linear infinite;
 }
 
 .marquee-track:hover {
   animation-play-state: paused;
+}
+
+/* Hero background: slow zoom-in then zoom-out, looping */
+@keyframes hero-ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.18);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hero-ken-burns {
+  animation: hero-ken-burns 12s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+  backface-visibility: hidden;
 }

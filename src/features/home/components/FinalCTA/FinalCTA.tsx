@@ -1,35 +1,30 @@
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-import { BrandSphere } from "@/components/media/brand-sphere";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { Button } from "@/components/ui/button";
 import { finalCtaContent } from "@/data/final-cta";
 
 export function FinalCTA() {
+  const t = useTranslations("finalCta");
+
   return (
     <SectionWrapper
       id="final-cta"
       contained={false}
-      className="relative overflow-hidden bg-background-secondary py-16 md:py-24"
+      className="bg-background-secondary pt-4 pb-16 md:pt-6 md:pb-20 lg:pt-8 lg:pb-24"
     >
-      <div
-        className="pointer-events-none absolute top-1/2 right-0 h-80 w-80 -translate-y-1/2 translate-x-1/4 opacity-50 md:h-[28rem] md:w-[28rem]"
-        aria-hidden
-      >
-        <BrandSphere />
-      </div>
-
-      <div className="relative mx-auto w-full max-w-[var(--container-xl)] px-4 md:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[var(--container-xl)] px-4 md:px-6 lg:px-8">
         <div className="flex max-w-2xl flex-col gap-5">
           <p className="text-sm font-medium tracking-wide text-primary uppercase">
-            {finalCtaContent.eyebrow}
+            {t("eyebrow")}
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-text md:text-5xl">
-            {finalCtaContent.titlePrimary}{" "}
-            <span className="text-primary">{finalCtaContent.titleAccent}</span>
+            {t("titlePrimary")}{" "}
+            <span className="text-primary">{t("titleAccent")}</span>
           </h2>
           <p className="max-w-xl text-base text-text-muted md:text-lg">
-            {finalCtaContent.description}
+            {t("description")}
           </p>
           <div className="mt-2 flex w-full flex-col gap-3 sm:flex-row sm:items-center">
             <Button
@@ -37,7 +32,7 @@ export function FinalCTA() {
               size="lg"
               className="w-full justify-center gap-2 sm:w-auto"
             >
-              {finalCtaContent.primaryCta.label}
+              {t("primaryCta")}
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Button>
             <Button
@@ -46,7 +41,7 @@ export function FinalCTA() {
               size="lg"
               className="w-full justify-center sm:w-auto"
             >
-              {finalCtaContent.secondaryCta.label}
+              {t("secondaryCta")}
             </Button>
           </div>
         </div>

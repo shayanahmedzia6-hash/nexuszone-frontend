@@ -1,15 +1,19 @@
-import { businessSetupDetails } from "@/data/business-setup-detail";
+import { getTranslations } from "next-intl/server";
+
 import { BusinessSetupDetail } from "@/features/business-setup/components/BusinessSetupDetail";
 import { routes } from "@/lib/constants/routes";
 import { createPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = createPageMetadata({
-  title: "Offshore Company Setup",
-  path: routes.businessSetupOffshore,
-  description:
-    "Establish a UAE offshore company with Nexus Zone — ideal for asset protection and international trade structuring.",
-});
+export async function generateMetadata() {
+  const t = await getTranslations("businessSetupDetail.types.offshore");
+
+  return createPageMetadata({
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+    path: routes.businessSetupOffshore,
+  });
+}
 
 export default function OffshorePage() {
-  return <BusinessSetupDetail detail={businessSetupDetails.offshore} />;
+  return <BusinessSetupDetail type="offshore" />;
 }

@@ -9,7 +9,7 @@ type OptimizedImageProps = Omit<ImageProps, "alt"> & {
 /**
  * Preferred image wrapper for marketing media.
  * - Default: lazy loading (Next.js default when priority is false)
- * - Set `priority` only for critical above-the-fold / LCP images (usually Hero)
+ * - Pass `loading="eager"` / `priority` when a page must wait for assets (e.g. home gate)
  * - Always provide meaningful `alt` for accessibility and SEO
  */
 export function OptimizedImage({

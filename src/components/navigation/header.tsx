@@ -22,8 +22,8 @@ export function Header({ className }: HeaderProps) {
   return (
     <header className={cn("sticky top-0 z-50", className)}>
       <div className="border-b border-glass-border bg-glass/90 backdrop-blur-md">
-        <Container className="py-1.5">
-          <div className="mb-1.5 hidden items-center justify-end gap-4 text-xs text-text-muted lg:flex">
+        <Container className="py-1">
+          <div className="mb-1 hidden items-center justify-end gap-4 text-xs text-text-muted lg:flex">
             <a
               href={siteContact.phoneHref}
               className="inline-flex items-center gap-1.5 transition-colors hover:text-text"

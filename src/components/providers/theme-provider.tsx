@@ -2,6 +2,7 @@
 
 import { useEffect, type ReactNode } from "react";
 
+import { applyThemeToDocument } from "@/lib/theme/theme-cookie";
 import { useThemeStore } from "@/store/theme-store";
 
 type ThemeProviderProps = {
@@ -9,21 +10,25 @@ type ThemeProviderProps = {
 };
 
 /**
- * Syncs Zustand theme with document after hydration.
- * Initial data-theme is set by the blocking script in root layout.
+ * Syncs Zustand theme with document + cookie after hydration.
+ * Initial data-theme comes from the theme cookie on the server layout.
  */
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const theme = useThemeStore((state) => state.theme);
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
+    applyThemeToDocument(theme);
   }, [theme]);
 
   useEffect(() => {
     const unsub = useThemeStore.persist.onFinishHydration(() => {
-      const hydrated = useThemeStore.getState().theme;
-      document.documentElement.setAttribute("data-theme", hydrated);
+      applyThemeToDocument(useThemeStore.getState().theme);
     });
+
+    if (useThemeStore.persist.hasHydrated()) {
+      applyThemeToDocument(useThemeStore.getState().theme);
+    }
+
     return unsub;
   }, []);
 

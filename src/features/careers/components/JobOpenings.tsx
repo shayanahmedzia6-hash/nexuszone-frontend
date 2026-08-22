@@ -2,13 +2,15 @@ import { Briefcase, MapPin } from "lucide-react";
 
 import { jobOpenings } from "@/data/careers";
 
-export function JobOpenings() {
+type JobOpeningsProps = {
+  emptyMessage: string;
+};
+
+export function JobOpenings({ emptyMessage }: JobOpeningsProps) {
   if (jobOpenings.length === 0) {
     return (
       <div className="rounded-2xl border border-dashed border-border bg-background-secondary p-8 text-center text-sm text-text-muted">
-        We don&apos;t have any open positions right now, but we&apos;re
-        always glad to hear from great people. Send us your CV using the
-        form and we&apos;ll keep you in mind for future roles.
+        {emptyMessage}
       </div>
     );
   }

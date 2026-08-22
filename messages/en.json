@@ -30,6 +30,90 @@
     "careers": "Careers",
     "contact": "Contact Us"
   },
+  "navMega": {
+    "businessSetup": {
+      "sidebarTitle": "Setup Options",
+      "sidebar": {
+        "all-setup-options": "All Setup Options",
+        "mainland": "Mainland Company",
+        "free-zone": "Free Zone Company",
+        "offshore": "Offshore Company"
+      },
+      "columns": {
+        "popular-routes": {
+          "title": "Popular Routes",
+          "items": {
+            "mainland": {
+              "label": "Mainland Company",
+              "description": "Trade freely across the UAE mainland."
+            },
+            "free-zone": {
+              "label": "Free Zone Company",
+              "description": "100% ownership with zone incentives."
+            },
+            "offshore": {
+              "label": "Offshore Company",
+              "description": "International holding and asset structures."
+            }
+          },
+          "footerLink": "View All Setup Options"
+        },
+        "need-guidance": {
+          "title": "Need Guidance?",
+          "items": {
+            "talk-to-expert": {
+              "label": "Talk to an Expert",
+              "description": "Get a tailored setup recommendation."
+            }
+          }
+        }
+      },
+      "cta": {
+        "title": "Need Help Choosing?",
+        "description": "Our experts are ready to help you find the right setup for your business.",
+        "buttonLabel": "Talk to an Expert"
+      }
+    },
+    "services": {
+      "sidebarTitle": "Explore Our Services",
+      "sidebar": {
+        "all-services": "All Services",
+        "business-setup": "Business Setup",
+        "visa-pro": "Visa & PRO Services",
+        "banking": "Banking Solutions",
+        "tax-accounting": "Tax & Accounting",
+        "legal-compliance": "Legal & Compliance",
+        "corporate-services": "Corporate Services",
+        "real-estate": "Real Estate Services"
+      },
+      "columns": {
+        "ongoing-support": {
+          "title": "Ongoing Business Support",
+          "items": {
+            "accounting": { "label": "Accounting & Bookkeeping" },
+            "vat": { "label": "VAT & Corporate Tax" },
+            "audit": { "label": "Audit & Assurance" },
+            "aml-compliance": { "label": "AML Compliance" },
+            "golden-visa": { "label": "Golden Visa" }
+          },
+          "footerLink": "View All Services"
+        }
+      },
+      "cta": {
+        "title": "Need Help Choosing?",
+        "description": "Our experts are ready to help you find the right solution for your business.",
+        "buttonLabel": "Talk to an Expert"
+      }
+    },
+    "about": {
+      "items": {
+        "about-nexus": "About Nexus Zone",
+        "our-team": "Our Team",
+        "partners-awards": "Partners & Awards",
+        "why-nexus": "Why Nexus Zone"
+      }
+    }
+  },
   "footer": {
     "tagline": "Your trusted partner for business setup and corporate solutions across the UAE and beyond.",
     "quickLinks": "Quick Links",
@@ -42,7 +126,41 @@
     "privacyPolicy": "Privacy Policy",
     "termsConditions": "Terms & Conditions",
     "hours": "Mon - Fri: 9:00 AM - 6:00 PM",
-    "copyright": "© {year} Nexus Zone. All Rights Reserved."
+    "copyright": "© {year} Nexus Zone. All Rights Reserved.",
+    "newsletterEmailLabel": "Email address",
+    "newsletterSubscribe": "Subscribe",
+    "links": {
+      "quick": {
+        "home": "Home",
+        "about": "About Us",
+        "services": "Services",
+        "how-it-works": "How It Works",
+        "faq": "FAQ",
+        "careers": "Careers",
+        "contact": "Contact Us"
+      },
+      "services": {
+        "business-setup": "Business Setup",
+        "pro-services": "PRO Services",
+        "corporate-services": "Corporate Services",
+        "banking-assistance": "Banking Assistance",
+        "consulting-services": "Consulting Services",
+        "visa-services": "Visa Services"
+      },
+      "resources": {
+        "guides": "Guides",
+        "free-consultation": "Free Consultation",
+        "faqs": "FAQs"
+      }
+    },
+    "social": {
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook",
+      "instagram": "Instagram"
+    },
+    "contactInfo": {
+      "address": "Saraya Avenue, Block B, Office 301, Dubai, UAE"
+    }
   },
   "hero": {
     "eyebrow": "YOUR TRUSTED BUSINESS PARTNER IN THE UAE",
@@ -236,31 +354,9 @@
       "legal-compliance": {
         "title": "Legal & Compliance",
         "description": "Legal advisory, contract drafting and full compliance support."
-      },
-      "business-support": {
-        "title": "Business Support",
-        "description": "HR, Payroll, Audit, Insurance and other essential business support services."
-      },
-      "international-setup": {
-        "title": "International Setup",
-        "description": "Expand your business internationally with our global solutions."
-      },
-      "real-estate": {
-        "title": "Real Estate Solutions",
-        "description": "Find, buy or lease the perfect office space for your business."
-      },
-      "marketing": {
-        "title": "Marketing Solutions",
-        "description": "Digital marketing, branding and growth strategies to scale your business."
-      },
-      "other": {
-        "title": "Other Services",
-        "description": "Have something else in mind? We're here to help you."
       }
     },
-    "notSureTitle": "Not sure what you need?",
-    "notSureDescription": "Our experts are ready to understand your goals and recommend the best solution for your business.",
-    "talkToExpert": "Talk to an Expert"
+    "viewAllServices": "View All Services"
   },
   "faqHome": {
     "eyebrow": "Frequently Asked Questions",
@@ -287,6 +383,46 @@
       "documents": {
         "question": "What documents are required for company formation?",
         "answer": "Requirements vary by jurisdiction and activity, but typically include passport copies, proof of address, and a description of your business activity. We'll provide an exact checklist once we know your chosen setup."
+      },
+      "setup-cost": {
+        "question": "How much does it cost to start a business in Dubai?",
+        "answer": "Setup costs depend on your jurisdiction (mainland vs. free zone), license type, business activity, number of visas, and whether you need physical office space. Free zone packages often carry a lower starting cost than an equivalent mainland setup. We'll prepare a detailed, itemized quote once we understand your requirements — final costs are always confirmed with you before you commit to anything."
+      },
+      "foreign-ownership": {
+        "question": "Can foreigners own 100% of a UAE company?",
+        "answer": "In most cases, yes. UAE free zones have always allowed 100% foreign ownership, and UAE mainland company law now permits full foreign ownership for the large majority of commercial and industrial activities, with a limited list of activities still subject to additional requirements. We'll confirm the ownership rules that apply to your specific activity and jurisdiction."
+      },
+      "office-requirement": {
+        "question": "Do I need an office to set up a business in the UAE?",
+        "answer": "It depends on your jurisdiction and license type. Many free zones offer flexi-desk or virtual office options that satisfy setup requirements without a dedicated physical space, while mainland licenses and certain activities typically require a physical tenancy contract. We'll advise on the office solution that fits your license type and budget."
+      },
+      "visa-quota": {
+        "question": "How many visas can I obtain for my company?",
+        "answer": "Visa allocation is generally tied to your office space (or flexi-desk package) and jurisdiction, with each free zone and the mainland authority applying their own quota rules — some setups allow just a few visas, others considerably more with larger office space. We'll confirm the exact visa allocation for the setup you choose."
+      },
+      "local-partner": {
+        "question": "Do I need a local partner or sponsor?",
+        "answer": "For free zone company formation and most mainland commercial and industrial activities, no — 100% foreign ownership is permitted. A local service agent (not an equity partner) may still be required for certain licenses, and a small list of activities with strategic significance retain local ownership requirements. We'll confirm what applies to your specific activity."
+      },
+      "tax-obligations": {
+        "question": "What are my tax obligations as a UAE business?",
+        "answer": "UAE businesses are generally subject to corporate tax on profits above the exempt threshold, with reduced or 0% rates available on qualifying income for qualifying free zone entities, plus VAT once registration thresholds are met. Exact obligations depend on your activity, jurisdiction, and revenue, so we'll assess your specific position and handle registration and ongoing filing."
+      },
+      "golden-visa": {
+        "question": "Am I eligible for the UAE Golden Visa?",
+        "answer": "The Golden Visa is a long-term UAE residency (typically 10 years) available to eligible investors, entrepreneurs, and specialized talent, each category with its own criteria — for example a minimum investment amount, business valuation, or professional qualification. We'll review your profile against the current criteria and guide you through the nomination and documentation process."
+      },
+      "which-free-zone": {
+        "question": "Which UAE free zone should I set up in?",
+        "answer": "The right free zone depends on your business activity, target market, budget, and whether you need physical office space or specific facilities. We work across every UAE free zone, so we compare the options relevant to your business and recommend the one that fits best rather than a one-size-fits-all answer."
+      },
+      "aml-compliance": {
+        "question": "Do I need AML compliance for my UAE business?",
+        "answer": "Certain business activities designated as Anti-Money Laundering (AML) \"relevant persons\" under UAE law — such as real estate brokers, dealers in precious metals and stones, and certain corporate service providers — have specific AML/CFT obligations, including registration on the goAML platform and UBO declarations. We'll confirm whether your activity is in scope and assist with setting up the required policies and registrations."
+      },
+      "careers": {
+        "question": "How do I apply for a job at Nexus Zone?",
+        "answer": "Visit our Careers page to see any current openings, or submit a speculative application with your CV if nothing listed matches your background right now. Our team reviews every application and will reach out if there's a fit."
       }
     },
     "stillHaveQuestions": "Still Have Questions?",
@@ -300,96 +436,6 @@
     "description": "Partner with Nexus Zone and experience seamless business setup and corporate solutions that drive real growth.",
     "primaryCta": "Talk to an Expert",
     "secondaryCta": "Schedule a Consultation"
-  },
-  "servicesCatalogPage": {
-    "heroEyebrow": "Our Services",
-    "heroTitlePrimary": "Everything Your Business Needs,",
-    "heroTitleAccent": "In One Place",
-    "heroDescription": "From day-one setup to ongoing compliance, explore the full range of services Nexus Zone offers to help your business start, run and grow in the UAE.",
-    "groups": {
-      "core": {
-        "title": "Core Services",
-        "description": "The essentials most businesses need to operate compliantly in the UAE."
-      },
-      "growth": {
-        "title": "Business Growth Solutions",
-        "description": "Strategic support to help you enter the market and expand well."
-      },
-      "support": {
-        "title": "Ongoing Business Support",
-        "description": "Keep your business compliant and running smoothly, year-round."
-      }
-    },
-    "items": {
-      "visa-pro": {
-        "title": "Visa & PRO Services",
-        "summary": "Investor, partner and employment visas, plus all PRO and government-related processing."
-      },
-      "banking": {
-        "title": "Banking Solutions",
-        "summary": "Support opening and managing corporate bank accounts with leading UAE banks."
-      },
-      "tax": {
-        "title": "Tax & Accounting",
-        "summary": "Corporate tax, VAT registration, and accurate day-to-day bookkeeping."
-      },
-      "legal": {
-        "title": "Legal & Compliance",
-        "summary": "Contract drafting, legal advisory, and ongoing regulatory compliance."
-      },
-      "corporate": {
-        "title": "Corporate Services",
-        "summary": "Corporate governance, documentation, and business support to keep you ahead."
-      },
-      "real-estate": {
-        "title": "Real Estate Services",
-        "summary": "Finding, leasing or buying the right office and commercial space."
-      },
-      "market-entry": {
-        "title": "Market Entry Strategy",
-        "summary": "Guidance on the right jurisdiction, structure and timing to enter the UAE market."
-      },
-      "company-formation": {
-        "title": "Company Formation",
-        "summary": "Full company formation across Mainland, Free Zone and Offshore."
-      },
-      "trade-license": {
-        "title": "Trade License Services",
-        "summary": "Trade license applications, renewals and activity amendments."
-      },
-      "feasibility": {
-        "title": "Feasibility Study",
-        "summary": "Market and financial feasibility studies to validate your business plan."
-      },
-      "advisory": {
-        "title": "Business Advisory",
-        "summary": "Strategic advice to help you start, manage and scale with confidence."
-      },
-      "accounting": {
-        "title": "Accounting & Bookkeeping",
-        "summary": "Day-to-day bookkeeping and financial record-keeping support."
-      },
-      "vat": {
-        "title": "VAT & Corporate Tax",
-        "summary": "VAT filing and corporate tax compliance handled end-to-end."
-      },
-      "payroll": {
-        "title": "Payroll Management",
-        "summary": "Payroll processing and WPS-compliant salary management."
-      },
-      "audit": {
-        "title": "Audit & Assurance",
-        "summary": "Independent audit and assurance services for regulatory and stakeholder confidence."
-      },
-      "compliance": {
-        "title": "Compliance Management",
-        "summary": "Ongoing regulatory compliance monitoring and reporting."
-      }
-    },
-    "learnMore": "Learn more",
-    "ctaTitle": "Not Sure Where to Start?",
-    "ctaDescription": "Talk to our team and we'll help you find the right service for your business.",
-    "ctaButton": "Talk to an Expert"
   },
   "businessSetupHub": {
     "titlePrimary": "Choose the Right Setup for",
@@ -405,145 +451,55 @@
     "notSureDescription": "Our experts will help you choose the perfect setup for your business.",
     "notSureButton": "Get Free Consultation"
   },
-  "businessSetupDetail": {
-    "eyebrow": "Business Setup",
-    "talkToExpert": "Talk to an Expert",
-    "estimateCost": "Estimate Setup Cost",
-    "keyBenefits": "Key Benefits",
-    "whoItsFor": "Who It's For",
-    "disclaimer": "This is general information, not legal or tax advice — exact requirements vary by emirate, free zone authority and business activity. Talk to our team for guidance specific to your case.",
-    "readyTitle": "Ready to Begin?",
-    "readyDescription": "Our experts will guide you through every step of the setup process.",
-    "bookConsultation": "Book Free Consultation",
-    "types": {
-      "mainland": {
-        "heroTitle": "Mainland Company Setup",
-        "heroDescription": "Register a mainland company to trade freely across the UAE and internationally, with access to government contracts and the local market.",
-        "benefits": [
-          {
-            "title": "Trade Anywhere in the UAE",
-            "description": "Operate across all Emirates without free zone restrictions."
-          },
-          {
-            "title": "Access Government Contracts",
-            "description": "Mainland companies can bid on government and public-sector tenders."
-          },
-          {
-            "title": "Flexible Office Locations",
-            "description": "Choose office space anywhere on the mainland, not limited to a specific zone."
-          },
-          {
-            "title": "Broad Business Activities",
-            "description": "License a wide range of commercial, professional and industrial activities."
-          }
-        ],
-        "idealFor": [
-          "Businesses trading directly with the local UAE market",
-          "Retail, contracting and service businesses needing a mainland presence",
-          "Companies bidding for government contracts"
-        ]
-      },
-      "free-zone": {
-        "heroTitle": "Free Zone Company Setup",
-        "heroDescription": "Set up in one of the UAE's free zones for 100% foreign ownership, streamlined licensing, and zone-specific incentives.",
-        "benefits": [
-          {
-            "title": "100% Foreign Ownership",
-            "description": "No local sponsor required in most free zones."
-          },
-          {
-            "title": "Full Profit Repatriation",
-            "description": "Move 100% of profits and capital out of the UAE."
-          },
-          {
-            "title": "Streamlined Setup",
-            "description": "Many free zones offer fast, largely digital registration processes."
-          },
-          {
-            "title": "Zone-Specific Infrastructure",
-            "description": "Access shared facilities, warehousing or office space depending on the zone."
-          }
-        ],
-        "idealFor": [
-          "Import/export and trading businesses",
-          "Startups and consultancies wanting full ownership",
-          "Companies not needing to trade directly in the local mainland market"
-        ]
-      },
-      "offshore": {
-        "heroTitle": "Offshore Company Setup",
-        "heroDescription": "Establish an offshore company for international trade, asset holding and structuring — without a physical UAE office requirement.",
-        "benefits": [
-          {
-            "title": "Asset Protection",
-            "description": "Hold international assets, shares or property under a separate corporate structure."
-          },
-          {
-            "title": "No Physical Office Required",
-            "description": "Offshore companies generally do not need UAE office space."
-          },
-          {
-            "title": "Confidential Structuring",
-            "description": "Commonly used for holding companies and international structuring."
-          },
-          {
-            "title": "International Trade",
-            "description": "Operate and invoice internationally outside the UAE market."
-          }
-        ],
-        "idealFor": [
-          "International holding companies",
-          "Businesses focused on global trade rather than the UAE market",
-          "Investors structuring cross-border assets"
-        ]
-      }
-    }
-  },
-  "about": {
-    "eyebrow": "About Nexus Zone",
-    "titlePrimary": "Your Trusted Partner for",
-    "titleAccent": "Business Setup in the UAE",
-    "description": "Nexus Zone helps entrepreneurs, investors and growing companies navigate company formation, compliance and ongoing business support across the UAE — so you can focus on running your business, not the paperwork behind it.",
-    "missionTitle": "Our Mission",
-    "missionText": "To make business setup and compliance in the UAE simple, transparent and accessible — guiding every client with clear advice and honest pricing.",
-    "visionTitle": "Our Vision",
-    "visionText": "To be the long-term growth partner businesses turn to at every stage — from first registration to ongoing operations in the UAE.",
-    "readyTitle": "Ready to Work Together?",
-    "readyDescription": "Tell us about your business and we'll help you get started.",
-    "talkToExpert": "Talk to an Expert"
-  },
   "blog": {
     "eyebrow": "Insights",
+    "eyebrowLatest": "Latest Insights",
     "titlePrimary": "Stay Updated With",
     "titleAccent": "Our Blog",
     "description": "Expert insights, guides and updates to help you grow your business in the UAE.",
+    "viewAllArticles": "View All Articles",
     "comingSoonTitle": "Articles Are Coming Soon",
     "comingSoonDescription": "We're preparing guides and insights on UAE business setup and compliance. Leave your email and we'll let you know when we publish."
   },
-  "contactPage": {
-    "eyebrow": "Contact Us",
-    "titlePrimary": "Let's Talk About",
-    "titleAccent": "Your Business",
-    "description": "Share a few details and our team will get back to you shortly — or reach us directly using the details below.",
-    "form": {
-      "fullName": "Full Name",
-      "email": "Email",
-      "phone": "Phone (optional)",
-      "phonePlaceholder": "+971 5X XXX XXXX",
-      "message": "Message",
-      "messagePlaceholder": "Tell us about your business and what you need help with.",
-      "send": "Send Message",
-      "sentTitle": "Your email client should now be open",
-      "sentBody": "Send the pre-filled message and our team will get back to you shortly. Prefer another way? Call or WhatsApp us using the details alongside this form.",
-      "sendAnother": "Send Another Message"
+  "homePage": {
+    "meta": {
+      "title": "Empower Your Business in the UAE",
+      "description": "Nexus Zone helps you with company formation, compliance, and business support across the UAE — smart solutions to move forward and achieve lasting success."
     },
-    "info": {
-      "phone": "Phone",
-      "whatsapp": "WhatsApp",
-      "email": "Email",
-      "office": "Office",
-      "hours": "Hours"
-    }
+    "partners": {
+      "eyebrow": "Free Zone & Banking Partners",
+      "titlePrimary": "Wherever You Set Up.",
+      "titleAccent": "Whoever You Bank With.",
+      "description": "We help clients set up across every UAE free zone and open corporate accounts with the UAE's leading banks.",
+      "freeZoneTitle": "Free Zone Partners",
+      "bankingTitle": "Banking Partners",
+      "emptyState": "Partner details are being added soon."
+    },
+    "team": {
+      "eyebrow": "Our Leadership",
+      "titlePrimary": "The People Behind",
+      "titleAccent": "Nexus Zone",
+      "description": "A passionate team of professionals dedicated to your success.",
+      "meetTheTeam": "Meet the Team",
+      "emptyState": "Team profiles are being added soon.",
+      "roles": {
+        "ceoFounder": "CEO & Founder"
+      }
+    },
+    "stats": {
+      "eyebrow": "Our Impact in Numbers",
+      "titlePrimary": "Results That Reflect",
+      "titleAccent": "Our Commitment",
+      "description": "We take pride in the trust our clients place in us and the impact we create together."
+    },
+    "testimonials": {
+      "eyebrow": "Client Testimonials",
+      "titlePrimary": "Trusted by Businesses, Recommended for",
+      "titleAccent": "Results",
+      "description": "We value long-term relationships built on trust, transparency and real results.",
+      "paginationLabel": "Show testimonials page {page}"
+    },
+    "whyNexusImageAlt": "Nexus Zone advisors discussing a client's business setup"
   },
   "legal": {
     "draftNotice": "This page is a general template and has not been reviewed by a lawyer. Replace it with policy text confirmed by qualified legal counsel before relying on it.",

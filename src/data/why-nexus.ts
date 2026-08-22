@@ -4,6 +4,7 @@ export const whyNexusPillars: WhyNexusPillar[] = [
   {
     id: "expertise",
     icon: "award",
+    image: "/images/why-nexus/expertise.jfif",
     tabLabel: "Expertise & Experience",
     eyebrow: "Expertise & Experience",
     title: "Advice Grounded in",
@@ -16,6 +17,7 @@ export const whyNexusPillars: WhyNexusPillar[] = [
   {
     id: "end-to-end",
     icon: "folder-kanban",
+    image: "/images/why-nexus/end-to-end.jfif",
     tabLabel: "End-to-End Solutions",
     eyebrow: "End-to-End Solutions",
     title: "One Partner, Every",
@@ -28,6 +30,7 @@ export const whyNexusPillars: WhyNexusPillar[] = [
   {
     id: "tailored-support",
     icon: "headset",
+    image: "/images/why-nexus/tailored-support.jfif",
     tabLabel: "Tailored Support",
     eyebrow: "Tailored Support",
     title: "Support That Fits",
@@ -40,6 +43,7 @@ export const whyNexusPillars: WhyNexusPillar[] = [
   {
     id: "strategic-advantage",
     icon: "target",
+    image: "/images/why-nexus/strategic-advantage.jfif",
     tabLabel: "Strategic Advantage",
     eyebrow: "Strategic Advantage",
     title: "Structured to Help",
@@ -52,6 +56,7 @@ export const whyNexusPillars: WhyNexusPillar[] = [
   {
     id: "trust-transparency",
     icon: "shield-check",
+    image: "/images/why-nexus/trust-transparency.jfif",
     tabLabel: "Trust & Transparency",
     eyebrow: "Trust & Transparency",
     title: "Clear Process.",

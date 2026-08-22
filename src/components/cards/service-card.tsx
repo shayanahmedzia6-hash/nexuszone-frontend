@@ -7,14 +7,19 @@ import { cn } from "@/lib/utils/cn";
 
 type ServiceCardProps = {
   service: ServiceListItem;
+  learnMoreLabel?: string;
   className?: string;
 };
 
 /** Anchors to `#slug` on the page unless `service.href` points elsewhere. */
-export function ServiceCard({ service, className }: ServiceCardProps) {
+export function ServiceCard({
+  service,
+  learnMoreLabel = "Learn more",
+  className,
+}: ServiceCardProps) {
   return (
     <article
-      id={service.href ? undefined : service.slug}
+      id={service.slug}
       className={cn(
         "flex scroll-mt-28 flex-col gap-4 rounded-xl border border-border bg-background p-6",
         className,
@@ -36,7 +41,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
           href={service.href}
           className="group inline-flex items-center gap-2 text-sm font-medium text-primary"
         >
-          Learn more
+          {learnMoreLabel}
           <ArrowRight
             className="h-4 w-4 transition-transform group-hover:translate-x-1"
             aria-hidden

@@ -1,14 +1,9 @@
-import { BusinessSetupHub } from "@/features/business-setup/components/BusinessSetupHub";
+import { getLocale } from "next-intl/server";
+
+import { redirect } from "@/i18n/navigation";
 import { routes } from "@/lib/constants/routes";
-import { createPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = createPageMetadata({
-  title: "Business Setup",
-  path: routes.businessSetup,
-  description:
-    "Explore Mainland, Free Zone and Offshore options for setting up a business in the UAE with Nexus Zone.",
-});
-
-export default function BusinessSetupPage() {
-  return <BusinessSetupHub />;
+export default async function BusinessSetupPage() {
+  const locale = await getLocale();
+  redirect({ href: routes.businessSetup, locale });
 }

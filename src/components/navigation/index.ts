@@ -5,5 +5,6 @@ export { Header } from "./header";
 export { LanguageSwitcher } from "./language-switcher";
 export { MegaMenu } from "./mega-menu";
 export { MobileNavigation } from "./mobile-navigation";
+export { NavigationLink } from "./navigation-link";
 export { NavItem } from "./nav-item";
 export { ThemeToggle } from "./theme-toggle";

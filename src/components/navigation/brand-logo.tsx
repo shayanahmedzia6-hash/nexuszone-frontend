@@ -29,10 +29,10 @@ export function BrandLogo({ className, priority = false }: BrandLogoProps) {
     <Link
       href={routes.home}
       className={cn(
-        "relative inline-flex h-16 shrink-0 items-center leading-none sm:h-[4.25rem] md:h-20",
+        "relative inline-flex h-11 shrink-0 items-center leading-none sm:h-12 md:h-14",
         className,
       )}
-      style={{ width: "clamp(13.5rem, calc(100vw - 6.5rem), 17.5rem)" }}
+      style={{ width: "clamp(11rem, calc(100vw - 6.5rem), 15rem)" }}
       aria-label="Nexus Zone home"
     >
       <Image

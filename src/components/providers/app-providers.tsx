@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
 
-import { LenisProvider } from "@/components/providers/lenis-provider";
+import { SectionScrollSync } from "@/components/providers/section-scroll-sync";
 import { QueryProvider } from "@/components/providers/query-provider";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 
@@ -13,7 +13,8 @@ export function AppProviders({ children }: AppProvidersProps) {
   return (
     <QueryProvider>
       <ThemeProvider>
-        <LenisProvider>{children}</LenisProvider>
+        <SectionScrollSync />
+        {children}
       </ThemeProvider>
     </QueryProvider>
   );

@@ -16,8 +16,8 @@ const HERO_IMAGES = {
 
 /**
  * Both hero assets stay mounted and crossfade so theme toggles do not
- * remount/re-crop and jump. Shared object-position keeps framing aligned
- * despite slightly different source dimensions.
+ * remount/re-crop and jump. Ken Burns zoom runs on a dedicated layer so
+ * Next/Image absolute positioning does not cancel the transform.
  */
 export function HeroVisual({ className }: HeroVisualProps) {
   const theme = useThemeStore((state) => state.theme);
@@ -28,31 +28,33 @@ export function HeroVisual({ className }: HeroVisualProps) {
       className={cn("absolute inset-0 overflow-hidden", className)}
       aria-hidden
     >
-      <div className="absolute inset-0">
-        <Image
-          src={HERO_IMAGES.light}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          quality={85}
-          className={cn(
-            "object-cover object-[40%_38%] transition-opacity duration-500 ease-out motion-reduce:transition-none lg:object-[52%_40%]",
-            isDark ? "opacity-0" : "opacity-100",
-          )}
-        />
-        <Image
-          src={HERO_IMAGES.dark}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          quality={85}
-          className={cn(
-            "object-cover object-[40%_38%] transition-opacity duration-500 ease-out motion-reduce:transition-none lg:object-[52%_40%]",
-            isDark ? "opacity-100" : "opacity-0",
-          )}
-        />
+      <div className="hero-ken-burns absolute -inset-[9%]">
+        <div className="relative h-full w-full">
+          <Image
+            src={HERO_IMAGES.light}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            quality={85}
+            className={cn(
+              "object-cover object-[40%_38%] transition-opacity duration-500 ease-out motion-reduce:transition-none lg:object-[52%_40%]",
+              isDark ? "opacity-0" : "opacity-100",
+            )}
+          />
+          <Image
+            src={HERO_IMAGES.dark}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            quality={85}
+            className={cn(
+              "object-cover object-[40%_38%] transition-opacity duration-500 ease-out motion-reduce:transition-none lg:object-[52%_40%]",
+              isDark ? "opacity-100" : "opacity-0",
+            )}
+          />
+        </div>
       </div>
 
       <div

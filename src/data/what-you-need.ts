@@ -42,41 +42,4 @@ export const needCategories: NeedCategory[] = [
       "Legal advisory, contract drafting and full compliance support.",
     href: routes.services,
   },
-  {
-    id: "business-support",
-    icon: "headset",
-    title: "Business Support",
-    description:
-      "HR, Payroll, Audit, Insurance and other essential business support services.",
-    href: routes.services,
-  },
-  {
-    id: "international-setup",
-    icon: "globe-2",
-    title: "International Setup",
-    description: "Expand your business internationally with our global solutions.",
-    href: routes.services,
-  },
-  {
-    id: "real-estate",
-    icon: "home",
-    title: "Real Estate Solutions",
-    description: "Find, buy or lease the perfect office space for your business.",
-    href: routes.services,
-  },
-  {
-    id: "marketing",
-    icon: "target",
-    title: "Marketing Solutions",
-    description:
-      "Digital marketing, branding and growth strategies to scale your business.",
-    href: routes.services,
-  },
-  {
-    id: "other",
-    icon: "info",
-    title: "Other Services",
-    description: "Have something else in mind? We're here to help you.",
-    href: routes.contact,
-  },
 ];

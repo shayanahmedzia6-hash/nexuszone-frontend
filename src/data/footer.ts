@@ -1,42 +1,73 @@
 import { routes } from "@/lib/constants/routes";
 import { siteContact } from "@/data/site-contact";
 
+export type FooterLink = {
+  id: string;
+  label: string;
+  href: string;
+};
+
+export type FooterSocialLink = {
+  id: string;
+  label: string;
+  href: string;
+  icon: string;
+};
+
 export const footerContent = {
   description:
     "Your trusted partner for business setup and corporate solutions across the UAE and beyond.",
   social: [
-    { label: "LinkedIn", href: "https://www.linkedin.com/", icon: "linkedin" },
-    { label: "Facebook", href: "https://www.facebook.com/", icon: "facebook" },
     {
+      id: "linkedin",
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/",
+      icon: "linkedin",
+    },
+    {
+      id: "facebook",
+      label: "Facebook",
+      href: "https://www.facebook.com/",
+      icon: "facebook",
+    },
+    {
+      id: "instagram",
       label: "Instagram",
       href: "https://www.instagram.com/",
       icon: "instagram",
     },
     // Temporarily hidden
-    // { label: "YouTube", href: "https://www.youtube.com/", icon: "youtube" },
-  ],
+    // { id: "youtube", label: "YouTube", href: "https://www.youtube.com/", icon: "youtube" },
+  ] satisfies FooterSocialLink[],
   quickLinks: [
-    { label: "Home", href: routes.home },
-    { label: "About Us", href: routes.about },
-    { label: "Services", href: routes.services },
-    { label: "How It Works", href: routes.howItWorks },
-    { label: "FAQ", href: routes.faq },
-    { label: "Careers", href: routes.careers },
-    { label: "Contact Us", href: routes.contact },
-  ],
+    { id: "home", label: "Home", href: routes.home },
+    { id: "about", label: "About Us", href: routes.about },
+    { id: "services", label: "Services", href: routes.services },
+    { id: "how-it-works", label: "How It Works", href: "/#how-it-works" },
+    { id: "faq", label: "FAQ", href: routes.faq },
+    { id: "careers", label: "Careers", href: routes.careers },
+    { id: "contact", label: "Contact Us", href: routes.contact },
+  ] satisfies FooterLink[],
   services: [
-    { label: "Business Setup", href: routes.businessSetup },
-    { label: "PRO Services", href: `${routes.services}#visa-pro` },
-    { label: "Corporate Services", href: `${routes.services}#corporate` },
-    { label: "Banking Assistance", href: `${routes.services}#banking` },
-    { label: "Consulting Services", href: `${routes.services}#corporate` },
-    { label: "Visa Services", href: `${routes.services}#visa-pro` },
-  ],
-  resources: [
-    { label: "Guides", href: routes.howItWorks },
-    { label: "Free Consultation", href: routes.contact },
-    { label: "FAQs", href: routes.faq },
-  ],
+    { id: "business-setup", label: "Business Setup", href: routes.businessSetup },
+    { id: "pro-services", label: "PRO Services", href: `${routes.services}#visa-pro` },
+    {
+      id: "corporate-services",
+      label: "Corporate Services",
+      href: `${routes.services}#corporate`,
+    },
+    {
+      id: "banking-assistance",
+      label: "Banking Assistance",
+      href: `${routes.services}#banking`,
+    },
+    {
+      id: "consulting-services",
+      label: "Consulting Services",
+      href: `${routes.services}#corporate`,
+    },
+    { id: "visa-services", label: "Visa Services", href: `${routes.services}#visa-pro` },
+  ] satisfies FooterLink[],
   contact: {
     address: siteContact.address,
     phone: siteContact.phoneDisplay,
@@ -51,7 +82,7 @@ export const footerContent = {
     placeholder: "Enter your email",
   },
   legal: [
-    { label: "Privacy Policy", href: routes.privacy },
-    { label: "Terms & Conditions", href: routes.terms },
-  ],
+    { id: "privacy", label: "Privacy Policy", href: routes.privacy },
+    { id: "terms", label: "Terms & Conditions", href: routes.terms },
+  ] satisfies FooterLink[],
 } as const;

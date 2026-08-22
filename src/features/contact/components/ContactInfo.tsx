@@ -1,41 +1,46 @@
+"use client";
+
 import { Clock3, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { siteContact } from "@/data/site-contact";
 
-const items = [
-  {
-    icon: Phone,
-    label: "Phone",
-    value: siteContact.phoneDisplay,
-    href: siteContact.phoneHref,
-  },
-  {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    value: siteContact.whatsappDisplay,
-    href: siteContact.whatsappHref,
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: siteContact.email,
-    href: siteContact.emailHref,
-  },
-  {
-    icon: MapPin,
-    label: "Office",
-    value: siteContact.address,
-    href: undefined,
-  },
-  {
-    icon: Clock3,
-    label: "Hours",
-    value: siteContact.hours,
-    href: undefined,
-  },
-] as const;
-
 export function ContactInfo() {
+  const t = useTranslations("contactPage.info");
+
+  const items = [
+    {
+      icon: Phone,
+      label: t("phone"),
+      value: siteContact.phoneDisplay,
+      href: siteContact.phoneHref,
+    },
+    {
+      icon: MessageCircle,
+      label: t("whatsapp"),
+      value: t("whatsappValue"),
+      href: siteContact.whatsappHref,
+    },
+    {
+      icon: Mail,
+      label: t("email"),
+      value: siteContact.email,
+      href: siteContact.emailHref,
+    },
+    {
+      icon: MapPin,
+      label: t("office"),
+      value: t("address"),
+      href: undefined,
+    },
+    {
+      icon: Clock3,
+      label: t("hours"),
+      value: t("hoursValue"),
+      href: undefined,
+    },
+  ] as const;
+
   return (
     <ul className="flex flex-col gap-6">
       {items.map((item) => {
