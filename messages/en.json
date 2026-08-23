@@ -90,11 +90,21 @@
         "ongoing-support": {
           "title": "Ongoing Business Support",
           "items": {
-            "accounting": { "label": "Accounting & Bookkeeping" },
-            "vat": { "label": "VAT & Corporate Tax" },
-            "audit": { "label": "Audit & Assurance" },
-            "aml-compliance": { "label": "AML Compliance" },
-            "golden-visa": { "label": "Golden Visa" }
+            "accounting": {
+              "label": "Accounting & Bookkeeping"
+            },
+            "vat": {
+              "label": "VAT & Corporate Tax"
+            },
+            "audit": {
+              "label": "Audit & Assurance"
+            },
+            "aml-compliance": {
+              "label": "AML Compliance"
+            },
+            "golden-visa": {
+              "label": "Golden Visa"
+            }
           },
           "footerLink": "View All Services"
         }
@@ -483,7 +493,7 @@
       "meetTheTeam": "Meet the Team",
       "emptyState": "Team profiles are being added soon.",
       "roles": {
-        "ceoFounder": "CEO & Founder"
+        "ceoFounder": "Founder & CEO"
       }
     },
     "stats": {

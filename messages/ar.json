@@ -90,11 +90,21 @@
         "ongoing-support": {
           "title": "الدعم المستمر للأعمال",
           "items": {
-            "accounting": { "label": "المحاسبة والمسك الدفتري" },
-            "vat": { "label": "ضريبة القيمة المضافة وضريبة الشركات" },
-            "audit": { "label": "التدقيق والضمان" },
-            "aml-compliance": { "label": "امتثال AML" },
-            "golden-visa": { "label": "الإقامة الذهبية" }
+            "accounting": {
+              "label": "المحاسبة والمسك الدفتري"
+            },
+            "vat": {
+              "label": "ضريبة القيمة المضافة وضريبة الشركات"
+            },
+            "audit": {
+              "label": "التدقيق والضمان"
+            },
+            "aml-compliance": {
+              "label": "امتثال AML"
+            },
+            "golden-visa": {
+              "label": "الإقامة الذهبية"
+            }
           },
           "footerLink": "عرض جميع الخدمات"
         }
@@ -469,7 +479,7 @@
       "meetTheTeam": "تعرّف على الفريق",
       "emptyState": "ملفات الفريق تُضاف قريباً.",
       "roles": {
-        "ceoFounder": "الرئيس التنفيذي والمؤسس"
+        "ceoFounder": "المؤسس والرئيس التنفيذي"
       }
     },
     "stats": {

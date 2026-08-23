@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { CTASection } from "@/components/sections/cta-section";
 import { Button } from "@/components/ui/button";
 import { AboutIntro } from "@/features/about/components/AboutIntro";
+import { FounderStory } from "@/features/about/components/FounderStory";
 import { Partners } from "@/features/home/components/Partners";
 import { Team } from "@/features/home/components/Team";
 import { WhyNexus } from "@/features/home/components/WhyNexus";
@@ -28,6 +29,7 @@ export default async function AboutPage() {
       <AboutIntro />
       <WhyNexus />
       <Team showCta={false} emptyState />
+      <FounderStory />
       <Partners emptyState />
       <CTASection
         title={t("readyTitle")}

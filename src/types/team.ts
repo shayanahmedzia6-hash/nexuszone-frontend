@@ -5,3 +5,8 @@ export type TeamMember = {
   bio?: string;
   imageUrl?: string;
 };
+
+export type StorySection = {
+  heading?: string;
+  paragraphs: string[];
+};
