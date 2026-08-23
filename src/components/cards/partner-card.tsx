@@ -12,10 +12,13 @@ type PartnerCardProps = {
 
 export function PartnerCard({ partner, className }: PartnerCardProps) {
   const isDark = useThemeStore((state) => state.theme) === "dark";
-  // Some source logos are white-on-transparent (made for dark surfaces) — give
-  // those a dark tile of their own instead of a floating grey patch, so every
-  // card reads as a clean, deliberate tile rather than a mismatched fix-up.
-  const needsDarkTile = Boolean(
+  // Some source logos are white (or white + a colored accent) on transparent,
+  // made for dark surfaces. Keep every tile on the same clean light card and
+  // crush those specific logos to a solid black silhouette in light mode so
+  // they read against it — brightness(0) avoids the hue-shift a plain invert
+  // would cause on any colored accent. In dark mode the page is already
+  // dark, so the original artwork shows fine as-is with no filter needed.
+  const needsSilhouetteInLight = Boolean(
     partner.logoLightBackground && partner.logoUrl && !isDark,
   );
   const logoPath = partner.logoUrl
@@ -29,10 +32,7 @@ export function PartnerCard({ partner, className }: PartnerCardProps) {
   const tile = (
     <div
       className={cn(
-        "flex h-full min-h-20 w-full items-center justify-center rounded-xl border p-4 text-center transition-colors",
-        needsDarkTile
-          ? "border-transparent bg-text"
-          : "border-border bg-background-secondary",
+        "flex h-full min-h-20 w-full items-center justify-center rounded-xl border border-border bg-background-secondary p-4 text-center transition-colors",
         partner.websiteUrl && "hover:border-primary/40",
       )}
     >
@@ -47,6 +47,7 @@ export function PartnerCard({ partner, className }: PartnerCardProps) {
           className={cn(
             "w-auto object-contain",
             partner.logoLarge ? "h-14" : "h-10",
+            needsSilhouetteInLight && "brightness-0",
           )}
         />
       ) : (
