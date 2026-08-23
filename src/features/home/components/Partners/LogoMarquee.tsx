@@ -8,7 +8,7 @@ type LogoMarqueeProps = {
 
 /** Seconds for one full loop — capped so long partner lists stay visibly in motion. */
 function marqueeDuration(itemCount: number) {
-  return Math.min(Math.max(itemCount * 1.1, 18), 30);
+  return Math.min(Math.max(itemCount * 2.2, 30), 55);
 }
 
 /**
