@@ -21,7 +21,10 @@ export function SectionWrapper({
   const content = contained ? <Container>{children}</Container> : children;
 
   return (
-    <Component id={id} className={cn("py-12 md:py-16 lg:py-20", className)}>
+    <Component
+      id={id}
+      className={cn("scroll-mt-28 py-8 md:py-10 lg:py-12", className)}
+    >
       {content}
     </Component>
   );

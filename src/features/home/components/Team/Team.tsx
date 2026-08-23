@@ -1,11 +1,12 @@
 import { ArrowRight } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-import { OptimizedImage } from "@/components/media/optimized-image";
 import { SectionWrapper } from "@/components/sections/section-wrapper";
 import { Button } from "@/components/ui/button";
 import { teamMembers } from "@/data/team";
 import { routes } from "@/lib/constants/routes";
+
+import { TeamLeaderCard, type FounderStorySection } from "./TeamLeaderCard";
 
 const TEAM_ROLE_KEYS: Record<string, string> = {
   waqas: "ceoFounder",
@@ -18,8 +19,9 @@ type TeamProps = {
   emptyState?: boolean;
 };
 
-export function Team({ showCta = true, emptyState = false }: TeamProps) {
-  const t = useTranslations("homePage.team");
+export async function Team({ showCta = true, emptyState = false }: TeamProps) {
+  const t = await getTranslations("homePage.team");
+  const storyT = await getTranslations("teamFounderStory");
   const leader = teamMembers[0];
 
   if (!leader && !emptyState) return null;
@@ -30,6 +32,7 @@ export function Team({ showCta = true, emptyState = false }: TeamProps) {
     .join("")
     .slice(0, 2);
 
+  const sections = storyT.raw("sections") as FounderStorySection[];
   const roleKey = leader ? TEAM_ROLE_KEYS[leader.id] : undefined;
   const roleLabel = roleKey ? t(`roles.${roleKey}`) : leader?.role;
 
@@ -52,39 +55,23 @@ export function Team({ showCta = true, emptyState = false }: TeamProps) {
             className="mt-1 w-fit gap-2"
           >
             {t("meetTheTeam")}
-            <ArrowRight className="h-4 w-4" aria-hidden />
+            <ArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden />
           </Button>
         ) : null}
       </div>
 
       {leader ? (
-        <div className="mt-10 grid gap-8 rounded-2xl border border-border bg-background-secondary p-6 sm:p-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] md:items-center">
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-surface">
-            {leader.imageUrl ? (
-              <OptimizedImage
-                src={leader.imageUrl}
-                alt={leader.name}
-                fill
-                sizes="(max-width: 768px) 100vw, 400px"
-                className="object-cover"
-              />
-            ) : (
-              <div className="flex h-full w-full items-center justify-center text-4xl font-semibold text-text-muted">
-                {initials}
-              </div>
-            )}
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <h3 className="text-xl font-semibold text-text">{leader.name}</h3>
-            <p className="text-sm font-medium text-primary">{roleLabel}</p>
-            {leader.bio ? (
-              <p className="text-base leading-relaxed text-text-muted">
-                {leader.bio}
-              </p>
-            ) : null}
-          </div>
-        </div>
+        <TeamLeaderCard
+          name={leader.name}
+          roleLabel={roleLabel ?? leader.role}
+          imageUrl={leader.imageUrl}
+          initials={initials}
+          sections={sections}
+          tagline={storyT("tagline")}
+          outro={storyT("outro")}
+          seeMore={storyT("seeMore")}
+          seeLess={storyT("seeLess")}
+        />
       ) : (
         <div className="mt-10 rounded-2xl border border-dashed border-border bg-background-secondary p-8 text-center text-sm text-text-muted">
           {t("emptyState")}

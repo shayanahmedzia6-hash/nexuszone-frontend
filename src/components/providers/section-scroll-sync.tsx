@@ -8,7 +8,6 @@ import {
   SECTION_SCROLL_DURATION,
   SECTION_SCROLL_OFFSET,
 } from "@/lib/navigation/section-scroll";
-import { routes } from "@/lib/constants/routes";
 import { useUiStore } from "@/store/ui-store";
 
 function scrollToSection(sectionId: string) {
@@ -19,17 +18,29 @@ function scrollToSection(sectionId: string) {
   });
 }
 
+function syncHash(sectionId: string) {
+  if (typeof window === "undefined") return;
+  const nextUrl = `${window.location.pathname}${window.location.search}#${sectionId}`;
+  window.history.replaceState(null, "", nextUrl);
+}
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+}
+
 function waitForSectionAndScroll(
   sectionId: string,
   onComplete?: () => void,
+  onGiveUp?: () => void,
 ): () => void {
   let attempts = 0;
   let frame = 0;
-  const maxAttempts = 60;
+  const maxAttempts = 120;
 
   const tryScroll = () => {
     if (document.getElementById(sectionId)) {
       scrollToSection(sectionId);
+      syncHash(sectionId);
       onComplete?.();
       return;
     }
@@ -37,7 +48,10 @@ function waitForSectionAndScroll(
     attempts += 1;
     if (attempts < maxAttempts) {
       frame = requestAnimationFrame(tryScroll);
+      return;
     }
+
+    onGiveUp?.();
   };
 
   frame = requestAnimationFrame(tryScroll);
@@ -48,9 +62,10 @@ function waitForSectionAndScroll(
 /** Cross-page and direct-hash section scrolling via react-scroll (not Lenis). */
 export function SectionScrollSync() {
   const pathname = usePathname();
-  const pendingSectionId = useUiStore((state) => state.pendingSectionId);
-  const setPendingSectionId = useUiStore((state) => state.setPendingSectionId);
+  const pendingScroll = useUiStore((state) => state.pendingScroll);
+  const setPendingScroll = useUiStore((state) => state.setPendingScroll);
   const handledHashRef = useRef<string | null>(null);
+  const prevPathnameRef = useRef(pathname);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -60,23 +75,51 @@ export function SectionScrollSync() {
   }, []);
 
   useEffect(() => {
-    if (pathname !== routes.home) return;
+    const pathnameChanged = prevPathnameRef.current !== pathname;
+    prevPathnameRef.current = pathname;
 
-    if (pendingSectionId) {
-      return waitForSectionAndScroll(pendingSectionId, () => {
-        setPendingSectionId(null);
-      });
+    if (pendingScroll) {
+      if (pendingScroll.path === pathname) {
+        const { sectionId } = pendingScroll;
+
+        return waitForSectionAndScroll(
+          sectionId,
+          () => {
+            handledHashRef.current = `${pathname}#${sectionId}`;
+            setPendingScroll(null);
+          },
+          () => {
+            setPendingScroll(null);
+            scrollToTop();
+          },
+        );
+      }
+
+      if (pathnameChanged) {
+        setPendingScroll(null);
+      }
     }
 
     const hashSectionId = window.location.hash.slice(1);
-    if (!hashSectionId) return;
+    if (hashSectionId) {
+      const key = `${pathname}#${hashSectionId}`;
+      if (handledHashRef.current === key) return;
 
-    const key = `${pathname}#${hashSectionId}`;
-    if (handledHashRef.current === key) return;
-    handledHashRef.current = key;
+      return waitForSectionAndScroll(
+        hashSectionId,
+        () => {
+          handledHashRef.current = key;
+        },
+        () => {
+          scrollToTop();
+        },
+      );
+    }
 
-    return waitForSectionAndScroll(hashSectionId);
-  }, [pathname, pendingSectionId, setPendingSectionId]);
+    if (pathnameChanged) {
+      scrollToTop();
+    }
+  }, [pathname, pendingScroll, setPendingScroll]);
 
   return null;
 }

@@ -11,5 +11,11 @@
   "visionText": "To be the long-term growth partner businesses turn to at every stage — from first registration to ongoing operations in the UAE.",
   "readyTitle": "Ready to Work Together?",
   "readyDescription": "Tell us about your business and we'll help you get started.",
-  "talkToExpert": "Talk to an Expert"
+  "talkToExpert": "Talk to an Expert",
+  "founderCeo": {
+    "eyebrow": "Founder & CEO",
+    "titlePrimary": "The Vision Behind",
+    "titleAccent": "Nexus Zone",
+    "description": "Meet the founder whose experience across aviation, marketing and the UAE business landscape shaped Nexus Zone."
+  }
 }

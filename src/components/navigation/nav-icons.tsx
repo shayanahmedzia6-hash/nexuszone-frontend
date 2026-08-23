@@ -31,6 +31,7 @@ import {
   ShieldCheck,
   Sparkles,
   Target,
+  UserCircle,
   Users,
   Wallet,
 } from "lucide-react";
@@ -66,6 +67,7 @@ const iconMap: Record<string, LucideIcon> = {
   "shield-check": ShieldCheck,
   sparkles: Sparkles,
   target: Target,
+  "user-circle": UserCircle,
   users: Users,
   wallet: Wallet,
 };

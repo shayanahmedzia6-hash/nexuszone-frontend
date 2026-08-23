@@ -20,7 +20,7 @@ export function Partners({ emptyState = false }: PartnersProps) {
   return (
     <SectionWrapper
       id="partners"
-      className="bg-background-secondary pt-4 md:pt-6 lg:pt-8"
+      className="bg-background-secondary"
     >
       <div className="flex flex-col gap-4">
         <p className="text-sm font-medium tracking-wide text-primary uppercase">

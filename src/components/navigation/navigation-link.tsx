@@ -36,20 +36,24 @@ export function NavigationLink({
 }: NavigationLinkProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const setPendingSectionId = useUiStore((state) => state.setPendingSectionId);
+  const setPendingScroll = useUiStore((state) => state.setPendingScroll);
 
-  const handleCrossPageHomeSection = useCallback(
-    (event: MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+  const handleCrossPageSection = useCallback(
+    (
+      event: MouseEvent<HTMLAnchorElement>,
+      path: string,
+      sectionId: string,
+    ) => {
       onClick?.(event);
       if (event.defaultPrevented) return;
 
       event.preventDefault();
       event.stopPropagation();
 
-      setPendingSectionId(sectionId);
-      router.push(routes.home, { scroll: false });
+      setPendingScroll({ path, sectionId });
+      router.push(path, { scroll: false });
     },
-    [onClick, router, setPendingSectionId],
+    [onClick, router, setPendingScroll],
   );
 
   if (typeof href === "string" && isHomeSectionHref(href)) {
@@ -78,7 +82,9 @@ export function NavigationLink({
         href={routes.home}
         scroll={false}
         className={className}
-        onClick={(event) => handleCrossPageHomeSection(event, sectionId)}
+        onClick={(event) =>
+          handleCrossPageSection(event, routes.home, sectionId)
+        }
         {...rest}
       >
         {children}
@@ -108,7 +114,35 @@ export function NavigationLink({
         </ScrollLink>
       );
     }
+
+    if (sectionId && !isSamePage) {
+      const { className, children, ...rest } = props;
+
+      return (
+        <Link
+          href={pathPart}
+          scroll={false}
+          className={className}
+          onClick={(event) =>
+            handleCrossPageSection(event, pathPart, sectionId)
+          }
+          {...rest}
+        >
+          {children}
+        </Link>
+      );
+    }
   }
 
-  return <Link href={href} scroll={scroll} onClick={onClick} {...props} />;
+  const isPlainPageLink =
+    typeof href === "string" && !hasHashInHref(href);
+
+  return (
+    <Link
+      href={href}
+      scroll={isPlainPageLink ? true : scroll}
+      onClick={onClick}
+      {...props}
+    />
+  );
 }

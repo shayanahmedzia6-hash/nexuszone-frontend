@@ -12,6 +12,8 @@ import servicesCatalogPageAr from "../../messages/fragments/services-catalog-pag
 import servicesCatalogPageEn from "../../messages/fragments/services-catalog-page.en.json";
 import servicesDetailAr from "../../messages/fragments/services-detail.ar.json";
 import servicesDetailEn from "../../messages/fragments/services-detail.en.json";
+import teamFounderStoryAr from "../../messages/fragments/team-founder-story.ar.json";
+import teamFounderStoryEn from "../../messages/fragments/team-founder-story.en.json";
 // import es from "../../messages/es.json";
 // import fr from "../../messages/fr.json";
 
@@ -24,6 +26,7 @@ export type Messages = typeof en & {
   servicesDetail: typeof servicesDetailEn;
   contactPage: typeof contactPageEn;
   careersPage: typeof careersPageEn;
+  teamFounderStory: typeof teamFounderStoryEn;
 };
 
 const catalogs: Record<Locale, Partial<Messages>> = {
@@ -69,6 +72,11 @@ const careersPageByLocale: Record<Locale, typeof careersPageEn> = {
   ar: careersPageAr,
 };
 
+const teamFounderStoryByLocale: Record<Locale, typeof teamFounderStoryEn> = {
+  en: teamFounderStoryEn,
+  ar: teamFounderStoryAr,
+};
+
 function isPlainObject(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -101,6 +109,8 @@ export function getLocaleMessages(locale: Locale): Messages {
   const servicesDetail = servicesDetailByLocale[locale] ?? servicesDetailEn;
   const contactPage = contactPageByLocale[locale] ?? contactPageEn;
   const careersPage = careersPageByLocale[locale] ?? careersPageEn;
+  const teamFounderStory =
+    teamFounderStoryByLocale[locale] ?? teamFounderStoryEn;
 
   if (locale === "en") {
     return {
@@ -111,6 +121,7 @@ export function getLocaleMessages(locale: Locale): Messages {
       servicesDetail,
       contactPage,
       careersPage,
+      teamFounderStory,
     };
   }
 
@@ -128,5 +139,6 @@ export function getLocaleMessages(locale: Locale): Messages {
     servicesDetail,
     contactPage,
     careersPage,
+    teamFounderStory,
   };
 }

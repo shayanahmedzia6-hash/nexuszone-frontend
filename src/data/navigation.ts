@@ -170,16 +170,22 @@ export const navigationItems: NavigationItem[] = [
     type: "dropdown",
     items: [
       {
-        id: "about-nexus",
-        label: "About Nexus Zone",
-        href: routes.about,
-        icon: "info",
+        id: "founder-ceo",
+        label: "Founder & CEO",
+        href: `${routes.about}#founder-ceo`,
+        icon: "user-circle",
       },
       {
         id: "our-team",
         label: "Our Team",
-        href: `${routes.about}#team`,
+        href: `${routes.about}#founder-ceo`,
         icon: "users",
+      },
+      {
+        id: "about-nexus",
+        label: "About Nexus Zone",
+        href: `${routes.about}#about-intro`,
+        icon: "info",
       },
       {
         id: "partners-awards",
