@@ -151,28 +151,29 @@ export function CareerApplicationForm({
       fieldErrors.cv = copy.errors.cv;
     }
 
-    if (Object.keys(fieldErrors).length > 0) {
+    if (Object.keys(fieldErrors).length > 0 || !result.success || !cvFile) {
       setErrors(fieldErrors);
       return;
     }
 
     setErrors({});
 
-    const phone = result!.data.phone ?? copy.phoneFallback;
+    const data = result.data;
+    const phone = data.phone ?? copy.phoneFallback;
     const subject = encodeURIComponent(
       fillTemplate(copy.mailSubject, {
-        position: result!.data.position,
-        name: result!.data.name,
+        position: data.position,
+        name: data.name,
       }),
     );
     const body = encodeURIComponent(
       fillTemplate(copy.mailBody, {
-        name: result!.data.name,
-        email: result!.data.email,
+        name: data.name,
+        email: data.email,
         phone,
-        position: result!.data.position,
-        cv: cvFile?.name ?? copy.cvFallback,
-        message: result!.data.message,
+        position: data.position,
+        cv: cvFile.name,
+        message: data.message,
       }),
     );
     window.location.href = `mailto:${siteContact.careersEmail}?subject=${subject}&body=${body}`;
