@@ -6,7 +6,10 @@ import { getMessages, getTranslations, setRequestLocale } from "next-intl/server
 import { notFound } from "next/navigation";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
+import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/navigation/header";
 import { AppProviders } from "@/components/providers/app-providers";
+import { LeadCaptureModal } from "@/features/lead-capture/components/LeadCaptureModal";
 import { siteConfig } from "@/config/site";
 import { routing, rtlLocales, type Locale } from "@/i18n/routing";
 import {
@@ -92,7 +95,14 @@ export default async function RootLayout({
           {t("skipToMainContent")}
         </a>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <AppProviders>{children}</AppProviders>
+          <AppProviders>
+            <Header />
+            <div id="main-content" className="flex flex-1 flex-col">
+              {children}
+            </div>
+            <Footer />
+            <LeadCaptureModal />
+          </AppProviders>
         </NextIntlClientProvider>
       </body>
     </html>

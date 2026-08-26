@@ -21,19 +21,19 @@ export const footerContent = {
     {
       id: "linkedin",
       label: "LinkedIn",
-      href: "https://www.linkedin.com/",
+      href: "https://www.linkedin.com/company/nexuszone/",
       icon: "linkedin",
     },
     {
       id: "facebook",
       label: "Facebook",
-      href: "https://www.facebook.com/",
+      href: "https://www.facebook.com/share/1BoJuKGcvD/",
       icon: "facebook",
     },
     {
       id: "instagram",
       label: "Instagram",
-      href: "https://www.instagram.com/",
+      href: "https://www.instagram.com/nexuszoneofficial/",
       icon: "instagram",
     },
     // Temporarily hidden

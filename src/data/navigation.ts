@@ -175,12 +175,12 @@ export const navigationItems: NavigationItem[] = [
         href: `${routes.about}#founder-ceo`,
         icon: "user-circle",
       },
-      {
-        id: "our-team",
-        label: "Our Team",
-        href: `${routes.about}#founder-ceo`,
-        icon: "users",
-      },
+      // {
+      //   id: "our-team",
+      //   label: "Our Team",
+      //   href: `${routes.about}#founder-ceo`,
+      //   icon: "users",
+      // },
       {
         id: "about-nexus",
         label: "About Nexus Zone",
@@ -189,7 +189,7 @@ export const navigationItems: NavigationItem[] = [
       },
       {
         id: "partners-awards",
-        label: "Partners & Awards",
+        label: "Partners",
         href: `${routes.about}#partners`,
         icon: "award",
       },
