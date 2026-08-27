@@ -64,27 +64,6 @@ export function Footer({ className }: FooterProps) {
             <p className="max-w-sm text-sm leading-relaxed text-text-muted">
               {t("tagline")}
             </p>
-            <ul className="flex items-center gap-2">
-              {footerContent.social.map((item) => {
-                const Icon = getSocialIcon(item.icon);
-                const socialLabel = t.has(`social.${item.id}`)
-                  ? t(`social.${item.id}`)
-                  : item.label;
-                return (
-                  <li key={item.id}>
-                    <a
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={socialLabel}
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-surface/60 text-text transition-colors hover:border-primary hover:text-primary"
-                    >
-                      {Icon ? <Icon className="h-4 w-4" /> : null}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
           </div>
 
           <div>
@@ -158,7 +137,34 @@ export function Footer({ className }: FooterProps) {
           <NewsletterForm />
         </div>
 
-        <div className="mt-8 flex flex-col gap-3 border-t border-border pt-6 text-sm text-text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col items-center gap-4 border-t border-border pt-8 sm:flex-row sm:justify-between">
+          <span className="text-sm font-medium tracking-wide text-text uppercase">
+            {t("followUs")}
+          </span>
+          <ul className="flex items-center gap-3">
+            {footerContent.social.map((item) => {
+              const Icon = getSocialIcon(item.icon);
+              const socialLabel = t.has(`social.${item.id}`)
+                ? t(`social.${item.id}`)
+                : item.label;
+              return (
+                <li key={item.id}>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={socialLabel}
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-surface text-text transition-colors hover:border-primary hover:bg-primary hover:text-white"
+                  >
+                    {Icon ? <Icon className="h-5 w-5" /> : null}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        <div className="mt-6 flex flex-col gap-3 border-t border-border pt-6 text-sm text-text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>{t("copyright", { year })}</p>
           <p className="flex flex-wrap gap-x-3 gap-y-1">
             <span className="inline-flex items-center gap-3">

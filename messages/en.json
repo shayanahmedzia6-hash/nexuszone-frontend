@@ -136,7 +136,7 @@
     "newsletterPlaceholder": "Enter your email",
     "privacyPolicy": "Privacy Policy",
     "termsConditions": "Terms & Conditions",
-    "hours": "Mon - Fri: 9:00 AM - 6:00 PM",
+    "hours": "Mon - Sat: 9:00 AM - 6:00 PM",
     "copyright": "© {year} Nexus Zone. All Rights Reserved.",
     "newsletterEmailLabel": "Email address",
     "newsletterSubscribe": "Subscribe",
@@ -171,7 +171,8 @@
     },
     "contactInfo": {
       "address": "Saraya Avenue, Block B, Office 301, Dubai, UAE"
-    }
+    },
+    "followUs": "Follow Us"
   },
   "hero": {
     "eyebrow": "YOUR TRUSTED BUSINESS PARTNER IN THE UAE",
