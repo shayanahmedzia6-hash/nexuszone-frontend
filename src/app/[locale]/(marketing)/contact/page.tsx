@@ -30,13 +30,11 @@ export default async function ContactPage() {
     message: t("form.message"),
     messagePlaceholder: t("form.messagePlaceholder"),
     send: t("form.send"),
+    sending: t("form.sending"),
     sentTitle: t("form.sentTitle"),
     sentBody: t("form.sentBody"),
     sendAnother: t("form.sendAnother"),
-    // raw: ICU would treat {name}/{email}/… as format args at render time
-    mailSubject: String(t.raw("form.mailSubject")),
-    mailBody: String(t.raw("form.mailBody")),
-    phoneFallback: t("form.phoneFallback"),
+    submitError: t("form.submitError"),
     errors: {
       name: t("form.errors.name"),
       email: t("form.errors.email"),

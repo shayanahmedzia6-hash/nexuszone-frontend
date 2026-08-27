@@ -6,7 +6,6 @@ import { type FormEvent, useState } from "react";
 import { FormField } from "@/components/forms/form-field";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { siteContact } from "@/data/site-contact";
 import { contactFormSchema } from "@/lib/validations/contact";
 
 type FormState = {
@@ -26,12 +25,11 @@ export type ContactFormCopy = {
   message: string;
   messagePlaceholder: string;
   send: string;
+  sending: string;
   sentTitle: string;
   sentBody: string;
   sendAnother: string;
-  mailSubject: string;
-  mailBody: string;
-  phoneFallback: string;
+  submitError: string;
   errors: {
     name: string;
     email: string;
@@ -42,21 +40,7 @@ export type ContactFormCopy = {
 
 const initialState: FormState = { name: "", email: "", phone: "", message: "" };
 
-function fillTemplate(
-  template: string,
-  values: Record<string, string>,
-): string {
-  return template.replace(/\{(\w+)\}/g, (_, key: string) => values[key] ?? "");
-}
-
-/**
- * No backend/email service is configured yet (see src/lib/api), so this
- * opens a pre-filled mailto: to the team inbox instead of posting anywhere.
- * Swap this handler for a real API route once an email provider is set up.
- *
- * Copy is passed from the server page so AR/EN never depends on client
- * message hydration for the visible labels.
- */
+/** Shows success immediately; email POST continues in the background. */
 export function ContactForm({ copy }: { copy: ContactFormCopy }) {
   const [values, setValues] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>(
@@ -93,29 +77,30 @@ export function ContactForm({ copy }: { copy: ContactFormCopy }) {
     }
 
     setErrors({});
-
-    const phone = result.data.phone ?? copy.phoneFallback;
-    const subject = encodeURIComponent(
-      fillTemplate(copy.mailSubject, { name: result.data.name }),
-    );
-    const body = encodeURIComponent(
-      fillTemplate(copy.mailBody, {
-        name: result.data.name,
-        email: result.data.email,
-        phone,
-        message: result.data.message,
-      }),
-    );
-    window.location.href = `mailto:${siteContact.email}?subject=${subject}&body=${body}`;
-
     setSubmitted(true);
     setValues(initialState);
+
+    void fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: result.data.name,
+        email: result.data.email,
+        phone: result.data.phone,
+        message: result.data.message,
+      }),
+    }).catch((error) => {
+      console.error("Contact email background send failed:", error);
+    });
   };
 
   if (submitted) {
     return (
-      <div className="flex flex-col items-start gap-3 rounded-xl border border-primary/30 bg-background-secondary p-6">
-        <CheckCircle2 className="h-6 w-6 text-primary" aria-hidden />
+      <div className="flex flex-col items-start gap-3 rounded-xl border border-[var(--color-success)]/35 bg-background-secondary p-6">
+        <CheckCircle2
+          className="h-6 w-6 text-[var(--color-success)]"
+          aria-hidden
+        />
         <p className="text-base font-semibold text-text">{copy.sentTitle}</p>
         <p className="text-sm text-text-muted">{copy.sentBody}</p>
         <Button

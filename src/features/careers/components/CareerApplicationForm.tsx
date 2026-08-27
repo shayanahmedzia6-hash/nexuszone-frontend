@@ -6,7 +6,6 @@ import { type FormEvent, useRef, useState } from "react";
 import { FormField } from "@/components/forms/form-field";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { siteContact } from "@/data/site-contact";
 import { careerApplicationSchema } from "@/lib/validations/careers";
 import { cn } from "@/lib/utils/cn";
 
@@ -33,13 +32,11 @@ export type CareerApplicationFormCopy = {
   message: string;
   messagePlaceholder: string;
   submit: string;
+  sending: string;
   sentTitle: string;
   sentBody: string;
   sendAnother: string;
-  mailSubject: string;
-  mailBody: string;
-  phoneFallback: string;
-  cvFallback: string;
+  submitError: string;
   errors: {
     name: string;
     email: string;
@@ -67,10 +64,13 @@ const ACCEPTED_CV_TYPES = [
 const ACCEPTED_CV_EXTENSIONS = [".pdf", ".doc", ".docx"];
 
 function fillTemplate(
-  template: string,
+  template: string | undefined,
   values: Record<string, string>,
 ): string {
-  return template.replace(/\{(\w+)\}/g, (_, key: string) => values[key] ?? "");
+  return (template ?? "").replace(
+    /\{(\w+)\}/g,
+    (_, key: string) => values[key] ?? "",
+  );
 }
 
 function isAcceptedCv(file: File): boolean {
@@ -80,10 +80,8 @@ function isAcceptedCv(file: File): boolean {
 }
 
 /**
- * No backend/email service is configured yet (see src/lib/api), so this
- * opens a pre-filled mailto: to the careers inbox instead of posting
- * anywhere. File upload is collected in the form; mailto cannot attach
- * the CV, so the selected filename is noted in the message body.
+ * Posts multipart form data to `/api/careers` (application + CV attachment).
+ * Company inbox gets the HTML notice with CV; applicant gets a thank-you email.
  */
 export function CareerApplicationForm({
   copy,
@@ -156,38 +154,38 @@ export function CareerApplicationForm({
       return;
     }
 
-    setErrors({});
-
     const data = result.data;
-    const phone = data.phone ?? copy.phoneFallback;
-    const subject = encodeURIComponent(
-      fillTemplate(copy.mailSubject, {
-        position: data.position,
-        name: data.name,
-      }),
-    );
-    const body = encodeURIComponent(
-      fillTemplate(copy.mailBody, {
-        name: data.name,
-        email: data.email,
-        phone,
-        position: data.position,
-        cv: cvFile.name,
-        message: data.message,
-      }),
-    );
-    window.location.href = `mailto:${siteContact.careersEmail}?subject=${subject}&body=${body}`;
+    const file = cvFile;
 
+    setErrors({});
     setSubmitted(true);
     setValues(initialState);
     setCvFile(null);
     if (fileInputRef.current) fileInputRef.current.value = "";
+
+    const body = new FormData();
+    body.append("name", data.name);
+    body.append("email", data.email);
+    if (data.phone) body.append("phone", data.phone);
+    body.append("position", data.position);
+    body.append("message", data.message);
+    body.append("cv", file);
+
+    void fetch("/api/careers", {
+      method: "POST",
+      body,
+    }).catch((error) => {
+      console.error("Careers email background send failed:", error);
+    });
   };
 
   if (submitted) {
     return (
-      <div className="flex flex-col items-start gap-3 rounded-xl border border-primary/30 bg-background-secondary p-6">
-        <CheckCircle2 className="h-6 w-6 text-primary" aria-hidden />
+      <div className="flex flex-col items-start gap-3 rounded-xl border border-[var(--color-success)]/35 bg-background-secondary p-6">
+        <CheckCircle2
+          className="h-6 w-6 text-[var(--color-success)]"
+          aria-hidden
+        />
         <p className="text-base font-semibold text-text">{copy.sentTitle}</p>
         <p className="text-sm text-text-muted">{copy.sentBody}</p>
         <Button

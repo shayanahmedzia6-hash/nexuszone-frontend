@@ -12,7 +12,6 @@ import { createPortal } from "react-dom";
 
 import { Button } from "@/components/ui/button";
 import { helpTypeOptions, leadCaptureContent } from "@/data/lead-capture";
-import { siteContact } from "@/data/site-contact";
 import { leadCaptureSchema } from "@/lib/validations/lead-capture";
 import { cn } from "@/lib/utils/cn";
 
@@ -62,9 +61,7 @@ function UaeFlag({ className }: { className?: string }) {
  * Auto-opens once per browser session, a few seconds after landing, as a
  * centered modal with backdrop. "notRobot" is a plain confirmation checkbox,
  * not real Google reCAPTCHA — swap in an actual reCAPTCHA site key before
- * relying on it to stop bots. No backend/email service exists yet, so
- * submitting opens a pre-filled mailto: instead of posting anywhere (same
- * approach as the Contact page).
+ * relying on it to stop bots. Submits to `/api/lead` (company + thank-you email).
  */
 export function LeadCaptureModal() {
   const [mounted, setMounted] = useState(false);
@@ -144,18 +141,25 @@ export function LeadCaptureModal() {
     }
 
     setErrors({});
-
-    const subject = encodeURIComponent(
-      `Website enquiry from ${result.data.firstName} ${result.data.lastName}`,
-    );
-    const body = encodeURIComponent(
-      `Name: ${result.data.firstName} ${result.data.lastName}\nEmail: ${result.data.email}\nPhone: +971 ${result.data.phone}\nHow can we help: ${result.data.helpType}\nBusiness type: ${result.data.businessType || "—"}`,
-    );
-    window.location.href = `mailto:${siteContact.email}?subject=${subject}&body=${body}`;
-
     setSubmitted(true);
     sessionStorage.setItem(DISMISSED_KEY, "1");
     setValues(initialState);
+
+    const phone = `+971 ${result.data.phone}`.trim();
+    void fetch("/api/lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        firstName: result.data.firstName,
+        lastName: result.data.lastName,
+        email: result.data.email,
+        phone,
+        helpType: result.data.helpType,
+        businessType: result.data.businessType || undefined,
+      }),
+    }).catch((error) => {
+      console.error("Lead email background send failed:", error);
+    });
   };
 
   const modal =
@@ -211,7 +215,10 @@ export function LeadCaptureModal() {
 
           {submitted ? (
             <div className="flex flex-col items-start gap-3 overflow-y-auto px-5 py-4">
-              <CheckCircle2 className="text-primary h-8 w-8" aria-hidden />
+              <CheckCircle2
+                className="h-8 w-8 text-[var(--color-success)]"
+                aria-hidden
+              />
               <p className="text-text-muted text-sm">
                 {leadCaptureContent.successBody}
               </p>

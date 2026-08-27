@@ -7,7 +7,9 @@ export const leadCaptureContent = {
   submitLabel: "Submit",
   successTitle: "Thanks — We've Got Your Details",
   successBody:
-    "Your email client should now be open with your message ready to send. We'll be in touch shortly.",
+    "Your message has been sent. We've emailed you a confirmation and our team will be in touch shortly.",
+  submittingLabel: "Sending…",
+  submitError: "Something went wrong. Please try again.",
 } as const;
 
 export const helpTypeOptions = needCategories.map((category) => category.title);
