@@ -1,3 +1,5 @@
+import { footerContent } from "@/data/footer";
+
 import { emailLogoSrc } from "../logo";
 
 function escapeHtml(value: string): string {
@@ -65,6 +67,32 @@ export type ThankYouTemplateData = {
   name: string;
 };
 
+const SOCIAL_BADGE_LABEL: Record<string, string> = {
+  linkedin: "in",
+  facebook: "f",
+  instagram: "IG",
+};
+
+/**
+ * Text badges instead of icon images/SVGs — keeps this working reliably
+ * across email clients (Outlook in particular has poor SVG/webfont support)
+ * without needing to host icon assets.
+ */
+function socialLinksRow(): string {
+  const cells = footerContent.social
+    .map((item) => {
+      const badge = SOCIAL_BADGE_LABEL[item.icon] ?? item.label.slice(0, 2);
+      return `<td style="padding:0 6px;">
+        <a href="${escapeHtml(item.href)}" style="display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;background:#0b1220;color:#ffffff;font-size:13px;font-weight:700;font-family:'Segoe UI',Arial,sans-serif;text-align:center;text-decoration:none;">${escapeHtml(badge)}</a>
+      </td>`;
+    })
+    .join("");
+
+  return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:20px 0 18px;">
+    <tr>${cells}</tr>
+  </table>`;
+}
+
 /** Shared thank-you for Contact + Lead (Connect With Us). */
 function enquiryThankYouBody(): string {
   return [
@@ -80,7 +108,9 @@ function enquiryThankYouBody(): string {
     ),
     paragraph(
       "Meanwhile, feel free to explore our social media platforms and stay connected with Nexus Zone for the latest updates, insights and UAE business opportunities.",
+      { marginBottom: 0 },
     ),
+    socialLinksRow(),
     paragraph("Nexus Zone — Connect. Comply. Scale.", {
       bold: true,
       marginBottom: 0,
