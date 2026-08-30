@@ -73,6 +73,16 @@ const SOCIAL_BADGE_LABEL: Record<string, string> = {
   instagram: "IG",
 };
 
+/** Each platform's own brand color. Instagram has no single brand color —
+ * a gradient is the closest to "original", with a solid fallback for
+ * Outlook and other clients that don't render CSS gradients. */
+const SOCIAL_BADGE_BACKGROUND: Record<string, string> = {
+  linkedin: "background-color:#0A66C2;background:#0A66C2;",
+  facebook: "background-color:#1877F2;background:#1877F2;",
+  instagram:
+    "background-color:#E4405F;background:linear-gradient(45deg,#F9CE34,#EE2A7B,#6228D7);",
+};
+
 /**
  * Text badges instead of icon images/SVGs — keeps this working reliably
  * across email clients (Outlook in particular has poor SVG/webfont support)
@@ -82,8 +92,10 @@ function socialLinksRow(): string {
   const cells = footerContent.social
     .map((item) => {
       const badge = SOCIAL_BADGE_LABEL[item.icon] ?? item.label.slice(0, 2);
+      const background =
+        SOCIAL_BADGE_BACKGROUND[item.icon] ?? "background:#0b1220;";
       return `<td style="padding:0 6px;">
-        <a href="${escapeHtml(item.href)}" style="display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;background:#0b1220;color:#ffffff;font-size:13px;font-weight:700;font-family:'Segoe UI',Arial,sans-serif;text-align:center;text-decoration:none;">${escapeHtml(badge)}</a>
+        <a href="${escapeHtml(item.href)}" style="display:inline-block;width:38px;height:38px;line-height:38px;border-radius:50%;${background}color:#ffffff;font-size:13px;font-weight:700;font-family:'Segoe UI',Arial,sans-serif;text-align:center;text-decoration:none;">${escapeHtml(badge)}</a>
       </td>`;
     })
     .join("");
