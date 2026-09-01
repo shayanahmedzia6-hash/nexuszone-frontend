@@ -55,8 +55,27 @@ export const navigationItems: NavigationItem[] = [
   {
     id: "business-setup",
     label: "Business Setup",
-    type: "link",
-    href: routes.businessSetup,
+    type: "dropdown",
+    items: [
+      {
+        id: "mainland",
+        label: "Mainland Company",
+        href: routes.businessSetupMainland,
+        icon: "building-2",
+      },
+      {
+        id: "free-zone",
+        label: "Free Zone Company",
+        href: routes.businessSetupFreeZone,
+        icon: "landmark",
+      },
+      {
+        id: "offshore",
+        label: "Offshore Company",
+        href: routes.businessSetupOffshore,
+        icon: "globe-2",
+      },
+    ],
   },
   {
     id: "services",
